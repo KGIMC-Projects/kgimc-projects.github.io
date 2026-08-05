@@ -732,20 +732,22 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
         </div>
       </div>
     </div>
-    <form class="contact-form" onsubmit="event.preventDefault();alert('Thank you! We will be in touch soon.');this.reset();">
+    <form class="contact-form" id="prayerForm" action="https://formspree.io/f/maewyerj" method="POST">
       <h3>Send a Prayer Request or Message</h3>
       <p class="sub">If you or someone you know needs prayer, let us stand with you in faith.</p>
+      <!-- Subject line for the email you'll receive -->
+      <input type="hidden" name="_subject" value="New Prayer Request — KGIMC Website" />
       <div class="form-two">
-        <div class="form-row"><label>First Name</label><input type="text" required /></div>
-        <div class="form-row"><label>Last Name</label><input type="text" required /></div>
+        <div class="form-row"><label>First Name</label><input type="text" name="First Name" required /></div>
+        <div class="form-row"><label>Last Name</label><input type="text" name="Last Name" required /></div>
       </div>
       <div class="form-two">
-        <div class="form-row"><label>Email</label><input type="email" required /></div>
-        <div class="form-row"><label>Phone (Optional)</label><input type="tel" /></div>
+        <div class="form-row"><label>Email</label><input type="email" name="Email" required /></div>
+        <div class="form-row"><label>Phone (Optional)</label><input type="tel" name="Phone" /></div>
       </div>
       <div class="form-row">
         <label>Reason for Contact</label>
-        <select>
+        <select name="Reason for Contact">
           <option>Prayer Request</option>
           <option>Book an Appointment</option>
           <option>Join a Service</option>
@@ -753,7 +755,7 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
           <option>General Inquiry</option>
         </select>
       </div>
-      <div class="form-row"><label>Your Message</label><textarea required placeholder="Share what's on your heart..."></textarea></div>
+      <div class="form-row"><label>Your Message</label><textarea name="Message" required placeholder="Share what's on your heart..."></textarea></div>
       <button type="submit" class="btn btn-navy" style="width:100%">Send Message</button>
     </form>
   </div>
@@ -797,6 +799,42 @@ document.getElementById('year').textContent = new Date().getFullYear();
 document.querySelectorAll('.nav-links a').forEach(a=>{
   a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
 });
+
+// --- Prayer request form: submit to Formspree with inline success/error UX ---
+(function(){
+  const form = document.getElementById('prayerForm');
+  if(!form) return;
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+    try{
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if(response.ok){
+        form.innerHTML = '<div style="text-align:center;padding:40px 20px">'
+          + '<div style="font-size:2.5rem;margin-bottom:16px">🙏</div>'
+          + '<h3 style="color:var(--navy);margin-bottom:12px;font-family:var(--serif);font-size:1.8rem">Thank You</h3>'
+          + '<p style="color:var(--muted);line-height:1.7">Your message has been received. Our ministry team will be in touch with you soon.<br/>May God bless you.</p>'
+          + '<p style="color:var(--gold);font-family:var(--serif);font-style:italic;margin-top:20px">"The prayer of a righteous person is powerful and effective." — James 5:16</p>'
+          + '</div>';
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch(err){
+      btn.textContent = originalText;
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      alert('Sorry, something went wrong. Please try again, or email us directly at kgimiraclecentre@gmail.com');
+    }
+  });
+})();
 </script>
 </body>
 </html>
