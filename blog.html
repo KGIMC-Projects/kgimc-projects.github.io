@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog | KGI Miracle Centre — Kingdom Guardian International</title>
+<meta name="description" content="KGIMC Blog — Weekly writings on Kingdom Living, Prayer & Devotion, Healing & Restoration, Family & Relationships, Leadership & Discipleship, and the Next Generation." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0b1e3f; --navy-deep:#061229;
+  --gold:#c9a24b; --gold-light:#e6c67a;
+  --cream:#faf6ee; --ink:#1a1a1a; --muted:#5c5c5c;
+  --line:rgba(201,162,75,0.35);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.7;font-weight:300;font-size:16px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;letter-spacing:.5px;line-height:1.2;color:var(--navy)}
+h1{font-size:clamp(2.5rem,6vw,4.5rem)}
+h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:.5rem}
+h3{font-size:1.5rem}
+p{margin-bottom:1rem}
+a{color:var(--gold);text-decoration:none;transition:.3s}
+a:hover{color:var(--navy)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;padding:14px 36px;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;border:1px solid var(--gold);border-radius:2px;cursor:pointer;transition:.3s;text-align:center}
+.btn-navy{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+.btn-navy:hover{background:transparent;color:var(--navy)}
+
+/* NAV (shared) */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,30,63,0.95);backdrop-filter:blur(10px);padding:14px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-logo{display:flex;align-items:center;gap:12px;color:var(--cream);font-family:var(--serif);font-size:1.1rem;flex-shrink:0}
+.nav-logo img{width:42px;height:42px;border-radius:50%}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center}
+.nav-links a{color:var(--cream);font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:400}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-links .book-btn{background:var(--gold);color:var(--navy)!important;padding:10px 20px;border-radius:2px;font-weight:500}
+.menu-toggle{display:none;background:none;border:none;color:var(--cream);font-size:1.5rem;cursor:pointer}
+
+/* PAGE HEADER */
+.page-header{background:linear-gradient(rgba(6,18,41,0.88),rgba(6,18,41,0.95)),url('https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/cca7e760-a62f-41d4-848b-e75a903f3152/heavenly+sky.png') center/cover;color:var(--cream);padding:150px 24px 80px;text-align:center}
+.page-header .eyebrow{font-family:var(--sans);font-size:.75rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px;display:block}
+.page-header h1{color:var(--cream);margin-bottom:16px}
+.page-header p{color:rgba(250,246,238,0.8);max-width:700px;margin:0 auto;font-size:1.05rem;font-style:italic;font-family:var(--serif)}
+
+/* CATEGORIES */
+.categories{padding:60px 0 20px;background:var(--cream)}
+.cat-filter{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.cat-btn{background:#fff;border:1px solid var(--line);color:var(--navy);padding:9px 18px;border-radius:20px;cursor:pointer;font-family:var(--sans);font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;transition:.25s;font-weight:500}
+.cat-btn:hover{border-color:var(--gold);color:var(--gold)}
+.cat-btn.active{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+.categories-title{text-align:center}
+.categories-title .eyebrow{font-family:var(--sans);font-size:.75rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px;display:block}
+.categories-title h2{position:relative;display:inline-block;padding-bottom:20px}
+.categories-title h2::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:var(--gold)}
+
+/* POSTS */
+.posts{padding:40px 0 100px;background:var(--cream)}
+.posts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}
+.post-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);padding:32px 28px;border-radius:4px;transition:.3s;display:flex;flex-direction:column}
+.post-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(11,30,63,0.1)}
+.post-cat{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px}
+.post-card h3{font-size:1.4rem;margin-bottom:12px;line-height:1.3}
+.post-card h3 a{color:var(--navy)}
+.post-card h3 a:hover{color:var(--gold)}
+.post-excerpt{color:var(--muted);font-size:.95rem;flex-grow:1;margin-bottom:20px}
+.post-meta{font-size:.75rem;color:var(--muted);letter-spacing:1px;padding-top:14px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:center}
+.post-meta .read-more{color:var(--gold);font-weight:500;text-transform:uppercase;font-size:.72rem;letter-spacing:1.5px}
+.empty-note{grid-column:1/-1;text-align:center;padding:40px 20px;color:var(--muted);font-style:italic;background:#fff;border:1px dashed var(--line);border-radius:4px}
+
+/* COMING SOON SECTION */
+.coming-soon{background:#fff;padding:80px 0;border-top:1px solid var(--line)}
+.coming-soon .container{max-width:900px}
+.coming-soon h2{text-align:center;margin-bottom:16px}
+.coming-soon p.intro{text-align:center;color:var(--muted);margin-bottom:40px;max-width:700px;margin-left:auto;margin-right:auto}
+.upcoming-list{columns:2;column-gap:36px;color:var(--muted);font-size:.95rem}
+.upcoming-list div{break-inside:avoid;padding:8px 0;border-bottom:1px dashed var(--line)}
+.upcoming-list div strong{color:var(--navy);font-family:var(--serif);font-size:1.02rem;display:block;margin-bottom:2px}
+.upcoming-list div span{font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+
+/* FOOTER */
+footer{background:var(--navy-deep);color:rgba(250,246,238,0.6);padding:60px 0 30px;text-align:center}
+.footer-logo{width:80px;height:80px;margin:0 auto 20px;border-radius:50%}
+footer h4{font-family:var(--serif);color:var(--gold);font-size:1.4rem;margin-bottom:8px}
+footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:24px 0;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase}
+.footer-links a{color:rgba(250,246,238,0.7)}
+.footer-links a:hover{color:var(--gold)}
+.socials{display:flex;gap:16px;justify-content:center;margin:20px 0}
+.socials a{width:40px;height:40px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.9rem}
+.socials a:hover{background:var(--gold);color:var(--navy)}
+.copyright{margin-top:30px;padding-top:20px;border-top:1px solid rgba(201,162,75,0.15);font-size:.8rem}
+
+@media(max-width:900px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px;gap:20px}
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  .upcoming-list{columns:1}
+  .page-header{padding:120px 24px 60px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html#top" class="nav-logo">
+      <img src="kgimc-logo.png" alt="KGIMC" />
+      <span>KGI Miracle Centre</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#top">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#schedule">Schedule</a></li>
+      <li><a href="index.html#team">Team</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#books">Books</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#book-now" class="book-btn">Book Now</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <span class="eyebrow">KGIMC Blog</span>
+  <h1>Kingdom Writings</h1>
+  <p>"Your word is a lamp unto my feet, and a light unto my path." — Psalm 119:105</p>
+</header>
+
+<section class="categories">
+  <div class="container">
+    <div class="categories-title">
+      <span class="eyebrow">Explore</span>
+      <h2>Browse by Category</h2>
+    </div>
+    <div class="cat-filter" id="catFilter">
+      <button class="cat-btn active" data-cat="all">All</button>
+      <button class="cat-btn" data-cat="kingdom-living">Kingdom Living</button>
+      <button class="cat-btn" data-cat="prayer-devotion">Prayer &amp; Devotion</button>
+      <button class="cat-btn" data-cat="healing-restoration">Healing &amp; Restoration</button>
+      <button class="cat-btn" data-cat="family-relationships">Family &amp; Relationships</button>
+      <button class="cat-btn" data-cat="leadership-discipleship">Leadership &amp; Discipleship</button>
+      <button class="cat-btn" data-cat="next-generation">Next Generation</button>
+    </div>
+  </div>
+</section>
+
+<section class="posts">
+  <div class="container">
+    <div class="posts-grid" id="postsGrid">
+
+      <article class="post-card" data-cat="kingdom-living">
+        <div class="post-cat">Kingdom Living</div>
+        <h3><a href="blogs/blog1.html">Jesus Called You Salt, Not Honey</a></h3>
+        <p class="post-excerpt">The world is comfortable with a Christianity that is sweet, quiet, and agreeable. But following Jesus will sometimes require us to stand for truth, speak with conviction, and refuse to compromise simply to gain approval…</p>
+        <div class="post-meta"><span>By Anita Singh · Matthew 5:13</span><a href="blogs/blog1.html" class="read-more">Read →</a></div>
+      </article>
+
+      <article class="post-card" data-cat="prayer-devotion">
+        <div class="post-cat">Prayer &amp; Devotion</div>
+        <h3><a href="blogs/blog2.html">Hearing God Clearly in a Noisy World</a></h3>
+        <p class="post-excerpt">Was that God? Was that me? Was that fear? Many believers love God deeply but still struggle to recognize which voice they are hearing. Learn how to recognize the voice of the Shepherd in a world filled with competing voices…</p>
+        <div class="post-meta"><span>By Anita Singh · John 10:27</span><a href="blogs/blog2.html" class="read-more">Read →</a></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="coming-soon">
+  <div class="container">
+    <h2>Coming Soon</h2>
+    <p class="intro">Over the coming weeks, new writings will be added on the following topics — reflections drawn from Scripture, prayer, and years of ministry.</p>
+    <div class="upcoming-list">
+      <div><strong>When God Is Silent: What to Do While You Wait</strong><span>Prayer &amp; Devotion</span></div>
+      <div><strong>The Difference Between Conviction and Condemnation</strong><span>Kingdom Living</span></div>
+      <div><strong>Grace and Truth: Why We Need Both</strong><span>Kingdom Living</span></div>
+      <div><strong>Guard Your Heart Without Hardening It</strong><span>Healing &amp; Restoration</span></div>
+      <div><strong>When Forgiveness Does Not Mean Reconciliation</strong><span>Healing &amp; Restoration</span></div>
+      <div><strong>Healing From Church Hurt Without Leaving God</strong><span>Healing &amp; Restoration</span></div>
+      <div><strong>How to Discern God's Timing</strong><span>Prayer &amp; Devotion</span></div>
+      <div><strong>Obedience When You Do Not Understand the Assignment</strong><span>Kingdom Living</span></div>
+      <div><strong>When God Changes Your Direction</strong><span>Kingdom Living</span></div>
+      <div><strong>Hidden Seasons Are Not Wasted Seasons</strong><span>Kingdom Living</span></div>
+      <div><strong>The Power of a Consecrated Life</strong><span>Leadership &amp; Discipleship</span></div>
+      <div><strong>What It Really Means to Carry Kingdom Authority</strong><span>Leadership &amp; Discipleship</span></div>
+      <div><strong>Authority Without Humility Becomes Dangerous</strong><span>Leadership &amp; Discipleship</span></div>
+      <div><strong>Submission to God Before Spiritual Authority</strong><span>Leadership &amp; Discipleship</span></div>
+      <div><strong>The Watchman: Why Believers Must Pray and Discern</strong><span>Prayer &amp; Devotion</span></div>
+      <div><strong>How to Pray for Your Family Without Trying to Control Them</strong><span>Family &amp; Relationships</span></div>
+      <div><strong>Praying for Gen Z and the Next Generation</strong><span>Next Generation</span></div>
+      <div><strong>Building a Christ-Centered Home in a Changing Culture</strong><span>Family &amp; Relationships</span></div>
+      <div><strong>When Your Child Is Walking Away From God</strong><span>Family &amp; Relationships</span></div>
+      <div><strong>Breaking Unhealthy Family Patterns Through Biblical Renewal</strong><span>Family &amp; Relationships</span></div>
+      <div><strong>Marriage: Covenant, Character, and Christ</strong><span>Family &amp; Relationships</span></div>
+      <div><strong>Singleness Is Not a Waiting Room</strong><span>Family &amp; Relationships</span></div>
+      <div><strong>How to Recognize Healthy Kingdom Relationships</strong><span>Family &amp; Relationships</span></div>
+      <div><strong>Boundaries Are Not Bitterness</strong><span>Healing &amp; Restoration</span></div>
+      <div><strong>Healing After Betrayal</strong><span>Healing &amp; Restoration</span></div>
+      <div><strong>When You Have to Love Someone From a Distance</strong><span>Family &amp; Relationships</span></div>
+      <div><strong>God Still Heals Broken Hearts</strong><span>Healing &amp; Restoration</span></div>
+      <div><strong>Faith During Chronic Pain and Difficult Seasons</strong><span>Healing &amp; Restoration</span></div>
+      <div><strong>When the Miracle Does Not Come the Way You Expected</strong><span>Prayer &amp; Devotion</span></div>
+      <div><strong>Rest Is Spiritual Too</strong><span>Kingdom Living</span></div>
+      <div><strong>Burnout Is Not a Badge of Faithfulness</strong><span>Leadership &amp; Discipleship</span></div>
+      <div><strong>Jesus Still Sees the One in the Crowd</strong><span>Kingdom Living</span></div>
+      <div><strong>The Church Must Love People Again</strong><span>Kingdom Living</span></div>
+      <div><strong>Gifted but Ungoverned: Why Character Still Matters</strong><span>Leadership &amp; Discipleship</span></div>
+      <div><strong>Correction Is Not Rejection</strong><span>Leadership &amp; Discipleship</span></div>
+      <div><strong>The Difference Between Anointing and Character</strong><span>Leadership &amp; Discipleship</span></div>
+      <div><strong>How to Lead Without Controlling People</strong><span>Leadership &amp; Discipleship</span></div>
+      <div><strong>Serving Without Needing Recognition</strong><span>Leadership &amp; Discipleship</span></div>
+      <div><strong>When Ministry Becomes an Idol</strong><span>Leadership &amp; Discipleship</span></div>
+      <div><strong>The Cost of Saying Yes to God</strong><span>Kingdom Living</span></div>
+      <div><strong>How to Discern Spiritual Warfare Without Living in Fear</strong><span>Prayer &amp; Devotion</span></div>
+      <div><strong>Put On the Whole Armor of God</strong><span>Prayer &amp; Devotion</span></div>
+      <div><strong>Praying From Victory, Not Panic</strong><span>Prayer &amp; Devotion</span></div>
+      <div><strong>What Does It Mean to Pull Down Strongholds Biblically?</strong><span>Prayer &amp; Devotion</span></div>
+      <div><strong>When Fear Tries to Become Your Counselor</strong><span>Healing &amp; Restoration</span></div>
+      <div><strong>The Power of Thanksgiving in Difficult Seasons</strong><span>Kingdom Living</span></div>
+      <div><strong>Declarations vs. Prayer: What Does the Bible Actually Teach?</strong><span>Prayer &amp; Devotion</span></div>
+      <div><strong>Your Latter Season Can Still Be Fruitful</strong><span>Kingdom Living</span></div>
+    </div>
+    <p style="text-align:center;margin-top:40px"><a href="index.html#contact" class="btn btn-navy" style="color:var(--gold)">Get in Touch</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <img src="kgimc-logo.png" alt="KGIMC" class="footer-logo" />
+    <h4>Kingdom Guardian International Miracle Centre</h4>
+    <p class="verse">I have given you authority to trample on snakes and scorpions and to overcome all the power of the enemy; nothing will harm you. — Luke 10:19</p>
+    <div class="footer-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#schedule">Schedule</a>
+      <a href="index.html#team">Team</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#books">Books</a>
+      <a href="index.html#book-now">Book Now</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.youtube.com/@KGIMiracleCentre-x7v" target="_blank" title="YouTube">▶</a>
+      <a href="https://www.instagram.com/kgimiraclecentre" target="_blank" title="Instagram">Ⓘ</a>
+      <a href="mailto:kgimcmediateam@gmail.com" title="Email">✉</a>
+    </div>
+    <div class="copyright">© <span id="year"></span> Kingdom Guardian International Miracle Centre. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
+});
+
+/* Category filter */
+(function(){
+  const btns = document.querySelectorAll('.cat-btn');
+  const posts = document.querySelectorAll('.post-card');
+  const grid = document.getElementById('postsGrid');
+  btns.forEach(b=>{
+    b.addEventListener('click', ()=>{
+      btns.forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      const cat = b.dataset.cat;
+      let shown = 0;
+      posts.forEach(p=>{
+        const match = (cat==='all' || p.dataset.cat===cat);
+        p.style.display = match ? '' : 'none';
+        if(match) shown++;
+      });
+      // Toggle empty note
+      let note = grid.querySelector('.empty-note');
+      if(shown===0){
+        if(!note){
+          note = document.createElement('div');
+          note.className='empty-note';
+          note.textContent = 'No posts in this category yet — new writings are coming soon.';
+          grid.appendChild(note);
+        }
+      } else if(note){
+        note.remove();
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
