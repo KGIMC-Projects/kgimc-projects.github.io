@@ -7,16 +7,15 @@
 <meta name="description" content="KGIMC — Bringing Healing, Deliverance, Reconciliation and Restoration to all nations through Jesus Christ. Luke 10:19" />
 
 <!-- ============================================================
-     KGIMC WEBSITE v3 — FULL BLUEPRINT
-     Sections match Squarespace tabs: Home / About / Schedule /
-     Team / Books / Contact / Book Now (Appointments)
-     v3 CHANGES:
-     - 8 books total with REAL cover images from Amazon author page
-     - Malini Persaud image object-position fixed (face centered)
-     - "Kingdom Guardian International" (singular) throughout
-     - Instagram @kgimiraclecentre in all places (footer + social)
-     - 2 new books (Men of Purpose, Seawall to the World) — link to
-       author storefront since direct ISBNs weren't scrapable
+     KGIMC WEBSITE v4 — FULL BLUEPRINT
+     v4 CHANGES:
+     - Contact form now opens the user's email client (mailto:)
+       and sends the message to kgimcmediateam@gmail.com
+     - Team section uses local /team/*.webp images
+     - Added Brother Yogi & Brother Yashwanth (Media & Activities)
+     - New Blog page linked from nav (blog.html)
+     - New floating chatbot ("Ask KGIMC") with prayer options
+       from Healing Prayers, and Send Prayer Request via mailto
 ============================================================ -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +54,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,30,63,0.9
 .nav-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
 .nav-logo{display:flex;align-items:center;gap:12px;color:var(--cream);font-family:var(--serif);font-size:1.1rem;flex-shrink:0}
 .nav-logo img{width:42px;height:42px;border-radius:50%}
-.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center}
 .nav-links a{color:var(--cream);font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:400}
 .nav-links a:hover{color:var(--gold-light)}
 .nav-links .book-btn{background:var(--gold);color:var(--navy)!important;padding:10px 20px;border-radius:2px;font-weight:500}
@@ -146,7 +145,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,30,63,0.9
 .events-empty{max-width:600px;margin:0 auto;padding:40px;border:1px dashed var(--line);border-radius:4px;background:#fff}
 .events-empty p{color:var(--muted);margin-bottom:20px}
 
-/* BOOKS — v3 with real cover images */
+/* BLOG PREVIEW STRIP (on home) */
+.blog-preview{background:var(--cream)}
+.blog-preview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-bottom:40px}
+.blog-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);padding:28px 26px;border-radius:4px;transition:.3s;display:flex;flex-direction:column}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(11,30,63,0.1)}
+.blog-cat{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px}
+.blog-card h3{font-size:1.35rem;margin-bottom:10px;line-height:1.3}
+.blog-card h3 a{color:var(--navy)}
+.blog-card h3 a:hover{color:var(--gold)}
+.blog-excerpt{color:var(--muted);font-size:.95rem;flex-grow:1;margin-bottom:18px}
+.blog-meta{font-size:.75rem;color:var(--muted);letter-spacing:1px}
+.blog-cta{text-align:center}
+
+/* BOOKS */
 .books{background:#fff}
 .books-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
 .book-card{background:var(--cream);border:1px solid var(--line);padding:28px 24px;text-align:center;transition:.3s;display:flex;flex-direction:column;border-radius:4px}
@@ -186,6 +198,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,30,63,0.9
 .form-row input:focus,.form-row textarea:focus,.form-row select:focus{outline:none;border-color:var(--gold);background:#fff}
 .form-row textarea{min-height:120px;resize:vertical}
 .form-two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-note{text-align:center;font-size:.8rem;color:var(--muted);margin-top:14px;line-height:1.5}
 
 /* FOOTER */
 footer{background:var(--navy-deep);color:rgba(250,246,238,0.6);padding:60px 0 30px;text-align:center}
@@ -200,7 +213,7 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
 .socials a:hover{background:var(--gold);color:var(--navy)}
 .copyright{margin-top:30px;padding-top:20px;border-top:1px solid rgba(201,162,75,0.15);font-size:.8rem}
 
-/* SCHEDULE — v4 additions */
+/* SCHEDULE additions */
 .recurring-block{background:linear-gradient(135deg,var(--navy),var(--navy-deep));color:var(--cream);padding:36px 40px;border-radius:6px;margin-bottom:40px;border-left:4px solid var(--gold)}
 .recurring-header{text-align:center;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(201,162,75,0.25)}
 .recurring-header .eyebrow-mini{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
@@ -223,14 +236,14 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
 .house-church .location strong{display:block;color:var(--navy);font-family:var(--serif);font-size:1.15rem;margin-bottom:4px}
 .house-church .location span{color:var(--gold);font-size:.85rem;letter-spacing:1px;text-transform:uppercase}
 
-/* PRAYER LINE — v4 richer content */
+/* PRAYER LINE */
 .prayer-line ul{list-style:none;padding:0;margin:20px 0;display:flex;justify-content:center;gap:8px 28px;flex-wrap:wrap}
 .prayer-line ul li{color:rgba(250,246,238,0.85);font-size:.9rem;position:relative;padding-left:18px}
 .prayer-line ul li::before{content:'✦';color:var(--gold);position:absolute;left:0}
 .prayer-line blockquote{margin-top:24px;font-style:italic;color:var(--gold-light);font-family:var(--serif);font-size:1.15rem;line-height:1.5;max-width:600px;margin-left:auto;margin-right:auto}
 .prayer-line blockquote small{display:block;margin-top:8px;font-size:.7rem;letter-spacing:2px;color:var(--gold);font-style:normal}
 
-/* CONTACT CHANNELS — v4 */
+/* CONTACT CHANNELS */
 .contact-channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:800px;margin:36px auto 0}
 .contact-channel{background:#fff;border:1px solid var(--line);padding:26px 20px;border-radius:4px;text-align:center;transition:.3s}
 .contact-channel:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 15px 30px rgba(11,30,63,0.08)}
@@ -238,6 +251,44 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
 .contact-channel .label{font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:500}
 .contact-channel a{font-family:var(--serif);color:var(--navy);font-size:1.15rem;font-weight:500;word-break:break-word}
 .contact-channel a:hover{color:var(--gold)}
+
+/* ============= CHATBOT ============= */
+.chatbot-toggle{position:fixed;bottom:24px;right:24px;width:64px;height:64px;border-radius:50%;background:var(--gold);color:var(--navy);border:none;cursor:pointer;box-shadow:0 10px 30px rgba(11,30,63,0.35);display:flex;align-items:center;justify-content:center;font-size:1.6rem;z-index:999;transition:.3s;font-family:var(--serif)}
+.chatbot-toggle:hover{background:var(--gold-light);transform:scale(1.05)}
+.chatbot-toggle .badge{position:absolute;top:-4px;right:-4px;background:var(--navy);color:var(--gold);font-size:.55rem;letter-spacing:1px;text-transform:uppercase;padding:3px 6px;border-radius:10px;font-family:var(--sans);font-weight:600}
+.chatbot-window{position:fixed;bottom:100px;right:24px;width:370px;max-width:calc(100vw - 32px);height:560px;max-height:calc(100vh - 130px);background:#fff;border-radius:12px;box-shadow:0 30px 60px rgba(11,30,63,0.35);z-index:998;display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line)}
+.chatbot-window.open{display:flex}
+.chatbot-header{background:linear-gradient(135deg,var(--navy),var(--navy-deep));color:var(--cream);padding:16px 20px;display:flex;align-items:center;gap:12px}
+.chatbot-header img{width:36px;height:36px;border-radius:50%}
+.chatbot-header .title{flex:1}
+.chatbot-header .title .name{font-family:var(--serif);font-size:1.05rem;color:var(--gold-light);margin:0}
+.chatbot-header .title .status{font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(250,246,238,0.65)}
+.chatbot-close{background:none;border:none;color:var(--cream);cursor:pointer;font-size:1.3rem;line-height:1;padding:4px 8px}
+.chatbot-close:hover{color:var(--gold)}
+.chatbot-body{flex:1;overflow-y:auto;padding:16px;background:var(--cream);display:flex;flex-direction:column;gap:10px}
+.chatbot-msg{max-width:88%;padding:10px 14px;border-radius:14px;font-size:.9rem;line-height:1.5;white-space:pre-wrap}
+.chatbot-msg.bot{background:#fff;color:var(--ink);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.chatbot-msg.user{background:var(--navy);color:var(--cream);border-bottom-right-radius:4px;align-self:flex-end}
+.chatbot-msg .verse{display:block;margin-top:6px;font-family:var(--serif);font-style:italic;color:var(--gold);font-size:.85rem}
+.chatbot-options{display:flex;flex-direction:column;gap:6px;margin-top:4px;align-self:flex-start;width:100%}
+.chatbot-option{background:#fff;border:1px solid var(--gold);color:var(--navy);padding:9px 12px;border-radius:8px;cursor:pointer;font-size:.82rem;text-align:left;font-family:var(--sans);transition:.2s}
+.chatbot-option:hover{background:var(--gold);color:var(--navy)}
+.chatbot-footer{border-top:1px solid var(--line);padding:10px 12px;background:#fff;display:flex;gap:8px;align-items:flex-end}
+.chatbot-footer textarea{flex:1;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-family:var(--sans);font-size:.85rem;resize:none;min-height:40px;max-height:120px;outline:none}
+.chatbot-footer textarea:focus{border-color:var(--gold)}
+.chatbot-footer button{background:var(--gold);color:var(--navy);border:none;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:500;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;font-family:var(--sans)}
+.chatbot-footer button:hover{background:var(--gold-light)}
+.chatbot-form{padding:14px;background:#fff;border-top:1px solid var(--line);display:none;flex-direction:column;gap:8px}
+.chatbot-form.open{display:flex}
+.chatbot-form input,.chatbot-form textarea{width:100%;border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-family:var(--sans);font-size:.85rem;outline:none}
+.chatbot-form input:focus,.chatbot-form textarea:focus{border-color:var(--gold)}
+.chatbot-form textarea{min-height:80px;resize:vertical}
+.chatbot-form .row{display:flex;gap:6px}
+.chatbot-form .row button{flex:1;padding:9px;border:none;border-radius:6px;cursor:pointer;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;font-weight:500}
+.chatbot-form .row .send{background:var(--navy);color:var(--gold)}
+.chatbot-form .row .send:hover{background:var(--navy-deep)}
+.chatbot-form .row .cancel{background:#eee;color:var(--ink)}
+.chatbot-form .row .cancel:hover{background:#ddd}
 
 @media(max-width:900px){
   .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px;gap:20px}
@@ -253,6 +304,7 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
   .recurring-block{padding:28px 24px}
   .house-church{padding:30px 20px}
   .house-church .locations{grid-template-columns:1fr}
+  .chatbot-window{bottom:90px;right:12px;left:12px;width:auto;max-width:none}
 }
 </style>
 </head>
@@ -270,6 +322,7 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
       <li><a href="#about">About</a></li>
       <li><a href="#schedule">Schedule</a></li>
       <li><a href="#team">Team</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="#books">Books</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#book-now" class="book-btn">Book Now</a></li>
@@ -343,7 +396,6 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
     </div>
     <p class="schedule-intro">Join us weekly for prayer, healing, leadership, and powerful encounters with God across the nations. <em>All times listed in EST unless noted.</em></p>
 
-    <!-- RECURRING Sun–Thu block -->
     <div class="recurring-block">
       <div class="recurring-header">
         <span class="eyebrow-mini">Every Week</span>
@@ -364,156 +416,59 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
     </div>
 
     <div class="schedule-grid">
-      <!-- MONDAY -->
       <div class="day-card">
         <h3>Monday <span>Day 01</span></h3>
-        <div class="event">
-          <div class="event-name">Intercessory Prayer</div>
-          <div class="event-time"><strong>8:00 AM</strong></div>
-          <div class="event-lead">Prophetess Savitri &amp; Sister Sabrina</div>
-        </div>
-        <div class="event">
-          <div class="event-name">Personal Counselling &amp; Healing</div>
-          <div class="event-time"><strong>9:00 AM – 3:00 PM</strong> · By Appointment</div>
-        </div>
-        <div class="event">
-          <div class="event-name">Family Prayer Meeting</div>
-          <div class="event-time"><strong>7:00 PM</strong> · WhatsApp Group Call</div>
-          <div class="event-lead">Prophetess Savitri, Sister Sabrina, Sister Malini &amp; Apostle Anita Singh</div>
-        </div>
-        <div class="event">
-          <div class="event-name">Intercessors Prayer</div>
-          <div class="event-time"><strong>7:30 PM</strong></div>
-          <div class="event-lead">Prophetess Savitri &amp; Sister Sabrina</div>
-        </div>
+        <div class="event"><div class="event-name">Intercessory Prayer</div><div class="event-time"><strong>8:00 AM</strong></div><div class="event-lead">Prophetess Savitri &amp; Sister Sabrina</div></div>
+        <div class="event"><div class="event-name">Personal Counselling &amp; Healing</div><div class="event-time"><strong>9:00 AM – 3:00 PM</strong> · By Appointment</div></div>
+        <div class="event"><div class="event-name">Family Prayer Meeting</div><div class="event-time"><strong>7:00 PM</strong> · WhatsApp Group Call</div><div class="event-lead">Prophetess Savitri, Sister Sabrina, Sister Malini &amp; Apostle Anita Singh</div></div>
+        <div class="event"><div class="event-name">Intercessors Prayer</div><div class="event-time"><strong>7:30 PM</strong></div><div class="event-lead">Prophetess Savitri &amp; Sister Sabrina</div></div>
       </div>
 
-      <!-- TUESDAY -->
       <div class="day-card">
         <h3>Tuesday <span>Day 02</span></h3>
-        <div class="event">
-          <div class="event-name">India God Encounter</div>
-          <div class="event-time"><strong>10:30 AM EST</strong> · 8:00 PM India</div>
-          <div class="event-lead">Apostle Anita Singh &amp; Pastor James</div>
-        </div>
-        <div class="event">
-          <div class="event-name">International Vacation Bible School</div>
-          <div class="event-time"><strong>12:00 – 2:00 PM</strong></div>
-          <div class="event-lead">Pastor Maria, Sister Sabrina &amp; Youth Team</div>
-        </div>
-        <div class="event">
-          <div class="event-name">A Time of Healing</div>
-          <div class="event-time"><strong>6:00 PM</strong> · Zoom</div>
-          <div class="event-lead">Prophetess Savitri &amp; Sister Sabrina</div>
-        </div>
-        <div class="event">
-          <div class="event-name">Prayer for the Nations</div>
-          <div class="event-time"><strong>7:00 PM</strong> · WhatsApp</div>
-          <div class="event-lead">Evangelist Racheal &amp; Apostle Anita Singh</div>
-        </div>
+        <div class="event"><div class="event-name">India God Encounter</div><div class="event-time"><strong>10:30 AM EST</strong> · 8:00 PM India</div><div class="event-lead">Apostle Anita Singh &amp; Pastor James</div></div>
+        <div class="event"><div class="event-name">International Vacation Bible School</div><div class="event-time"><strong>12:00 – 2:00 PM</strong></div><div class="event-lead">Pastor Maria, Sister Sabrina &amp; Youth Team</div></div>
+        <div class="event"><div class="event-name">A Time of Healing</div><div class="event-time"><strong>6:00 PM</strong> · Zoom</div><div class="event-lead">Prophetess Savitri &amp; Sister Sabrina</div></div>
+        <div class="event"><div class="event-name">Prayer for the Nations</div><div class="event-time"><strong>7:00 PM</strong> · WhatsApp</div><div class="event-lead">Evangelist Racheal &amp; Apostle Anita Singh</div></div>
       </div>
 
-      <!-- WEDNESDAY -->
       <div class="day-card">
         <h3>Wednesday <span>Day 03</span></h3>
-        <div class="event">
-          <div class="event-name">International Leadership Meeting</div>
-          <div class="event-time"><strong>9:00 AM</strong></div>
-        </div>
-        <div class="event">
-          <div class="event-name">Youth &amp; Young Adults Intercessory Prayer <span class="new-badge">New</span></div>
-          <div class="event-time"><strong>10:30 AM EST</strong> · 8:00 PM India</div>
-          <div class="event-lead">Apostle Anita Singh &amp; Brother Yashwanth</div>
-        </div>
-        <div class="event">
-          <div class="event-name">International Vacation Bible School</div>
-          <div class="event-time"><strong>12:00 – 2:00 PM</strong></div>
-          <div class="event-lead">Pastor Maria, Sister Sabrina &amp; Youth Team</div>
-        </div>
-        <div class="event">
-          <div class="event-name">Women Ministers International</div>
-          <div class="event-time"><strong>6:00 PM</strong></div>
-          <div class="event-lead">Pastor Maria &amp; Sister Sabrina</div>
-        </div>
+        <div class="event"><div class="event-name">International Leadership Meeting</div><div class="event-time"><strong>9:00 AM</strong></div></div>
+        <div class="event"><div class="event-name">Youth &amp; Young Adults Intercessory Prayer <span class="new-badge">New</span></div><div class="event-time"><strong>10:30 AM EST</strong> · 8:00 PM India</div><div class="event-lead">Apostle Anita Singh &amp; Brother Yashwanth</div></div>
+        <div class="event"><div class="event-name">International Vacation Bible School</div><div class="event-time"><strong>12:00 – 2:00 PM</strong></div><div class="event-lead">Pastor Maria, Sister Sabrina &amp; Youth Team</div></div>
+        <div class="event"><div class="event-name">Women Ministers International</div><div class="event-time"><strong>6:00 PM</strong></div><div class="event-lead">Pastor Maria &amp; Sister Sabrina</div></div>
       </div>
 
-      <!-- THURSDAY — special Fasting Day -->
       <div class="day-card">
         <h3>Thursday <span>Day 04</span></h3>
         <div class="day-banner">Weekly Fasting Day <span class="new-badge">New</span></div>
-        <div class="event">
-          <div class="event-name">Morning Prayer &amp; Worship</div>
-          <div class="event-time"><strong>7:30 – 9:00 AM</strong></div>
-          <div class="event-lead">Host: Apostle Anita Singh</div>
-        </div>
-        <div class="event">
-          <div class="event-name">International Vacation Bible School</div>
-          <div class="event-time"><strong>12:00 – 2:00 PM</strong></div>
-          <div class="event-lead">Pastor Maria, Sister Sabrina &amp; Youth Team</div>
-        </div>
-        <div class="event">
-          <div class="event-name">Midday Prayer &amp; Worship</div>
-          <div class="event-time"><strong>12:00 – 2:00 PM</strong></div>
-        </div>
-        <div class="event">
-          <div class="event-name">Youth &amp; Young Adults Meeting</div>
-          <div class="event-time"><strong>7:00 PM</strong></div>
-          <div class="event-lead">Evangelist Racheal</div>
-        </div>
-        <div class="event">
-          <div class="event-name">Night Watch Prayer &amp; Worship <span class="new-badge">New</span></div>
-          <div class="event-time"><strong>9:00 PM – 12:00 Midnight</strong></div>
-          <div class="event-lead">Apostle Anita Singh</div>
-        </div>
+        <div class="event"><div class="event-name">Morning Prayer &amp; Worship</div><div class="event-time"><strong>7:30 – 9:00 AM</strong></div><div class="event-lead">Host: Apostle Anita Singh</div></div>
+        <div class="event"><div class="event-name">International Vacation Bible School</div><div class="event-time"><strong>12:00 – 2:00 PM</strong></div><div class="event-lead">Pastor Maria, Sister Sabrina &amp; Youth Team</div></div>
+        <div class="event"><div class="event-name">Midday Prayer &amp; Worship</div><div class="event-time"><strong>12:00 – 2:00 PM</strong></div></div>
+        <div class="event"><div class="event-name">Youth &amp; Young Adults Meeting</div><div class="event-time"><strong>7:00 PM</strong></div><div class="event-lead">Evangelist Racheal</div></div>
+        <div class="event"><div class="event-name">Night Watch Prayer &amp; Worship <span class="new-badge">New</span></div><div class="event-time"><strong>9:00 PM – 12:00 Midnight</strong></div><div class="event-lead">Apostle Anita Singh</div></div>
       </div>
 
-      <!-- FRIDAY -->
       <div class="day-card">
         <h3>Friday <span>Day 05</span></h3>
-        <div class="event">
-          <div class="event-name">India God Encounter <span class="new-badge">New</span></div>
-          <div class="event-time"><strong>10:30 AM EST</strong> · 8:00 PM India</div>
-          <div class="event-lead">Apostle Anita Singh &amp; Pastor James</div>
-        </div>
-        <div class="event">
-          <div class="event-name">Kids International Ministry</div>
-          <div class="event-time"><strong>5:00 PM</strong></div>
-          <div class="event-lead">Pastor Maria</div>
-        </div>
-        <div class="event">
-          <div class="event-name">House of Prayer – Pakistan</div>
-          <div class="event-time"><strong>6:00 PM</strong></div>
-          <div class="event-lead">Pastor Gill</div>
-        </div>
-        <div class="event">
-          <div class="event-name">Antigua Prayer Call <span class="new-badge">New</span></div>
-          <div class="event-time"><strong>7:00 – 8:00 PM</strong> · WhatsApp Group Call</div>
-          <div class="event-lead">Antigua House Church</div>
-        </div>
+        <div class="event"><div class="event-name">India God Encounter <span class="new-badge">New</span></div><div class="event-time"><strong>10:30 AM EST</strong> · 8:00 PM India</div><div class="event-lead">Apostle Anita Singh &amp; Pastor James</div></div>
+        <div class="event"><div class="event-name">Kids International Ministry</div><div class="event-time"><strong>5:00 PM</strong></div><div class="event-lead">Pastor Maria</div></div>
+        <div class="event"><div class="event-name">House of Prayer – Pakistan</div><div class="event-time"><strong>6:00 PM</strong></div><div class="event-lead">Pastor Gill</div></div>
+        <div class="event"><div class="event-name">Antigua Prayer Call <span class="new-badge">New</span></div><div class="event-time"><strong>7:00 – 8:00 PM</strong> · WhatsApp Group Call</div><div class="event-lead">Antigua House Church</div></div>
       </div>
 
-      <!-- SATURDAY -->
       <div class="day-card">
         <h3>Saturday <span>Day 06</span></h3>
-        <div class="event">
-          <div class="event-name">Pakistan House Church Meeting</div>
-          <div class="event-time"><strong>9:00 AM EST</strong> · 6:00 PM Pakistan</div>
-          <div class="event-lead">Pastor Gill, Apostle Anita Singh &amp; Brother Nadeem</div>
-        </div>
+        <div class="event"><div class="event-name">Pakistan House Church Meeting</div><div class="event-time"><strong>9:00 AM EST</strong> · 6:00 PM Pakistan</div><div class="event-lead">Pastor Gill, Apostle Anita Singh &amp; Brother Nadeem</div></div>
       </div>
 
-      <!-- SUNDAY -->
       <div class="day-card">
         <h3>Sunday <span>Day 07</span></h3>
-        <div class="event">
-          <div class="event-name">God Encounter Service – KGIMC</div>
-          <div class="event-time"><strong>9:30 AM</strong></div>
-          <div class="event-lead">Apostle Anita Singh</div>
-        </div>
+        <div class="event"><div class="event-name">God Encounter Service – KGIMC</div><div class="event-time"><strong>9:30 AM</strong></div><div class="event-lead">Apostle Anita Singh</div></div>
       </div>
     </div>
 
-    <!-- MONTHLY HOUSE CHURCH -->
     <div class="house-church">
       <div class="section-title" style="margin-bottom:20px">
         <span class="eyebrow">Growing the Kingdom</span>
@@ -521,39 +476,19 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
       </div>
       <p>Kingdom Guardian International Miracle Centre is establishing and strengthening House Churches across the nations.</p>
       <div class="locations">
-        <div class="location">
-          <strong>Canada House Churches</strong>
-          <span>Pastor Maria</span>
-        </div>
-        <div class="location">
-          <strong>USA House Churches</strong>
-          <span>Evangelist Racheal</span>
-        </div>
-        <div class="location">
-          <strong>Antigua House Church <span class="new-badge">New</span></strong>
-          <span>Hosted by Malini &amp; Apostle Anita Singh · Launching Next Month</span>
-        </div>
+        <div class="location"><strong>Canada House Churches</strong><span>Pastor Maria</span></div>
+        <div class="location"><strong>USA House Churches</strong><span>Evangelist Racheal</span></div>
+        <div class="location"><strong>Antigua House Church <span class="new-badge">New</span></strong><span>Hosted by Malini &amp; Apostle Anita Singh · Launching Next Month</span></div>
       </div>
       <p style="margin-top:24px"><em>Interested in opening a House Church in your community?</em></p>
       <a href="#contact" class="btn btn-navy" style="color:var(--gold);border-color:var(--navy);margin-top:12px">Get in Touch</a>
     </div>
 
-    <!-- PRAYER LINE -->
     <div class="prayer-line">
       <h3>KGIMC Prayer Line</h3>
       <p>Our prayer line is open throughout the week. Our ministry team is available for:</p>
-      <ul>
-        <li>Prayer</li>
-        <li>Encouragement</li>
-        <li>Healing</li>
-        <li>Deliverance</li>
-        <li>Counselling</li>
-        <li>Ministry Support</li>
-      </ul>
-      <blockquote>
-        "Bear one another's burdens, and so fulfill the law of Christ."
-        <small>— Galatians 6:2 (NKJV)</small>
-      </blockquote>
+      <ul><li>Prayer</li><li>Encouragement</li><li>Healing</li><li>Deliverance</li><li>Counselling</li><li>Ministry Support</li></ul>
+      <blockquote>"Bear one another's burdens, and so fulfill the law of Christ."<small>— Galatians 6:2 (NKJV)</small></blockquote>
     </div>
   </div>
 </section>
@@ -566,18 +501,19 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
       <h2>Meet the Team</h2>
     </div>
     <div class="team-grid">
-      <div class="team-card"><div class="team-photo"><img src="https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/2b2d1acc-7757-4437-9b9c-8cef00251f61/person+1.jpg" alt="Pastor Maria Bharat"/></div><div class="team-name">Pastor Maria Bharat</div><div class="team-role">Pastor</div></div>
-      <div class="team-card"><div class="team-photo"><img src="https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/828932fb-418c-4e1b-ae07-5d28102a39a1/ai+propagandda.jpg" alt="Apostle Anita B Singh"/></div><div class="team-name">Apostle Anita B Singh</div><div class="team-role">Apostle</div></div>
-      <div class="team-card"><div class="team-photo"><img src="https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/db9b5210-35d1-4852-9918-eef281a47b8b/Person+6.jpg" alt="Racheal Ali"/></div><div class="team-name">Racheal Ali</div><div class="team-role">Evangelist / Administrator</div></div>
-      <div class="team-card"><div class="team-photo"><img src="https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/e5c70577-0ea9-44bc-95da-d23d1116e113/person+5.jpg" alt="Kiran Gill"/></div><div class="team-name">Kiran Gill</div><div class="team-role">Prophetic Intercessor / Children's Minister</div></div>
-      <div class="team-card"><div class="team-photo"><img src="https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/7b7163e7-bd8f-4305-8603-b91c1b210715/person+3.jpg" alt="Savitri Ramrattan"/></div><div class="team-name">Savitri Ramrattan</div><div class="team-role">Prophetess / Intercessor</div></div>
-      <div class="team-card"><div class="team-photo"><img src="https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/5e2aceb9-dd4d-4d9c-8b48-a610a5ed3205/person+2.jpg" alt="Bano Abdool"/></div><div class="team-name">Bano Abdool (Sabrina)</div><div class="team-role">Event Coordinator / Teacher</div></div>
-      <!-- Malini: image cropped at top on the live site — object-position pushed to 20% so more of the top shows and her face lands centrally -->
-      <div class="team-card"><div class="team-photo"><img src="https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/622dd0de-43a0-4117-819c-dad2eec65ea0/Intercessor+Malinin.jpg" alt="Malini Persaud" style="object-position:center 20%"/></div><div class="team-name">Malini Persaud</div><div class="team-role">Intercessor</div></div>
-      <div class="team-card"><div class="team-photo"><img src="https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/cdd236dd-e5fd-404b-97d2-91912b1a07bb/person+4.jpg" alt="Pastor Quaisir Gill"/></div><div class="team-name">Pastor Quaisir Gill</div><div class="team-role">Pastor</div></div>
-      <div class="team-card"><div class="team-photo"><img src="https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/ee0a6043-d15a-49dc-891f-d65766a4e69e/Pastor+James.jpg" alt="Pastor James and Wife"/></div><div class="team-name">Pastor James &amp; Wife</div><div class="team-role">Pastors</div></div>
-      <div class="team-card"><div class="team-photo"><img src="https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/c54b48dd-4794-4921-a268-f8c150106394/IMG_7797.jpeg" alt="Zion Clarke"/></div><div class="team-name">Zion Clarke</div><div class="team-role">IT / TikTok Host</div></div>
-      <div class="team-card"><div class="team-photo"><img src="https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/436acd44-1583-4881-87d8-1aae563b9972/IMG_6561.jpeg" alt="Shiloh Clarke"/></div><div class="team-name">Shiloh Clarke</div><div class="team-role">YouTube Host</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team/Pastor%20Maria%20Bharat.webp" alt="Pastor Maria Bharat" onerror="this.onerror=null;this.src='team/pastor-maria-bharat.webp'"/></div><div class="team-name">Pastor Maria Bharat</div><div class="team-role">Pastor</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team/Apostle%20Anita%20B%20Singh.webp" alt="Apostle Anita B Singh" onerror="this.onerror=null;this.src='team/apostle-anita-b-singh.webp'"/></div><div class="team-name">Apostle Anita B Singh</div><div class="team-role">Apostle</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team/Racheal%20Ali.webp" alt="Racheal Ali" onerror="this.onerror=null;this.src='team/racheal-ali.webp'"/></div><div class="team-name">Racheal Ali</div><div class="team-role">Evangelist / Administrator</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team/Kiran%20Gill.webp" alt="Kiran Gill" onerror="this.onerror=null;this.src='team/kiran-gill.webp'"/></div><div class="team-name">Kiran Gill</div><div class="team-role">Prophetic Intercessor / Children's Minister</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team/Savitri%20Ramrattan.webp" alt="Savitri Ramrattan" onerror="this.onerror=null;this.src='team/savitri-ramrattan.webp'"/></div><div class="team-name">Savitri Ramrattan</div><div class="team-role">Prophetess / Intercessor</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team/Bano%20Abdool%20(Sabrina).webp" alt="Bano Abdool (Sabrina)" onerror="this.onerror=null;this.src='team/bano-abdool-sabrina.webp'"/></div><div class="team-name">Bano Abdool (Sabrina)</div><div class="team-role">Event Coordinator / Teacher</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team/Malini%20Persaud.webp" alt="Malini Persaud" style="object-position:center 20%" onerror="this.onerror=null;this.src='team/malini-persaud.webp'"/></div><div class="team-name">Malini Persaud</div><div class="team-role">Intercessor</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team/Pastor%20Quaisir%20Gill.webp" alt="Pastor Quaisir Gill" onerror="this.onerror=null;this.src='team/pastor-quaisir-gill.webp'"/></div><div class="team-name">Pastor Quaisir Gill</div><div class="team-role">Pastor</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team/Pastor%20James%20&amp;%20Wife.webp" alt="Pastor James and Wife" onerror="this.onerror=null;this.src='team/pastor-james-and-wife.webp'"/></div><div class="team-name">Pastor James &amp; Wife</div><div class="team-role">Pastors</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team/Zion%20Clarke.webp" alt="Zion Clarke" onerror="this.onerror=null;this.src='team/zion-clarke.webp'"/></div><div class="team-name">Zion Clarke</div><div class="team-role">IT / TikTok Host</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team/Shiloh%20Clarke.webp" alt="Shiloh Clarke" onerror="this.onerror=null;this.src='team/shiloh-clarke.webp'"/></div><div class="team-name">Shiloh Clarke</div><div class="team-role">YouTube Host</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team/Brother%20Yogi.webp" alt="Brother Yogi" onerror="this.onerror=null;this.src='team/brother-yogi.webp'"/></div><div class="team-name">Brother Yogi</div><div class="team-role">Media &amp; Activities</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team/Brother%20Yashwanth.webp" alt="Brother Yashwanth" onerror="this.onerror=null;this.src='team/brother-yashwanth.webp'"/></div><div class="team-name">Brother Yashwanth</div><div class="team-role">Media &amp; Activities</div></div>
     </div>
   </div>
 </section>
@@ -615,7 +551,34 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
   </div>
 </section>
 
-<!-- ================= BOOKS — v3 with real covers & all 8 titles ================= -->
+<!-- ================= BLOG PREVIEW ================= -->
+<section class="section blog-preview" id="blog">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Latest Writings</span>
+      <h2>From the Blog</h2>
+    </div>
+    <div class="blog-preview-grid">
+      <article class="blog-card">
+        <div class="blog-cat">Kingdom Living</div>
+        <h3><a href="blogs/blog1.html">Jesus Called You Salt, Not Honey</a></h3>
+        <p class="blog-excerpt">The world is comfortable with a Christianity that is sweet, quiet, and agreeable. But following Jesus will sometimes require us to stand for truth, speak with conviction, and refuse to compromise simply to gain approval…</p>
+        <div class="blog-meta">By Anita Singh · Matthew 5:13</div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-cat">Prayer &amp; Devotion</div>
+        <h3><a href="blogs/blog2.html">Hearing God Clearly in a Noisy World</a></h3>
+        <p class="blog-excerpt">Was that God? Was that me? Was that fear? Many believers love God deeply but still struggle to recognize which voice they are hearing. Learn how to recognize the voice of the Shepherd in a world filled with competing voices…</p>
+        <div class="blog-meta">By Anita Singh · John 10:27</div>
+      </article>
+    </div>
+    <div class="blog-cta">
+      <a href="blog.html" class="btn btn-navy" style="color:var(--gold)">Visit the Blog</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOKS ================= -->
 <section class="section books" id="books">
   <div class="container">
     <div class="section-title">
@@ -623,75 +586,15 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
       <h2>Books by Anita B. Singh</h2>
     </div>
     <div class="books-grid">
-
-      <div class="book-card">
-        <div class="book-cover"><img src="books/love-that-stays.png" alt="A Love That Stays"/></div>
-        <div class="book-title">A Love That Stays</div>
-        <div class="book-subtitle">Poems on Love, Healing, and Purpose</div>
-        <div class="book-desc">A poetry collection on love, healing, and finding purpose through God.</div>
-        <a href="https://www.amazon.ca/dp/B0GVYFBLSY" target="_blank" class="btn btn-outline">Buy on Amazon</a>
-      </div>
-
-      <div class="book-card">
-        <div class="book-cover"><img src="books/voice-restored.png" alt="Voice Restored"/></div>
-        <div class="book-title">Voice Restored</div>
-        <div class="book-subtitle">Healing After Bullying and Abuse</div>
-        <div class="book-desc">A journey of healing from bullying, abuse, and emotional wounds.</div>
-        <a href="https://www.amazon.ca/dp/B0GP6HB4DG" target="_blank" class="btn btn-outline">Buy on Amazon</a>
-      </div>
-
-      <div class="book-card">
-        <div class="book-cover"><img src="books/beautiful-beyond.png" alt="Beautiful Beyond Comprehension"/></div>
-        <div class="book-title">Beautiful Beyond Comprehension</div>
-        <div class="book-subtitle">A 30-Day Devotional</div>
-        <div class="book-desc">A 30-day devotional for healing, reflection, and growth in God's love.</div>
-        <a href="https://www.amazon.ca/dp/B0GQNGG14N" target="_blank" class="btn btn-outline">Buy on Amazon</a>
-      </div>
-
-      <div class="book-card">
-        <div class="book-cover"><img src="books/you-are-my-beloved.png" alt="You Are My Beloved"/></div>
-        <div class="book-title">You Are My Beloved</div>
-        <div class="book-subtitle">A Devotional for Restoring Identity</div>
-        <div class="book-desc">A devotional to restore identity, worth, and spiritual confidence.</div>
-        <a href="https://www.amazon.ca/dp/B0GPY64PWD" target="_blank" class="btn btn-outline">Buy on Amazon</a>
-      </div>
-
-      <div class="book-card">
-        <div class="book-cover"><img src="books/love-has-accents.png" alt="Love Has Accents"/></div>
-        <div class="book-title">Love Has Accents</div>
-        <div class="book-subtitle">How Culture, Family Patterns, and Faith Shape the Way We Love</div>
-        <div class="book-desc">Understanding how culture, family, and faith shape the way we love.</div>
-        <a href="https://www.amazon.ca/dp/B0GQ98JGLZ" target="_blank" class="btn btn-outline">Buy on Amazon</a>
-      </div>
-
-      <div class="book-card">
-        <div class="book-cover"><img src="books/misunderstanding.png" alt="When Misunderstanding Messes Things Up"/></div>
-        <div class="book-title">When Misunderstanding Messes Things Up</div>
-        <div class="book-subtitle">Finding Clarity, Healing, and Peace Through God's Truth</div>
-        <div class="book-desc">How small misreads can damage relationships — and how to restore them.</div>
-        <a href="https://www.amazon.ca/dp/B0GPY6V7MF" target="_blank" class="btn btn-outline">Buy on Amazon</a>
-      </div>
-
-      <!-- NEW: Men of Purpose — direct ISBN not verified, link to author storefront -->
-      <div class="book-card">
-        <div class="book-cover"><img src="books/men-of-purpose.png" alt="Men of Purpose"/></div>
-        <div class="book-title">Men of Purpose</div>
-        <div class="book-subtitle">A 365-Day Devotional for Christian Men</div>
-        <div class="book-desc">A year-long devotional on identity, discipline, and purpose for men of God.</div>
-        <a href="https://www.amazon.ca/dp/1067743308" target="_blank" class="btn btn-outline">Buy on Amazon</a>
-      </div>
-
-      <!-- NEW: From the Seawall to the World — co-authored, link to author storefront -->
-      <div class="book-card">
-        <div class="book-cover"><img src="books/seawall-world.png" alt="From the Seawall to the World"/></div>
-        <div class="book-title">From the Seawall to the World</div>
-        <div class="book-subtitle">Six Sisters. One Journey. From Guyana to Canada and Beyond</div>
-        <div class="book-desc">The journey of six sisters — a testimony of family, faith, and God's faithfulness.</div>
-        <a href="https://www.amazon.ca/dp/B0GWLVBPS8" target="_blank" class="btn btn-outline">Buy on Amazon</a>
-      </div>
-
+      <div class="book-card"><div class="book-cover"><img src="books/love-that-stays.png" alt="A Love That Stays"/></div><div class="book-title">A Love That Stays</div><div class="book-subtitle">Poems on Love, Healing, and Purpose</div><div class="book-desc">A poetry collection on love, healing, and finding purpose through God.</div><a href="https://www.amazon.ca/dp/B0GVYFBLSY" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card"><div class="book-cover"><img src="books/voice-restored.png" alt="Voice Restored"/></div><div class="book-title">Voice Restored</div><div class="book-subtitle">Healing After Bullying and Abuse</div><div class="book-desc">A journey of healing from bullying, abuse, and emotional wounds.</div><a href="https://www.amazon.ca/dp/B0GP6HB4DG" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card"><div class="book-cover"><img src="books/beautiful-beyond.png" alt="Beautiful Beyond Comprehension"/></div><div class="book-title">Beautiful Beyond Comprehension</div><div class="book-subtitle">A 30-Day Devotional</div><div class="book-desc">A 30-day devotional for healing, reflection, and growth in God's love.</div><a href="https://www.amazon.ca/dp/B0GQNGG14N" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card"><div class="book-cover"><img src="books/you-are-my-beloved.png" alt="You Are My Beloved"/></div><div class="book-title">You Are My Beloved</div><div class="book-subtitle">A Devotional for Restoring Identity</div><div class="book-desc">A devotional to restore identity, worth, and spiritual confidence.</div><a href="https://www.amazon.ca/dp/B0GPY64PWD" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card"><div class="book-cover"><img src="books/love-has-accents.png" alt="Love Has Accents"/></div><div class="book-title">Love Has Accents</div><div class="book-subtitle">How Culture, Family Patterns, and Faith Shape the Way We Love</div><div class="book-desc">Understanding how culture, family, and faith shape the way we love.</div><a href="https://www.amazon.ca/dp/B0GQ98JGLZ" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card"><div class="book-cover"><img src="books/misunderstanding.png" alt="When Misunderstanding Messes Things Up"/></div><div class="book-title">When Misunderstanding Messes Things Up</div><div class="book-subtitle">Finding Clarity, Healing, and Peace Through God's Truth</div><div class="book-desc">How small misreads can damage relationships — and how to restore them.</div><a href="https://www.amazon.ca/dp/B0GPY6V7MF" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card"><div class="book-cover"><img src="books/men-of-purpose.png" alt="Men of Purpose"/></div><div class="book-title">Men of Purpose</div><div class="book-subtitle">A 365-Day Devotional for Christian Men</div><div class="book-desc">A year-long devotional on identity, discipline, and purpose for men of God.</div><a href="https://www.amazon.ca/dp/1067743308" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card"><div class="book-cover"><img src="books/seawall-world.png" alt="From the Seawall to the World"/></div><div class="book-title">From the Seawall to the World</div><div class="book-subtitle">Six Sisters. One Journey. From Guyana to Canada and Beyond</div><div class="book-desc">The journey of six sisters — a testimony of family, faith, and God's faithfulness.</div><a href="https://www.amazon.ca/dp/B0GWLVBPS8" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
     </div>
-
     <div class="author-link">
       <a href="https://www.amazon.ca/stores/author/B0GPP3MNW3/allbooks" target="_blank" class="btn btn-navy">Visit Amazon Author Page</a>
     </div>
@@ -723,39 +626,25 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
     <div class="contact-info">
       <p>Need prayer? Interested in working together, or want to join a service? We would love to hear from you.</p>
       <div class="contact-channels">
-        <div class="contact-channel">
-          <div class="flag">🇨🇦</div>
-          <div class="label">Canada</div>
-          <a href="tel:+16478480750">647-848-0750</a>
-        </div>
-        <div class="contact-channel">
-          <div class="flag">🇮🇳</div>
-          <div class="label">India</div>
-          <a href="tel:+919591916021">+91 95919 16021</a>
-        </div>
-        <div class="contact-channel">
-          <div class="flag">✉</div>
-          <div class="label">Email</div>
-          <a href="mailto:kgimiraclecentre@gmail.com">kgimiraclecentre@gmail.com</a>
-        </div>
+        <div class="contact-channel"><div class="flag">🇨🇦</div><div class="label">Canada</div><a href="tel:+16478480750">647-848-0750</a></div>
+        <div class="contact-channel"><div class="flag">🇮🇳</div><div class="label">India</div><a href="tel:+919591916021">+91 95919 16021</a></div>
+        <div class="contact-channel"><div class="flag">✉</div><div class="label">Email</div><a href="mailto:kgimcmediateam@gmail.com">kgimcmediateam@gmail.com</a></div>
       </div>
     </div>
-    <form class="contact-form" id="prayerForm" action="https://formspree.io/f/maewyerj" method="POST">
+    <form class="contact-form" id="prayerForm">
       <h3>Send a Prayer Request or Message</h3>
       <p class="sub">If you or someone you know needs prayer, let us stand with you in faith.</p>
-      <!-- Subject line for the email you'll receive -->
-      <input type="hidden" name="_subject" value="New Prayer Request — KGIMC Website" />
       <div class="form-two">
-        <div class="form-row"><label>First Name</label><input type="text" name="First Name" required /></div>
-        <div class="form-row"><label>Last Name</label><input type="text" name="Last Name" required /></div>
+        <div class="form-row"><label>First Name</label><input type="text" name="firstName" required /></div>
+        <div class="form-row"><label>Last Name</label><input type="text" name="lastName" required /></div>
       </div>
       <div class="form-two">
-        <div class="form-row"><label>Email</label><input type="email" name="Email" required /></div>
-        <div class="form-row"><label>Phone (Optional)</label><input type="tel" name="Phone" /></div>
+        <div class="form-row"><label>Email</label><input type="email" name="email" required /></div>
+        <div class="form-row"><label>Phone (Optional)</label><input type="tel" name="phone" /></div>
       </div>
       <div class="form-row">
         <label>Reason for Contact</label>
-        <select name="Reason for Contact">
+        <select name="reason">
           <option>Prayer Request</option>
           <option>Book an Appointment</option>
           <option>Join a Service</option>
@@ -763,8 +652,9 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
           <option>General Inquiry</option>
         </select>
       </div>
-      <div class="form-row"><label>Your Message</label><textarea name="Message" required placeholder="Share what's on your heart..."></textarea></div>
+      <div class="form-row"><label>Your Message</label><textarea name="message" required placeholder="Share what's on your heart..."></textarea></div>
       <button type="submit" class="btn btn-navy" style="width:100%">Send Message</button>
+      <p class="form-note">Clicking <strong>Send Message</strong> will open your email app with the message pre-filled and addressed to <strong>kgimcmediateam@gmail.com</strong>. Just press <em>Send</em> in your email app to deliver it.</p>
     </form>
   </div>
 </section>
@@ -776,19 +666,14 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
     <h4>Kingdom Guardian International Miracle Centre</h4>
     <p class="verse">I have given you authority to trample on snakes and scorpions and to overcome all the power of the enemy; nothing will harm you. — Luke 10:19</p>
     <h2 class="revival-title">REVIVAL IS HERE...</h2>
-      <style>
-      .revival-title {
-        font-size: 48px;
-        font-weight: 800;
-        text-align: center;
-        color: #ffcc00;
-        text-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
-      }
-      </style>
+    <style>
+      .revival-title{font-size:48px;font-weight:800;text-align:center;color:#ffcc00;text-shadow:0 0 15px rgba(255,204,0,0.8)}
+    </style>
     <div class="footer-links">
       <a href="#about">About</a>
       <a href="#schedule">Schedule</a>
       <a href="#team">Team</a>
+      <a href="blog.html">Blog</a>
       <a href="#books">Books</a>
       <a href="#book-now">Book Now</a>
       <a href="#contact">Contact</a>
@@ -796,11 +681,38 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
     <div class="socials">
       <a href="https://www.youtube.com/@KGIMiracleCentre-x7v" target="_blank" title="YouTube">▶</a>
       <a href="https://www.instagram.com/kgimiraclecentre" target="_blank" title="Instagram">Ⓘ</a>
-      <a href="mailto:kgimiraclecentre@gmail.com" title="Email">✉</a>
+      <a href="mailto:kgimcmediateam@gmail.com" title="Email">✉</a>
     </div>
     <div class="copyright">© <span id="year"></span> Kingdom Guardian International Miracle Centre. All rights reserved.</div>
   </div>
 </footer>
+
+<!-- ================= CHATBOT ================= -->
+<button class="chatbot-toggle" id="chatbotToggle" aria-label="Open chat">✝<span class="badge">Pray</span></button>
+<div class="chatbot-window" id="chatbotWindow" role="dialog" aria-label="KGIMC Chat">
+  <div class="chatbot-header">
+    <img src="kgimc-logo.png" alt="KGIMC" />
+    <div class="title">
+      <p class="name">KGIMC Prayer Assistant</p>
+      <div class="status">We stand with you</div>
+    </div>
+    <button class="chatbot-close" id="chatbotClose" aria-label="Close">✕</button>
+  </div>
+  <div class="chatbot-body" id="chatbotBody"></div>
+  <div class="chatbot-form" id="chatbotForm">
+    <input type="text" id="prName" placeholder="Your name" />
+    <input type="email" id="prEmail" placeholder="Your email (optional)" />
+    <textarea id="prMessage" placeholder="Share your prayer request..."></textarea>
+    <div class="row">
+      <button type="button" class="cancel" id="prCancel">Cancel</button>
+      <button type="button" class="send" id="prSend">Send via Email</button>
+    </div>
+  </div>
+  <div class="chatbot-footer" id="chatbotFooter">
+    <textarea id="chatInput" placeholder="Type your message..." rows="1"></textarea>
+    <button id="chatSend">Send</button>
+  </div>
+</div>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
@@ -808,40 +720,283 @@ document.querySelectorAll('.nav-links a').forEach(a=>{
   a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
 });
 
-// --- Prayer request form: submit to Formspree with inline success/error UX ---
+/* ============ PRAYER FORM → mailto ============ */
 (function(){
   const form = document.getElementById('prayerForm');
   if(!form) return;
-  form.addEventListener('submit', async function(e){
+  form.addEventListener('submit', function(e){
     e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    btn.style.opacity = '0.7';
-    try{
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if(response.ok){
-        form.innerHTML = '<div style="text-align:center;padding:40px 20px">'
-          + '<div style="font-size:2.5rem;margin-bottom:16px">🙏</div>'
-          + '<h3 style="color:var(--navy);margin-bottom:12px;font-family:var(--serif);font-size:1.8rem">Thank You</h3>'
-          + '<p style="color:var(--muted);line-height:1.7">Your message has been received. Our ministry team will be in touch with you soon.<br/>May God bless you.</p>'
-          + '<p style="color:var(--gold);font-family:var(--serif);font-style:italic;margin-top:20px">"The prayer of a righteous person is powerful and effective." — James 5:16</p>'
-          + '</div>';
-      } else {
-        throw new Error('Submission failed');
-      }
-    } catch(err){
-      btn.textContent = originalText;
-      btn.disabled = false;
-      btn.style.opacity = '1';
-      alert('Sorry, something went wrong. Please try again, or email us directly at kgimiraclecentre@gmail.com');
-    }
+    const fd = new FormData(form);
+    const first = (fd.get('firstName')||'').toString().trim();
+    const last  = (fd.get('lastName')||'').toString().trim();
+    const email = (fd.get('email')||'').toString().trim();
+    const phone = (fd.get('phone')||'').toString().trim();
+    const reason= (fd.get('reason')||'').toString().trim();
+    const msg   = (fd.get('message')||'').toString().trim();
+    const subject = `[${reason}] from ${first} ${last} — KGIMC Website`;
+    const body =
+      `Reason: ${reason}\n` +
+      `Name: ${first} ${last}\n` +
+      `Email: ${email}\n` +
+      (phone ? `Phone: ${phone}\n` : '') +
+      `\nMessage:\n${msg}\n\n— Sent from the KGIMC website contact form`;
+    const mailto = 'mailto:kgimcmediateam@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = mailto;
+    // Show a friendly confirmation in place of the form after a short delay
+    setTimeout(function(){
+      form.innerHTML = '<div style="text-align:center;padding:40px 20px">'
+        + '<div style="font-size:2.5rem;margin-bottom:16px">🙏</div>'
+        + '<h3 style="color:var(--navy);margin-bottom:12px;font-family:var(--serif);font-size:1.8rem">Almost There</h3>'
+        + '<p style="color:var(--muted);line-height:1.7">Your email app should have opened with the message ready to send.<br/>Please press <strong>Send</strong> in your email app to deliver it to <strong>kgimcmediateam@gmail.com</strong>.</p>'
+        + '<p style="color:var(--muted);margin-top:12px;font-size:.9rem">If nothing opened, please email us directly at <a href="mailto:kgimcmediateam@gmail.com" style="color:var(--gold)">kgimcmediateam@gmail.com</a>.</p>'
+        + '<p style="color:var(--gold);font-family:var(--serif);font-style:italic;margin-top:20px">"The prayer of a righteous person is powerful and effective." — James 5:16</p>'
+        + '</div>';
+    }, 800);
   });
+})();
+
+/* ============ CHATBOT ============ */
+(function(){
+  const RECIPIENT = 'kgimcmediateam@gmail.com';
+  const toggle = document.getElementById('chatbotToggle');
+  const win    = document.getElementById('chatbotWindow');
+  const closeBtn = document.getElementById('chatbotClose');
+  const body   = document.getElementById('chatbotBody');
+  const footer = document.getElementById('chatbotFooter');
+  const input  = document.getElementById('chatInput');
+  const sendBtn= document.getElementById('chatSend');
+  const form   = document.getElementById('chatbotForm');
+  const prName = document.getElementById('prName');
+  const prEmail= document.getElementById('prEmail');
+  const prMsg  = document.getElementById('prMessage');
+  const prSend = document.getElementById('prSend');
+  const prCancel = document.getElementById('prCancel');
+
+  // Prayer library — excerpts drawn from KGIMC's Healing Prayers document
+  const PRAYERS = {
+    healing: {
+      label: 'Healing (body / mind / emotions)',
+      verse: 'By His stripes we are healed. — Isaiah 53:5',
+      text: 'Lord Jesus, touch every place of pain, sickness, and weariness. Heal my body, renew my mind, and restore my emotions. Where there has been suffering, release Your peace. Where there has been fear, release Your love. I receive Your healing by faith. In Jesus\' name, Amen.'
+    },
+    deliverance: {
+      label: 'Deliverance & Spiritual Warfare',
+      verse: '"Behold, I give unto you power… over all the power of the enemy." — Luke 10:19',
+      text: 'Father, in the mighty name of Jesus, I break every yoke, chain, and assignment of the enemy over my life. I cover myself, my family, and my home with the precious blood of Jesus. No weapon formed against me shall prosper. I walk in the freedom Christ purchased for me. Amen.'
+    },
+    family: {
+      label: 'Family & Restoration',
+      verse: '"Though I have fallen, I will rise." — Micah 7:8',
+      text: 'Heavenly Father, I lift my family before You. Heal what has been wounded, restore what has been broken, and turn hearts toward one another and toward You. Break every unhealthy pattern and let a new legacy of peace, faith, and love begin with us. In Jesus\' name, Amen.'
+    },
+    finances: {
+      label: 'Finances & Provision',
+      verse: '"My God shall supply all your need according to His riches in glory by Christ Jesus." — Philippians 4:19',
+      text: 'Father, I trust You as my Provider. Break every cycle of lack, debt, and fruitless labor. Grant me wisdom, diligence, and stewardship. Open doors of legitimate opportunity and let the work of my hands be blessed. I receive Your provision with thanksgiving. In Jesus\' name, Amen.'
+    },
+    fear: {
+      label: 'Fear, Anxiety & Peace',
+      verse: '"Be still, and know that I am God." — Psalm 46:10',
+      text: 'Lord, quiet the storm within me. Cast out every fear with Your perfect love. Let Your peace, which surpasses all understanding, guard my heart and my mind in Christ Jesus. I choose to trust You today. Amen.'
+    },
+    genz: {
+      label: 'Gen Z & Young Adults',
+      verse: '"Let no one despise your youth… be an example." — 1 Timothy 4:12',
+      text: 'Father, I lift up this generation. Awaken hearts to the love of Jesus. Protect minds, bodies, and futures. Raise up young men and women who love truth, walk in holiness, and boldly follow Christ. Let revival begin in them. In Jesus\' name, Amen.'
+    },
+    relationships: {
+      label: 'Marriage & Relationships',
+      verse: '"Above all, love one another deeply." — 1 Peter 4:8',
+      text: 'Lord, guard my heart and lead my relationships. Break every counterfeit attachment, deception, and unhealthy pattern. Teach me to recognize godly love — honoring, faithful, patient, and true. Prepare me for the covenant relationships You have ordained. In Jesus\' name, Amen.'
+    },
+    identity: {
+      label: 'Rejection, Identity & Belonging',
+      verse: '"When my father and mother forsake me, then the Lord will take me up." — Psalm 27:10',
+      text: 'Father, heal every wound of rejection, abandonment, and shame. Silence every false label. I receive my identity as Your beloved, chosen and accepted in Christ. I refuse the voice of rejection and I stand in Your love. In Jesus\' name, Amen.'
+    },
+    night: {
+      label: 'Night Protection & Rest',
+      verse: '"I will both lay me down in peace, and sleep: for Thou, Lord, only makest me dwell in safety." — Psalm 4:8',
+      text: 'Father, I commit this night to You. Cover my home, my family, and my rest with the blood of Jesus. Send Your angels to encamp around us. Grant peaceful sleep, revelation dreams, and morning strength. In Jesus\' name, Amen.'
+    },
+    discernment: {
+      label: 'Discernment & Direction',
+      verse: '"If any of you lacks wisdom, let him ask of God." — James 1:5',
+      text: 'Lord, give me the wisdom that comes from above — pure, peaceable, gentle, and full of mercy. Guide my steps, expose deception, and let me hear Your voice clearly. I choose Your will above my own. In Jesus\' name, Amen.'
+    }
+  };
+
+  function scrollBottom(){ body.scrollTop = body.scrollHeight; }
+
+  function addBot(html){
+    const d = document.createElement('div');
+    d.className = 'chatbot-msg bot';
+    d.innerHTML = html;
+    body.appendChild(d);
+    scrollBottom();
+  }
+  function addUser(text){
+    const d = document.createElement('div');
+    d.className = 'chatbot-msg user';
+    d.textContent = text;
+    body.appendChild(d);
+    scrollBottom();
+  }
+  function addOptions(opts){
+    const wrap = document.createElement('div');
+    wrap.className = 'chatbot-options';
+    opts.forEach(o=>{
+      const b = document.createElement('button');
+      b.type='button';
+      b.className='chatbot-option';
+      b.textContent = o.label;
+      b.addEventListener('click', ()=>{
+        wrap.remove();
+        addUser(o.label);
+        setTimeout(()=>o.action(), 200);
+      });
+      wrap.appendChild(b);
+    });
+    body.appendChild(wrap);
+    scrollBottom();
+  }
+
+  function showMainMenu(){
+    addBot('How can we stand with you today? Choose an option below or type your message.');
+    addOptions([
+      { label: '🙏 I need prayer for something',    action: showPrayerTopics },
+      { label: '📖 Learn about KGIMC',              action: showAbout },
+      { label: '📅 Weekly ministry schedule',       action: showSchedule },
+      { label: '✉ Send a private prayer request',   action: openRequestForm }
+    ]);
+  }
+
+  function showPrayerTopics(){
+    addBot('What do you need prayer for? Pick a topic and we will pray with you.');
+    const opts = Object.keys(PRAYERS).map(k=>({
+      label: PRAYERS[k].label,
+      action: ()=> showPrayer(k)
+    }));
+    opts.push({ label: '↩ Back to main menu', action: showMainMenu });
+    addOptions(opts);
+  }
+
+  function showPrayer(key){
+    const p = PRAYERS[key];
+    addBot('<strong>Prayer for ' + p.label + '</strong>\n\n' + p.text + '\n<span class="verse">' + p.verse + '</span>');
+    addOptions([
+      { label: '✉ Send this as a private prayer request', action: ()=>{ prMsg.value = 'I would like prayer for: ' + p.label + '\n\n(Please add anything else you would like the team to know.)'; openRequestForm(); } },
+      { label: '🙏 Pray for something else', action: showPrayerTopics },
+      { label: '↩ Main menu', action: showMainMenu }
+    ]);
+  }
+
+  function showAbout(){
+    addBot('KGIMC — Kingdom Guardian International Miracle Centre — is a global family walking in Healing, Deliverance, Reconciliation, and Restoration through Jesus Christ.\n\n"Behold, I give unto you power to tread on serpents and scorpions, and over all the power of the enemy." — Luke 10:19');
+    addOptions([
+      { label: '📅 See the weekly schedule', action: showSchedule },
+      { label: '🙏 Prayer topics',            action: showPrayerTopics },
+      { label: '↩ Main menu',                 action: showMainMenu }
+    ]);
+  }
+
+  function showSchedule(){
+    addBot('Some of our weekly gatherings (all times EST unless noted):\n\n• Sun–Thu · Daily House of Prayer — 7:30 PM\n• Sun–Thu · Night Watch Prayer & Worship — 9:00 PM – Midnight\n• Sunday · God Encounter Service — 9:30 AM\n• Tuesday & Friday · India God Encounter — 10:30 AM EST / 8:00 PM India\n• Friday · Antigua Prayer Call — 7:00–8:00 PM (WhatsApp)\n\nSee the full schedule on the Home page.');
+    addOptions([
+      { label: '🙏 I need prayer', action: showPrayerTopics },
+      { label: '↩ Main menu',     action: showMainMenu }
+    ]);
+  }
+
+  function openRequestForm(){
+    footer.style.display = 'none';
+    form.classList.add('open');
+    setTimeout(()=>prName.focus(), 100);
+  }
+  function closeRequestForm(){
+    form.classList.remove('open');
+    footer.style.display = 'flex';
+  }
+  prCancel.addEventListener('click', closeRequestForm);
+  prSend.addEventListener('click', function(){
+    const name = (prName.value||'').trim();
+    const email= (prEmail.value||'').trim();
+    const msg  = (prMsg.value||'').trim();
+    if(!name || !msg){ alert('Please enter your name and prayer request.'); return; }
+    const subject = 'Prayer Request from ' + name + ' — KGIMC Chatbot';
+    const bodyText =
+      `Prayer Request\n` +
+      `Name: ${name}\n` +
+      (email ? `Email: ${email}\n` : '') +
+      `\nMessage:\n${msg}\n\n— Sent from the KGIMC website chatbot`;
+    const mailto = 'mailto:' + RECIPIENT + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(bodyText);
+    window.location.href = mailto;
+    closeRequestForm();
+    addBot('🙏 Thank you, ' + name + '. Your email app has opened with your prayer request ready to send to <strong>' + RECIPIENT + '</strong>. Please press <strong>Send</strong> in your email app to deliver it.\n\nOur team will be praying with you.\n<span class="verse">"The prayer of a righteous person is powerful and effective." — James 5:16</span>');
+    prName.value=''; prEmail.value=''; prMsg.value='';
+    addOptions([
+      { label: '🙏 Another prayer topic', action: showPrayerTopics },
+      { label: '↩ Main menu',             action: showMainMenu }
+    ]);
+  });
+
+  function sendTypedMessage(){
+    const t = (input.value||'').trim();
+    if(!t) return;
+    addUser(t);
+    input.value='';
+    input.style.height='auto';
+    // Simple keyword routing
+    const lower = t.toLowerCase();
+    setTimeout(()=>{
+      if(/pray|prayer|intercede/.test(lower)){
+        addBot('We would be honored to pray with you. Pick a topic below, or send us your request directly.');
+        addOptions([
+          { label: '🙏 Choose a prayer topic', action: showPrayerTopics },
+          { label: '✉ Send my prayer request', action: ()=>{ prMsg.value = t; openRequestForm(); } }
+        ]);
+      } else if(/schedule|service|meeting|when|time/.test(lower)){
+        showSchedule();
+      } else if(/about|who|kgimc|ministry/.test(lower)){
+        showAbout();
+      } else if(/contact|email|reach|talk/.test(lower)){
+        addBot('You can email us at <strong>kgimcmediateam@gmail.com</strong>, or send your request through the form below.');
+        addOptions([{ label: '✉ Send a prayer request', action: ()=>{ prMsg.value = t; openRequestForm(); } }, { label: '↩ Main menu', action: showMainMenu }]);
+      } else {
+        addBot('Thank you for sharing. Would you like to:');
+        addOptions([
+          { label: '🙏 Pray about this',              action: ()=>{ prMsg.value = t; showPrayerTopics(); } },
+          { label: '✉ Send this as a prayer request', action: ()=>{ prMsg.value = t; openRequestForm(); } },
+          { label: '↩ Main menu',                     action: showMainMenu }
+        ]);
+      }
+    }, 250);
+  }
+  sendBtn.addEventListener('click', sendTypedMessage);
+  input.addEventListener('keydown', function(e){
+    if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); sendTypedMessage(); }
+  });
+  input.addEventListener('input', function(){
+    input.style.height='auto';
+    input.style.height = Math.min(input.scrollHeight, 120) + 'px';
+  });
+
+  let welcomed = false;
+  function openChat(){
+    win.classList.add('open');
+    if(!welcomed){
+      welcomed = true;
+      setTimeout(()=>{
+        addBot('Welcome to <strong>KGIMC</strong> — Kingdom Guardian International Miracle Centre. 🙏\nWe are so glad you are here.');
+        setTimeout(showMainMenu, 350);
+      }, 200);
+    }
+  }
+  function closeChat(){ win.classList.remove('open'); }
+  toggle.addEventListener('click', ()=>{
+    if(win.classList.contains('open')) closeChat(); else openChat();
+  });
+  closeBtn.addEventListener('click', closeChat);
 })();
 </script>
 </body>
