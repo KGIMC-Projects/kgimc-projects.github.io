@@ -47,7 +47,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,30,63,0.9
 .nav-links .book-btn{background:var(--gold);color:var(--navy)!important;padding:10px 20px;border-radius:2px;font-weight:500}
 .menu-toggle{display:none;background:none;border:none;color:var(--cream);font-size:1.5rem;cursor:pointer}
 
-.post-header{background:linear-gradient(rgba(6,18,41,0.88),rgba(6,18,41,0.95)),url('https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/cca7e760-a62f-41d4-848b-e75a903f3152/heavenly+sky.png') center/cover;color:var(--cream);padding:150px 24px 70px;text-align:center}
+.post-header{background:radial-gradient(ellipse at 50% 0%,#2a4778 0%,#1a3260 40%,#0b1e3f 100%);color:var(--cream);padding:150px 24px 70px;text-align:center;position:relative;overflow:hidden}
+.post-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 20%,rgba(201,162,75,0.25),transparent 70%);pointer-events:none}
+.post-header>*{position:relative;z-index:1}
 .post-header .cat{font-family:var(--sans);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px;display:inline-block;padding:6px 14px;border:1px solid var(--gold);border-radius:20px}
 .post-header h1{color:var(--cream)}
 .post-header .meta{color:rgba(250,246,238,0.75);font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-top:16px}
