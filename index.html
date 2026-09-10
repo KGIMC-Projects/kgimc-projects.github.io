@@ -62,8 +62,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,30,63,0.9
 .menu-toggle{display:none;background:none;border:none;color:var(--cream);font-size:1.5rem;cursor:pointer}
 
 /* HERO */
-.hero{min-height:100vh;background:linear-gradient(rgba(6,18,41,0.75),rgba(6,18,41,0.9)),url('https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/cca7e760-a62f-41d4-848b-e75a903f3152/heavenly+sky.png') center/cover;color:var(--cream);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:120px 24px 60px}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top,rgba(201,162,75,0.15),transparent 60%);pointer-events:none}
+.hero{min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#2a4778 0%,#1a3260 30%,#0f2148 60%,#0b1e3f 100%);color:var(--cream);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:120px 24px 60px}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 800px 400px at 50% 15%,rgba(201,162,75,0.28),transparent 70%),radial-gradient(circle at 20% 30%,rgba(255,255,255,0.06),transparent 40%),radial-gradient(circle at 80% 40%,rgba(255,255,255,0.05),transparent 40%);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;background:conic-gradient(from 220deg at 50% 10%,transparent 0deg,rgba(201,162,75,0.08) 30deg,transparent 60deg,rgba(255,255,255,0.04) 90deg,transparent 120deg,rgba(201,162,75,0.06) 150deg,transparent 180deg);pointer-events:none;opacity:.9}
 .hero-content{position:relative;z-index:2;max-width:900px}
 .hero-logo{width:180px;height:180px;margin:0 auto 30px;border-radius:50%;box-shadow:0 0 60px rgba(201,162,75,0.4);animation:float 6s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
@@ -224,7 +225,7 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
 .recurring-events .event-time strong{color:var(--gold);font-size:1rem}
 .recurring-events .event-lead{font-size:.85rem;color:rgba(250,246,238,0.7);font-style:italic;margin-top:6px}
 .event-lead{font-size:.78rem;color:var(--muted);font-style:italic;margin-top:4px;line-height:1.4}
-.new-badge{display:inline-block;font-family:var(--sans);font-size:.55rem;letter-spacing:1.5px;text-transform:uppercase;background:var(--gold);color:var(--navy);padding:2px 8px;border-radius:2px;font-weight:600;vertical-align:middle}
+.new-badge{display:inline-block;font-family:var(--sans);font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;background:var(--gold);color:#000;padding:3px 10px;border-radius:3px;font-weight:700;vertical-align:middle;margin-left:6px;box-shadow:0 1px 3px rgba(0,0,0,0.15)}
 .day-banner{background:rgba(201,162,75,0.12);border:1px solid var(--gold);padding:10px 14px;border-radius:2px;margin-bottom:16px;text-align:center;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:500}
 
 /* MONTHLY HOUSE CHURCH */
@@ -570,6 +571,12 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
         <h3><a href="blogs/blog2.html">Hearing God Clearly in a Noisy World</a></h3>
         <p class="blog-excerpt">Was that God? Was that me? Was that fear? Many believers love God deeply but still struggle to recognize which voice they are hearing. Learn how to recognize the voice of the Shepherd in a world filled with competing voices…</p>
         <div class="blog-meta">By Anita Singh · John 10:27</div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-cat">Healing &amp; Restoration</div>
+        <h3><a href="blogs/blog3.html">Guard Your Heart Without Hardening It</a></h3>
+        <p class="blog-excerpt">There is wisdom in learning from what happened, but there is danger in allowing pain to turn protection into hardness. God tells us to guard our hearts, not harden them. Boundaries have doors. Walls do not…</p>
+        <div class="blog-meta">By Anita Singh · Proverbs 4:23</div>
       </article>
     </div>
     <div class="blog-cta">
