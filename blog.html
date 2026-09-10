@@ -47,7 +47,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,30,63,0.9
 .menu-toggle{display:none;background:none;border:none;color:var(--cream);font-size:1.5rem;cursor:pointer}
 
 /* PAGE HEADER */
-.page-header{background:linear-gradient(rgba(6,18,41,0.88),rgba(6,18,41,0.95)),url('https://images.squarespace-cdn.com/content/v1/68dee1ae6e23702e60d068d5/cca7e760-a62f-41d4-848b-e75a903f3152/heavenly+sky.png') center/cover;color:var(--cream);padding:150px 24px 80px;text-align:center}
+.page-header{background:radial-gradient(ellipse at 50% 0%,#2a4778 0%,#1a3260 40%,#0b1e3f 100%);color:var(--cream);padding:150px 24px 80px;text-align:center;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 700px 350px at 50% 15%,rgba(201,162,75,0.25),transparent 70%);pointer-events:none}
+.page-header>*{position:relative;z-index:1}
 .page-header .eyebrow{font-family:var(--sans);font-size:.75rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px;display:block}
 .page-header h1{color:var(--cream);margin-bottom:16px}
 .page-header p{color:rgba(250,246,238,0.8);max-width:700px;margin:0 auto;font-size:1.05rem;font-style:italic;font-family:var(--serif)}
@@ -78,14 +80,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,30,63,0.9
 .empty-note{grid-column:1/-1;text-align:center;padding:40px 20px;color:var(--muted);font-style:italic;background:#fff;border:1px dashed var(--line);border-radius:4px}
 
 /* COMING SOON SECTION */
-.coming-soon{background:#fff;padding:80px 0;border-top:1px solid var(--line)}
-.coming-soon .container{max-width:900px}
-.coming-soon h2{text-align:center;margin-bottom:16px}
-.coming-soon p.intro{text-align:center;color:var(--muted);margin-bottom:40px;max-width:700px;margin-left:auto;margin-right:auto}
-.upcoming-list{columns:2;column-gap:36px;color:var(--muted);font-size:.95rem}
-.upcoming-list div{break-inside:avoid;padding:8px 0;border-bottom:1px dashed var(--line)}
-.upcoming-list div strong{color:var(--navy);font-family:var(--serif);font-size:1.02rem;display:block;margin-bottom:2px}
-.upcoming-list div span{font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
 
 /* FOOTER */
 footer{background:var(--navy-deep);color:rgba(250,246,238,0.6);padding:60px 0 30px;text-align:center}
@@ -104,8 +98,7 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
   .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px;gap:20px}
   .nav-links.open{display:flex}
   .menu-toggle{display:block}
-  .upcoming-list{columns:1}
-  .page-header{padding:120px 24px 60px}
+    .page-header{padding:120px 24px 60px}
 }
 </style>
 </head>
@@ -173,67 +166,17 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
         <div class="post-meta"><span>By Anita Singh · John 10:27</span><a href="blogs/blog2.html" class="read-more">Read →</a></div>
       </article>
 
+      <article class="post-card" data-cat="healing-restoration">
+        <div class="post-cat">Healing &amp; Restoration</div>
+        <h3><a href="blogs/blog3.html">Guard Your Heart Without Hardening It</a></h3>
+        <p class="post-excerpt">There is wisdom in learning from what happened, but there is danger in allowing pain to turn protection into hardness. God tells us to guard our hearts, not harden them. Boundaries have doors. Walls do not…</p>
+        <div class="post-meta"><span>By Anita Singh · Proverbs 4:23</span><a href="blogs/blog3.html" class="read-more">Read →</a></div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<section class="coming-soon">
-  <div class="container">
-    <h2>Coming Soon</h2>
-    <p class="intro">Over the coming weeks, new writings will be added on the following topics — reflections drawn from Scripture, prayer, and years of ministry.</p>
-    <div class="upcoming-list">
-      <div><strong>When God Is Silent: What to Do While You Wait</strong><span>Prayer &amp; Devotion</span></div>
-      <div><strong>The Difference Between Conviction and Condemnation</strong><span>Kingdom Living</span></div>
-      <div><strong>Grace and Truth: Why We Need Both</strong><span>Kingdom Living</span></div>
-      <div><strong>Guard Your Heart Without Hardening It</strong><span>Healing &amp; Restoration</span></div>
-      <div><strong>When Forgiveness Does Not Mean Reconciliation</strong><span>Healing &amp; Restoration</span></div>
-      <div><strong>Healing From Church Hurt Without Leaving God</strong><span>Healing &amp; Restoration</span></div>
-      <div><strong>How to Discern God's Timing</strong><span>Prayer &amp; Devotion</span></div>
-      <div><strong>Obedience When You Do Not Understand the Assignment</strong><span>Kingdom Living</span></div>
-      <div><strong>When God Changes Your Direction</strong><span>Kingdom Living</span></div>
-      <div><strong>Hidden Seasons Are Not Wasted Seasons</strong><span>Kingdom Living</span></div>
-      <div><strong>The Power of a Consecrated Life</strong><span>Leadership &amp; Discipleship</span></div>
-      <div><strong>What It Really Means to Carry Kingdom Authority</strong><span>Leadership &amp; Discipleship</span></div>
-      <div><strong>Authority Without Humility Becomes Dangerous</strong><span>Leadership &amp; Discipleship</span></div>
-      <div><strong>Submission to God Before Spiritual Authority</strong><span>Leadership &amp; Discipleship</span></div>
-      <div><strong>The Watchman: Why Believers Must Pray and Discern</strong><span>Prayer &amp; Devotion</span></div>
-      <div><strong>How to Pray for Your Family Without Trying to Control Them</strong><span>Family &amp; Relationships</span></div>
-      <div><strong>Praying for Gen Z and the Next Generation</strong><span>Next Generation</span></div>
-      <div><strong>Building a Christ-Centered Home in a Changing Culture</strong><span>Family &amp; Relationships</span></div>
-      <div><strong>When Your Child Is Walking Away From God</strong><span>Family &amp; Relationships</span></div>
-      <div><strong>Breaking Unhealthy Family Patterns Through Biblical Renewal</strong><span>Family &amp; Relationships</span></div>
-      <div><strong>Marriage: Covenant, Character, and Christ</strong><span>Family &amp; Relationships</span></div>
-      <div><strong>Singleness Is Not a Waiting Room</strong><span>Family &amp; Relationships</span></div>
-      <div><strong>How to Recognize Healthy Kingdom Relationships</strong><span>Family &amp; Relationships</span></div>
-      <div><strong>Boundaries Are Not Bitterness</strong><span>Healing &amp; Restoration</span></div>
-      <div><strong>Healing After Betrayal</strong><span>Healing &amp; Restoration</span></div>
-      <div><strong>When You Have to Love Someone From a Distance</strong><span>Family &amp; Relationships</span></div>
-      <div><strong>God Still Heals Broken Hearts</strong><span>Healing &amp; Restoration</span></div>
-      <div><strong>Faith During Chronic Pain and Difficult Seasons</strong><span>Healing &amp; Restoration</span></div>
-      <div><strong>When the Miracle Does Not Come the Way You Expected</strong><span>Prayer &amp; Devotion</span></div>
-      <div><strong>Rest Is Spiritual Too</strong><span>Kingdom Living</span></div>
-      <div><strong>Burnout Is Not a Badge of Faithfulness</strong><span>Leadership &amp; Discipleship</span></div>
-      <div><strong>Jesus Still Sees the One in the Crowd</strong><span>Kingdom Living</span></div>
-      <div><strong>The Church Must Love People Again</strong><span>Kingdom Living</span></div>
-      <div><strong>Gifted but Ungoverned: Why Character Still Matters</strong><span>Leadership &amp; Discipleship</span></div>
-      <div><strong>Correction Is Not Rejection</strong><span>Leadership &amp; Discipleship</span></div>
-      <div><strong>The Difference Between Anointing and Character</strong><span>Leadership &amp; Discipleship</span></div>
-      <div><strong>How to Lead Without Controlling People</strong><span>Leadership &amp; Discipleship</span></div>
-      <div><strong>Serving Without Needing Recognition</strong><span>Leadership &amp; Discipleship</span></div>
-      <div><strong>When Ministry Becomes an Idol</strong><span>Leadership &amp; Discipleship</span></div>
-      <div><strong>The Cost of Saying Yes to God</strong><span>Kingdom Living</span></div>
-      <div><strong>How to Discern Spiritual Warfare Without Living in Fear</strong><span>Prayer &amp; Devotion</span></div>
-      <div><strong>Put On the Whole Armor of God</strong><span>Prayer &amp; Devotion</span></div>
-      <div><strong>Praying From Victory, Not Panic</strong><span>Prayer &amp; Devotion</span></div>
-      <div><strong>What Does It Mean to Pull Down Strongholds Biblically?</strong><span>Prayer &amp; Devotion</span></div>
-      <div><strong>When Fear Tries to Become Your Counselor</strong><span>Healing &amp; Restoration</span></div>
-      <div><strong>The Power of Thanksgiving in Difficult Seasons</strong><span>Kingdom Living</span></div>
-      <div><strong>Declarations vs. Prayer: What Does the Bible Actually Teach?</strong><span>Prayer &amp; Devotion</span></div>
-      <div><strong>Your Latter Season Can Still Be Fruitful</strong><span>Kingdom Living</span></div>
-    </div>
-    <p style="text-align:center;margin-top:40px"><a href="index.html#contact" class="btn btn-navy" style="color:var(--gold)">Get in Touch</a></p>
-  </div>
-</section>
 
 <footer>
   <div class="container">
