@@ -132,6 +132,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,30,63,0.9
 /* APPOINTMENTS */
 .appointments{background:linear-gradient(135deg,var(--navy-deep),var(--navy));color:var(--cream);text-align:center}
 .appointments h2{color:var(--cream)}
+.credential-block{background:rgba(255,255,255,0.05);border:1px solid rgba(201,162,75,0.3);border-radius:6px;padding:32px;margin:40px auto 0;max-width:920px;text-align:left}
+.credential-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center}
+.credential-text .credential-eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;display:block;margin-bottom:10px}
+.credential-text h3{color:var(--cream);font-family:var(--serif);font-size:1.7rem;margin-bottom:14px;font-weight:500;line-height:1.2}
+.credential-text p{color:rgba(250,246,238,0.85);font-size:.95rem;line-height:1.7;margin:0 0 14px}
+.credential-text .accreds{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.credential-text .accreds span{font-family:var(--sans);font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,162,75,0.4);padding:4px 10px;border-radius:20px;font-weight:500}
+.credential-image{display:block;position:relative;border-radius:4px;overflow:hidden;border:1px solid rgba(201,162,75,0.4);transition:.3s;background:#fff}
+.credential-image:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(0,0,0,0.35);border-color:var(--gold)}
+.credential-image img{width:100%;height:auto;display:block}
+.credential-image .credential-view{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(11,30,63,0.95),transparent);color:var(--gold-light);text-align:center;padding:26px 12px 10px;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;font-family:var(--sans);opacity:0;transition:.3s}
+.credential-image:hover .credential-view{opacity:1}
+@media (max-width:768px){
+  .credential-inner{grid-template-columns:1fr;text-align:center}
+  .credential-text .accreds{justify-content:center}
+  .credential-block{padding:24px 20px}
+}
 .appointments .section-title .eyebrow{color:var(--gold-light)}
 .appt-intro{max-width:700px;margin:0 auto 40px;color:rgba(250,246,238,0.85);font-size:1.05rem}
 .appt-types{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:900px;margin:0 auto 50px}
@@ -532,6 +549,27 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
       <div class="appt-card"><div class="icon">☦</div><h4>Healing Session</h4><p>Ministry focused on emotional, spiritual, and physical healing.</p></div>
       <div class="appt-card"><div class="icon">✧</div><h4>Deliverance Session</h4><p>Prayer for freedom from bondage and spiritual oppression.</p></div>
       <div class="appt-card"><div class="icon">✡</div><h4>Spiritual Guidance</h4><p>Direction for your calling, purpose, and next steps.</p></div>
+    </div>
+        <!-- ================= CREDENTIALS ================= -->
+    <div class="credential-block">
+      <div class="credential-inner">
+        <div class="credential-text">
+          <span class="credential-eyebrow">Accredited &amp; Certified</span>
+          <h3>Certified Christian Counsellor</h3>
+          <p>Apostle Anita B Singh holds a <strong>Christian Counsellor Certificate</strong> from Presence College — bringing recognised professional training alongside decades of pastoral ministry, prayer, and spiritual guidance.</p>
+          <div class="accreds">
+            <span>CPD</span>
+            <span>NCCAP</span>
+            <span>CMA</span>
+            <span>IPHM</span>
+            <span>ICAHP</span>
+          </div>
+        </div>
+        <a href="credentials/Christian_Counselor_Certificate_Anita_Singh.jpeg" target="_blank" rel="noopener" class="credential-image" aria-label="View full certificate">
+          <img src="credentials/Christian_Counselor_Certificate_Anita_Singh.jpeg" alt="Christian Counsellor Certificate — Apostle Anita B Singh, Presence College" loading="lazy" />
+          <span class="credential-view">View full certificate</span>
+        </a>
+      </div>
     </div>
     <a href="#contact" class="btn btn-primary">Request an Appointment</a>
   </div>
