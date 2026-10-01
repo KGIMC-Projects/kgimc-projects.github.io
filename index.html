@@ -324,6 +324,38 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
   .house-church .locations{grid-template-columns:1fr}
   .chatbot-window{bottom:90px;right:12px;left:12px;width:auto;max-width:none}
 }
+
+/* ===== v8: Schedule alignment & responsiveness ===== */
+.schedule-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;align-items:stretch}
+.day-card{display:flex;flex-direction:column;height:100%;padding:28px 24px}
+.day-card h3{font-size:1.45rem;min-height:52px}
+.day-card .event{padding:12px 0 12px 14px;margin:0;border-bottom:1px dashed rgba(0,0,0,0.08);border-left:2px solid rgba(201,162,75,0.35)}
+.day-card .event+.event{margin-top:10px}
+.day-card .event:last-child{border-bottom:none}
+.day-card .event-name{font-size:.93rem;line-height:1.35}
+.day-card .new-badge{font-size:.58rem;padding:2px 7px;margin-left:4px}
+.house-church .locations{grid-template-columns:repeat(3,minmax(0,1fr));max-width:900px}
+.house-church .location{display:flex;flex-direction:column;justify-content:center}
+.house-church .location span{line-height:1.6}
+.presence-btn{margin-top:12px;margin-left:8px;color:var(--navy);border-color:var(--navy)}
+.presence-btn:hover{background:var(--navy);color:var(--gold)}
+.book-title .new-badge{font-size:.55rem;padding:2px 7px;vertical-align:middle}
+.house-church .location .new-badge{color:#000;background:var(--gold);font-size:.6rem;letter-spacing:1.5px;padding:2px 8px;line-height:1.4;text-transform:uppercase}
+@media(max-width:1180px){
+  .nav-links{gap:16px}
+  .nav-links a{font-size:.72rem;letter-spacing:1px}
+  .nav-links .book-btn{padding:9px 14px}
+}
+@media(max-width:1100px){.schedule-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:900px){
+  .schedule-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .house-church .locations{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .schedule-grid{grid-template-columns:1fr}
+  .day-card h3{min-height:0}
+  .presence-btn{margin-left:0}
+}
 </style>
 </head>
 <body>
@@ -339,6 +371,7 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
       <li><a href="#top">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#schedule">Schedule</a></li>
+      <li><a href="presence.html">Our Presence</a></li>
       <li><a href="#team">Team</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="#books">Books</a></li>
@@ -445,7 +478,6 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
       <div class="day-card">
         <h3>Tuesday <span>Day 02</span></h3>
         <div class="event"><div class="event-name">India God Encounter</div><div class="event-time"><strong>10:30 AM EST</strong> · 8:00 PM India</div><div class="event-lead">Apostle Anita Singh &amp; Pastor James</div></div>
-        <div class="event"><div class="event-name">International Vacation Bible School</div><div class="event-time"><strong>12:00 – 2:00 PM</strong></div><div class="event-lead">Pastor Maria, Sister Sabrina &amp; Youth Team</div></div>
         <div class="event"><div class="event-name">A Time of Healing</div><div class="event-time"><strong>6:00 PM</strong> · Zoom</div><div class="event-lead">Prophetess Savitri &amp; Sister Sabrina</div></div>
         <div class="event"><div class="event-name">Prayer for the Nations</div><div class="event-time"><strong>7:00 PM</strong> · WhatsApp</div><div class="event-lead">Evangelist Racheal &amp; Apostle Anita Singh</div></div>
       </div>
@@ -453,8 +485,7 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
       <div class="day-card">
         <h3>Wednesday <span>Day 03</span></h3>
         <div class="event"><div class="event-name">International Leadership Meeting</div><div class="event-time"><strong>9:00 AM</strong></div></div>
-        <div class="event"><div class="event-name">Youth &amp; Young Adults Intercessory Prayer <span class="new-badge">New</span></div><div class="event-time"><strong>10:30 AM EST</strong> · 8:00 PM India</div><div class="event-lead">Apostle Anita Singh &amp; Brother Yashwanth</div></div>
-        <div class="event"><div class="event-name">International Vacation Bible School</div><div class="event-time"><strong>12:00 – 2:00 PM</strong></div><div class="event-lead">Pastor Maria, Sister Sabrina &amp; Youth Team</div></div>
+        <div class="event"><div class="event-name">Youth &amp; Young Adults Intercessory Prayer <span class="new-badge">New</span></div><div class="event-time"><strong>11:30 AM EST</strong> · 9:00 PM India</div><div class="event-lead">Apostle Anita Singh &amp; Brother Yashwanth</div></div>
         <div class="event"><div class="event-name">Women Ministers International</div><div class="event-time"><strong>6:00 PM</strong></div><div class="event-lead">Pastor Maria &amp; Sister Sabrina</div></div>
       </div>
 
@@ -462,7 +493,6 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
         <h3>Thursday <span>Day 04</span></h3>
         <div class="day-banner">Weekly Fasting Day <span class="new-badge">New</span></div>
         <div class="event"><div class="event-name">Morning Prayer &amp; Worship</div><div class="event-time"><strong>7:30 – 9:00 AM</strong></div><div class="event-lead">Host: Apostle Anita Singh</div></div>
-        <div class="event"><div class="event-name">International Vacation Bible School</div><div class="event-time"><strong>12:00 – 2:00 PM</strong></div><div class="event-lead">Pastor Maria, Sister Sabrina &amp; Youth Team</div></div>
         <div class="event"><div class="event-name">Midday Prayer &amp; Worship</div><div class="event-time"><strong>12:00 – 2:00 PM</strong></div></div>
         <div class="event"><div class="event-name">Youth &amp; Young Adults Meeting</div><div class="event-time"><strong>7:00 PM</strong></div><div class="event-lead">Evangelist Racheal</div></div>
         <div class="event"><div class="event-name">Night Watch Prayer &amp; Worship <span class="new-badge">New</span></div><div class="event-time"><strong>9:00 PM – 12:00 Midnight</strong></div><div class="event-lead">Apostle Anita Singh</div></div>
@@ -470,7 +500,6 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
 
       <div class="day-card">
         <h3>Friday <span>Day 05</span></h3>
-        <div class="event"><div class="event-name">India God Encounter <span class="new-badge">New</span></div><div class="event-time"><strong>10:30 AM EST</strong> · 8:00 PM India</div><div class="event-lead">Apostle Anita Singh &amp; Pastor James</div></div>
         <div class="event"><div class="event-name">Kids International Ministry</div><div class="event-time"><strong>5:00 PM</strong></div><div class="event-lead">Pastor Maria</div></div>
         <div class="event"><div class="event-name">House of Prayer – Pakistan</div><div class="event-time"><strong>6:00 PM</strong></div><div class="event-lead">Pastor Gill</div></div>
         <div class="event"><div class="event-name">Antigua Prayer Call <span class="new-badge">New</span></div><div class="event-time"><strong>7:00 – 8:00 PM</strong> · WhatsApp Group Call</div><div class="event-lead">Antigua House Church</div></div>
@@ -494,12 +523,13 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
       </div>
       <p>Kingdom Guardian International Miracle Centre is establishing and strengthening House Churches across the nations.</p>
       <div class="locations">
-        <div class="location"><strong>Canada House Churches</strong><span>Pastor Maria</span></div>
-        <div class="location"><strong>USA House Churches</strong><span>Evangelist Racheal</span></div>
+        <div class="location"><strong>Canada House Churches</strong><span>Apostle Anita Singh</span></div>
+        <div class="location"><strong>USA House Churches</strong><span>Apostle Anita Singh</span></div>
         <div class="location"><strong>Antigua House Church <span class="new-badge">New</span></strong><span>Hosted by Malini &amp; Apostle Anita Singh · Launching Next Month</span></div>
       </div>
       <p style="margin-top:24px"><em>Interested in opening a House Church in your community?</em></p>
       <a href="#contact" class="btn btn-navy" style="color:var(--gold);border-color:var(--navy);margin-top:12px">Get in Touch</a>
+      <a href="presence.html" class="btn btn-outline presence-btn">See Our Presence by Nation</a>
     </div>
 
     <div class="prayer-line">
@@ -631,6 +661,7 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
       <h2>Books by Anita B. Singh</h2>
     </div>
     <div class="books-grid">
+      <div class="book-card"><div class="book-cover"><img src="books/little-feet-big-dreams.jpg" alt="Little Feet, Big Dreams: Walking with God"/></div><div class="book-title">Little Feet, Big Dreams <span class="new-badge">New</span></div><div class="book-subtitle">Walking with God · Ages 5–10</div><div class="book-desc">A 30-day devotional and activity book to help children ages 5–10 grow in faith, build character, and discover how much they are loved and created with a purpose.</div><a href="https://www.amazon.ca/dp/1067743316" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
       <div class="book-card"><div class="book-cover"><img src="books/love-that-stays.png" alt="A Love That Stays"/></div><div class="book-title">A Love That Stays</div><div class="book-subtitle">Poems on Love, Healing, and Purpose</div><div class="book-desc">A poetry collection on love, healing, and finding purpose through God.</div><a href="https://www.amazon.ca/dp/B0GVYFBLSY" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
       <div class="book-card"><div class="book-cover"><img src="books/voice-restored.png" alt="Voice Restored"/></div><div class="book-title">Voice Restored</div><div class="book-subtitle">Healing After Bullying and Abuse</div><div class="book-desc">A journey of healing from bullying, abuse, and emotional wounds.</div><a href="https://www.amazon.ca/dp/B0GP6HB4DG" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
       <div class="book-card"><div class="book-cover"><img src="books/beautiful-beyond.png" alt="Beautiful Beyond Comprehension"/></div><div class="book-title">Beautiful Beyond Comprehension</div><div class="book-subtitle">A 30-Day Devotional</div><div class="book-desc">A 30-day devotional for healing, reflection, and growth in God's love.</div><a href="https://www.amazon.ca/dp/B0GQNGG14N" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
@@ -717,6 +748,7 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
     <div class="footer-links">
       <a href="#about">About</a>
       <a href="#schedule">Schedule</a>
+      <a href="presence.html">Our Presence</a>
       <a href="#team">Team</a>
       <a href="blog.html">Blog</a>
       <a href="#books">Books</a>
@@ -946,7 +978,7 @@ document.querySelectorAll('.nav-links a').forEach(a=>{
   }
 
   function showSchedule(){
-    addBot('Some of our weekly gatherings (all times EST unless noted):\n\n• Sun–Thu · Daily House of Prayer — 7:30 PM\n• Sun–Thu · Night Watch Prayer & Worship — 9:00 PM – Midnight\n• Sunday · God Encounter Service — 9:30 AM\n• Tuesday & Friday · India God Encounter — 10:30 AM EST / 8:00 PM India\n• Friday · Antigua Prayer Call — 7:00–8:00 PM (WhatsApp)\n\nSee the full schedule on the Home page.');
+    addBot('Some of our weekly gatherings (all times EST unless noted):\n\n• Sun–Thu · Daily House of Prayer — 7:30 PM\n• Sun–Thu · Night Watch Prayer & Worship — 9:00 PM – Midnight\n• Sunday · God Encounter Service — 9:30 AM\n• Tuesday · India God Encounter — 10:30 AM EST / 8:00 PM India\n• Friday · Antigua Prayer Call — 7:00–8:00 PM (WhatsApp)\n\nSee the full schedule on the Home page.');
     addOptions([
       { label: '🙏 I need prayer', action: showPrayerTopics },
       { label: '↩ Main menu',     action: showMainMenu }
