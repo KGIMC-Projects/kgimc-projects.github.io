@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Grace and Truth: Why We Need Both | KGIMC Blog</title>
+<meta name="description" content="Jesus was full of grace and truth. Why we need both: grace without truth becomes permission, truth without grace becomes harsh. By Anita Singh." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0b1e3f; --navy-deep:#061229;
+  --gold:#c9a24b; --gold-light:#e6c67a;
+  --cream:#faf6ee; --ink:#1a1a1a; --muted:#5c5c5c;
+  --line:rgba(201,162,75,0.35);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.8;font-weight:300;font-size:17px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;letter-spacing:.3px;line-height:1.25;color:var(--navy)}
+h1{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:16px}
+h2{font-size:1.8rem;margin:36px 0 14px}
+h3{font-size:1.35rem;margin:28px 0 10px}
+p{margin-bottom:18px;color:#2b2b2b}
+a{color:var(--gold);text-decoration:none;transition:.3s}
+a:hover{color:var(--navy)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;padding:12px 30px;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;border:1px solid var(--gold);border-radius:2px;cursor:pointer;transition:.3s;text-align:center}
+.btn-navy{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+.btn-navy:hover{background:transparent;color:var(--navy)}
+.btn-outline{background:transparent;color:var(--gold)}
+.btn-outline:hover{background:var(--gold);color:var(--navy)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,30,63,0.95);backdrop-filter:blur(10px);padding:14px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-logo{display:flex;align-items:center;gap:12px;color:var(--cream);font-family:var(--serif);font-size:1.1rem;flex-shrink:0}
+.nav-logo img{width:42px;height:42px;border-radius:50%}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center}
+.nav-links a{color:var(--cream);font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:400}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-links .book-btn{background:var(--gold);color:var(--navy)!important;padding:10px 20px;border-radius:2px;font-weight:500}
+.menu-toggle{display:none;background:none;border:none;color:var(--cream);font-size:1.5rem;cursor:pointer}
+
+.post-header{background:radial-gradient(ellipse at 50% 0%,#2a4778 0%,#1a3260 40%,#0b1e3f 100%);color:var(--cream);padding:150px 24px 70px;text-align:center;position:relative;overflow:hidden}
+.post-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 20%,rgba(201,162,75,0.25),transparent 70%);pointer-events:none}
+.post-header>*{position:relative;z-index:1}
+.post-header .cat{font-family:var(--sans);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px;display:inline-block;padding:6px 14px;border:1px solid var(--gold);border-radius:20px}
+.post-header h1{color:var(--cream)}
+.post-header .subtitle{font-family:var(--serif);font-style:italic;color:var(--gold-light);font-size:1.25rem;margin-top:6px}
+.post-header .meta{color:rgba(250,246,238,0.75);font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-top:16px}
+.post-header .verse{font-family:var(--serif);font-style:italic;color:var(--gold-light);font-size:1.15rem;margin-top:24px;max-width:700px;margin-left:auto;margin-right:auto}
+
+article.post{max-width:780px;margin:0 auto;padding:70px 24px 40px}
+article.post .scripture{background:#fff;border-left:4px solid var(--gold);padding:16px 22px;margin:20px 0 26px;font-family:var(--serif);font-style:italic;color:var(--navy);font-size:1.1rem;border-radius:2px}
+article.post .scripture .ref{display:block;font-size:.75rem;letter-spacing:2px;color:var(--gold);font-style:normal;text-transform:uppercase;margin-top:8px}
+article.post .lead{font-family:var(--serif);font-size:1.35rem;color:var(--navy);font-style:italic;line-height:1.5;margin-bottom:28px}
+article.post .prayer-box{background:linear-gradient(135deg,var(--navy),var(--navy-deep));color:var(--cream);padding:30px 32px;border-radius:6px;margin:36px 0}
+article.post .prayer-box h3{color:var(--gold-light);margin-top:0;margin-bottom:12px;font-family:var(--serif);font-size:1.5rem}
+article.post .prayer-box p{color:rgba(250,246,238,0.9)}
+article.post .declaration-box{background:#fff;border:1px solid var(--gold);padding:24px 28px;border-radius:4px;margin:30px 0}
+article.post .declaration-box .label{font-family:var(--sans);font-size:.72rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:500;margin-bottom:12px;text-align:center}
+article.post .declaration-box p{font-family:var(--serif);font-style:italic;color:var(--navy);font-size:1.08rem;line-height:1.65;margin-bottom:14px}
+article.post .signature{margin-top:40px;text-align:right;font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.2rem}
+
+.post-nav{max-width:780px;margin:0 auto;padding:30px 24px 80px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:20px}
+
+footer{background:var(--navy-deep);color:rgba(250,246,238,0.6);padding:60px 0 30px;text-align:center}
+.footer-logo{width:80px;height:80px;margin:0 auto 20px;border-radius:50%}
+footer h4{font-family:var(--serif);color:var(--gold);font-size:1.4rem;margin-bottom:8px}
+footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:24px 0;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase}
+.footer-links a{color:rgba(250,246,238,0.75)}
+.footer-links a:hover{color:var(--gold)}
+.socials{display:flex;gap:16px;justify-content:center;margin:16px 0}
+.socials a{width:40px;height:40px;border:1px solid var(--gold);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem}
+.socials a:hover{background:var(--gold);color:var(--navy)}
+.copyright{font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;margin-top:20px}
+
+@media (max-width:768px){
+  .nav-links{position:fixed;top:70px;left:0;right:0;background:var(--navy-deep);flex-direction:column;padding:24px;display:none;gap:16px;border-top:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  article.post{padding:50px 20px 30px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../kgimc-logo.png" alt="KGIMC" /><span>KGIMC</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#schedule">Schedule</a></li>
+      <li><a href="../index.html#team">Team</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../index.html#books">Books</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a href="../index.html#book-now" class="book-btn">Book Now</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<header class="post-header">
+  <div class="cat">Kingdom Living</div>
+  <h1>Grace and Truth: Why We Need Both</h1>
+  <div class="subtitle">Let grace shape the way you carry truth.</div>
+  <div class="meta">By Anita Singh</div>
+</header>
+
+<article class="post">
+  <p class="lead">We live in a time when people often feel they must choose between grace and truth. Some believe loving people means never confronting what is wrong. Others believe standing for truth gives them permission to speak without compassion. But Jesus showed us another way. John 1:14 NKJV says He was “full of grace and truth.” Jesus carried both.</p>
+  <p>But what is grace? Biblical grace is God’s undeserved favor freely given to us. We cannot earn it, purchase it, or make ourselves worthy of it. Ephesians 2:8 NKJV says, “For by grace you have been saved through faith, and that not of yourselves; it is the gift of God.” Mercy and grace are closely connected, but there is a helpful distinction: mercy is God withholding the judgment we deserve, while grace is God giving us favor and help we could never earn.</p>
+  <p>Grace is also more than forgiveness. Titus 2:11–12 NKJV says, “For the grace of God that brings salvation has appeared to all men, teaching us that, denying ungodliness and worldly lusts, we should live soberly, righteously, and godly in the present age.” Grace saves us, but grace also teaches us. Biblical grace does not give us permission to remain unchanged; it leads us into a new way of living.</p>
+  <p>Truth is what agrees with the character, Word, and ways of God. Jesus said in John 8:32 NKJV, “And you shall know the truth, and the truth shall make you free.” Truth exposes what is false, gives direction, establishes boundaries, and shows us what God calls right and wrong. We therefore need both grace and truth. Grace without truth can become permission for what God wants to transform, while truth without grace can become harsh and wound the people God desires to restore.</p>
+  <h2>Jesus Showed Us Both</h2>
+  <p>Jesus never compromised truth to make people comfortable, but neither did He use truth as a weapon to humiliate them. When the woman caught in adultery was brought before Him, Jesus said, “Neither do I condemn you; go and sin no more” (John 8:11 NKJV). He extended mercy without pretending her sin did not matter. He refused condemnation while still calling her to change.</p>
+  <p>That is important for us today. Loving someone does not require us to call everything acceptable. Sometimes love requires an honest conversation. Sometimes truth requires a boundary. Sometimes restoration requires repentance. At the same time, being biblically correct does not give us permission to become cruel, arrogant, or self-righteous. Ephesians 4:15 tells us to speak “the truth in love.”</p>
+  <p>Before correcting someone, we should examine our own hearts. Are we trying to restore them or prove that we are right? Are we speaking from love or anger? Galatians 6:1 teaches that when someone is overtaken in a fault, those who are spiritual should restore that person “in a spirit of gentleness.” The goal of biblical correction should be restoration, not humiliation.</p>
+  <p>We also need grace and truth when dealing with ourselves. Grace should never become an excuse to avoid responsibility, and truth should never become a weapon we use to condemn ourselves. When we sin, we can acknowledge it honestly, repent, receive God’s forgiveness, and allow Him to change us.</p>
+  <p>The Church needs both. We should be a people where the broken can come without being humiliated and where transformation is still expected; where people encounter mercy and hear truth; where sinners can come to Christ and disciples are taught to become more like Him.</p>
+  <p>Jesus was full of grace and truth. If we want to represent Him well, we cannot abandon either one. Let grace shape the way you carry truth, and let truth give direction to the grace you extend. Love deeply. Speak truth faithfully. Correct gently. Forgive freely. Hold biblical convictions without losing compassion.</p>
+  <div class="prayer-box">
+    <h3>Prayer</h3>
+    <p>Father, thank You for Your grace that saved me when I could not save myself. Teach me not to misuse grace as an excuse to remain unchanged. Help me walk in both grace and truth. Keep me from compromising Your Word, but also keep me from becoming harsh or self-righteous. Give me wisdom to speak truth with love, correct with gentleness, receive correction with humility, and extend to others the grace You have shown me. In Jesus’ name, amen.</p>
+  </div>
+  <p class="signature">— Anita Singh</p>
+</article>
+
+<div class="post-nav">
+  <a href="blog13.html" class="btn btn-outline">← Previous</a>
+  <a href="../blog.html" class="btn btn-navy">Back to Blog</a>
+</div>
+
+<footer>
+  <div class="container">
+    <img src="../kgimc-logo.png" alt="KGIMC" class="footer-logo" />
+    <h4>Kingdom Guardian International Miracle Centre</h4>
+    <p class="verse">I have given you authority to trample on snakes and scorpions and to overcome all the power of the enemy; nothing will harm you. — Luke 10:19</p>
+    <div class="footer-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#schedule">Schedule</a>
+      <a href="../index.html#team">Team</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../index.html#books">Books</a>
+      <a href="../index.html#book-now">Book Now</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.youtube.com/@KGIMiracleCentre-x7v" target="_blank" title="YouTube">▶</a>
+      <a href="https://www.instagram.com/kgimiraclecentre" target="_blank" title="Instagram">Ⓘ</a>
+      <a href="mailto:kgimcmediateam@gmail.com" title="Email">✉</a>
+    </div>
+    <div class="copyright">© <span id="year"></span> Kingdom Guardian International Miracle Centre. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
+});
+</script>
+</body>
+</html>
