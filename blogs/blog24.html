@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>When Leaders Refuse to Be Corrected | KGIMC Blog</title>
+<meta name="description" content="Correction is not rejection. Saul, David, Rehoboam, Diotrephes and Peter on accountability, boundaries and restoration in leadership. By Anita Singh." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0b1e3f; --navy-deep:#061229;
+  --gold:#c9a24b; --gold-light:#e6c67a;
+  --cream:#faf6ee; --ink:#1a1a1a; --muted:#5c5c5c;
+  --line:rgba(201,162,75,0.35);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.8;font-weight:300;font-size:17px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;letter-spacing:.3px;line-height:1.25;color:var(--navy)}
+h1{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:16px}
+h2{font-size:1.8rem;margin:36px 0 14px}
+h3{font-size:1.35rem;margin:28px 0 10px}
+p{margin-bottom:18px;color:#2b2b2b}
+a{color:var(--gold);text-decoration:none;transition:.3s}
+a:hover{color:var(--navy)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;padding:12px 30px;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;border:1px solid var(--gold);border-radius:2px;cursor:pointer;transition:.3s;text-align:center}
+.btn-navy{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+.btn-navy:hover{background:transparent;color:var(--navy)}
+.btn-outline{background:transparent;color:var(--gold)}
+.btn-outline:hover{background:var(--gold);color:var(--navy)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,30,63,0.95);backdrop-filter:blur(10px);padding:14px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-logo{display:flex;align-items:center;gap:12px;color:var(--cream);font-family:var(--serif);font-size:1.1rem;flex-shrink:0}
+.nav-logo img{width:42px;height:42px;border-radius:50%}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center}
+.nav-links a{color:var(--cream);font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:400}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-links .book-btn{background:var(--gold);color:var(--navy)!important;padding:10px 20px;border-radius:2px;font-weight:500}
+.menu-toggle{display:none;background:none;border:none;color:var(--cream);font-size:1.5rem;cursor:pointer}
+
+.post-header{background:radial-gradient(ellipse at 50% 0%,#2a4778 0%,#1a3260 40%,#0b1e3f 100%);color:var(--cream);padding:150px 24px 70px;text-align:center;position:relative;overflow:hidden}
+.post-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 20%,rgba(201,162,75,0.25),transparent 70%);pointer-events:none}
+.post-header>*{position:relative;z-index:1}
+.post-header .cat{font-family:var(--sans);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px;display:inline-block;padding:6px 14px;border:1px solid var(--gold);border-radius:20px}
+.post-header h1{color:var(--cream)}
+.post-header .subtitle{font-family:var(--serif);font-style:italic;color:var(--gold-light);font-size:1.25rem;margin-top:6px}
+.post-header .meta{color:rgba(250,246,238,0.75);font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-top:16px}
+.post-header .verse{font-family:var(--serif);font-style:italic;color:var(--gold-light);font-size:1.15rem;margin-top:24px;max-width:700px;margin-left:auto;margin-right:auto}
+
+article.post{max-width:780px;margin:0 auto;padding:70px 24px 40px}
+article.post .scripture{background:#fff;border-left:4px solid var(--gold);padding:16px 22px;margin:20px 0 26px;font-family:var(--serif);font-style:italic;color:var(--navy);font-size:1.1rem;border-radius:2px}
+article.post .scripture .ref{display:block;font-size:.75rem;letter-spacing:2px;color:var(--gold);font-style:normal;text-transform:uppercase;margin-top:8px}
+article.post .lead{font-family:var(--serif);font-size:1.35rem;color:var(--navy);font-style:italic;line-height:1.5;margin-bottom:28px}
+article.post .prayer-box{background:linear-gradient(135deg,var(--navy),var(--navy-deep));color:var(--cream);padding:30px 32px;border-radius:6px;margin:36px 0}
+article.post .prayer-box h3{color:var(--gold-light);margin-top:0;margin-bottom:12px;font-family:var(--serif);font-size:1.5rem}
+article.post .prayer-box p{color:rgba(250,246,238,0.9)}
+article.post .declaration-box{background:#fff;border:1px solid var(--gold);padding:24px 28px;border-radius:4px;margin:30px 0}
+article.post .declaration-box .label{font-family:var(--sans);font-size:.72rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:500;margin-bottom:12px;text-align:center}
+article.post .declaration-box p{font-family:var(--serif);font-style:italic;color:var(--navy);font-size:1.08rem;line-height:1.65;margin-bottom:14px}
+article.post .signature{margin-top:40px;text-align:right;font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.2rem}
+
+.post-nav{max-width:780px;margin:0 auto;padding:30px 24px 80px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:20px}
+
+footer{background:var(--navy-deep);color:rgba(250,246,238,0.6);padding:60px 0 30px;text-align:center}
+.footer-logo{width:80px;height:80px;margin:0 auto 20px;border-radius:50%}
+footer h4{font-family:var(--serif);color:var(--gold);font-size:1.4rem;margin-bottom:8px}
+footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:24px 0;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase}
+.footer-links a{color:rgba(250,246,238,0.75)}
+.footer-links a:hover{color:var(--gold)}
+.socials{display:flex;gap:16px;justify-content:center;margin:16px 0}
+.socials a{width:40px;height:40px;border:1px solid var(--gold);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem}
+.socials a:hover{background:var(--gold);color:var(--navy)}
+.copyright{font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;margin-top:20px}
+
+@media (max-width:768px){
+  .nav-links{position:fixed;top:70px;left:0;right:0;background:var(--navy-deep);flex-direction:column;padding:24px;display:none;gap:16px;border-top:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  article.post{padding:50px 20px 30px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../kgimc-logo.png" alt="KGIMC" /><span>KGIMC</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#schedule">Schedule</a></li>
+      <li><a href="../index.html#team">Team</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../index.html#books">Books</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a href="../index.html#book-now" class="book-btn">Book Now</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<header class="post-header">
+  <div class="cat">CHRISTIAN TEACHING • LEADERSHIP &amp; ACCOUNTABILITY</div>
+  <h1>When Leaders Refuse to Be Corrected</h1>
+  <div class="meta">By Anita Singh</div>
+</header>
+
+<article class="post">
+  <p class="lead">One of the greatest dangers in leadership is reaching a place where a person believes they are beyond correction. They may have a powerful anointing, spiritual gifts, years of ministry experience, a successful business, or a position of influence. Yet none of these things makes anyone immune to mistakes, pride, poor judgment, or the need for accountability.</p>
+  <p>Sometimes leaders surround themselves with people who constantly agree with them. Others may be afraid to speak because they do not want to lose their position, damage a relationship, or be accused of dishonoring God&#x27;s anointed. Over time, a leader may begin to mistake agreement for loyalty and correction for rebellion.</p>
+  <p>But God never intended spiritual authority to place anyone above His Word, godly wisdom, or accountability.</p>
+  <p>A leader who refuses correction is not demonstrating spiritual strength. They may be revealing an area of their character that still needs to mature.</p>
+  <h2>Correction Is Not Rejection</h2>
+  <p>Proverbs 12:1 (NKJV) says, &quot;Whoever loves instruction loves knowledge, But he who hates correction is stupid.&quot;</p>
+  <p>Scripture speaks strongly about the importance of being teachable. Correction is not always comfortable, especially when it exposes something we would rather not acknowledge. Yet a willingness to receive correction is essential for spiritual growth.</p>
+  <p>Some leaders interpret every disagreement as disrespect and every challenge as an attack against their authority. However, correction offered with truth, humility, and love can be an expression of care rather than opposition.</p>
+  <p>Proverbs 27:6 reminds us that faithful are the wounds of a friend. Sometimes the person who loves us enough to speak an uncomfortable truth is more valuable than those who continually tell us what we want to hear.</p>
+  <p>Not everyone who corrects you is against you. Sometimes they are trying to protect you from something you cannot see.</p>
+  <h2>King Saul: When Pride and Reputation Become More Important Than Obedience</h2>
+  <p>In 1 Samuel 15, God instructed Saul concerning the Amalekites, but Saul did not fully obey. When the prophet Samuel confronted him, Saul initially defended his actions and shifted responsibility toward the people.</p>
+  <p>Although Saul later acknowledged his sin, he also expressed concern about being honored before the elders of Israel (1 Samuel 15:24–30). His response revealed the struggle between obedience to God and maintaining his public image.</p>
+  <p>Samuel declared that the Lord had rejected Saul as king because Saul had rejected the word of the Lord. Saul continued occupying the throne for a time, but God&#x27;s judgment against his kingship had been pronounced.</p>
+  <p>Saul&#x27;s circumstances involved a specific divine judgment, not an automatic outcome for every leader who resists correction. Nevertheless, his story warns us about the danger of making excuses, blaming others, and protecting our reputation instead of taking responsibility.</p>
+  <p>When preserving your position becomes more important than obeying God, your leadership is already in danger.</p>
+  <h2>King David: A Leader Who Acknowledged His Sin</h2>
+  <p>David was also a king, and he committed serious sin. In 2 Samuel 11–12, David abused his power in his actions involving Bathsheba and arranged for Uriah&#x27;s death. The prophet Nathan confronted him through a parable that exposed his wrongdoing.</p>
+  <p>David responded in 2 Samuel 12:13 (NKJV), &quot;I have sinned against the LORD.&quot;</p>
+  <p>David&#x27;s confession did not erase the harm he had caused or remove the consequences of his actions. Nevertheless, his response demonstrates the importance of acknowledging wrongdoing rather than continuing to justify it.</p>
+  <p>Psalm 51 reveals David&#x27;s repentance and desire for a clean heart.</p>
+  <p>Spiritual maturity is not proven by never making mistakes. It is demonstrated, in part, by how we respond when our wrongdoing is brought into the light.</p>
+  <h2>Rehoboam: When Leaders Only Listen to Those Who Agree</h2>
+  <p>In 1 Kings 12:1–19, King Rehoboam faced a request from the people to lighten their burdens. He consulted older advisers who encouraged him to respond with kindness and serve the people.</p>
+  <p>Instead, he rejected their counsel and followed the advice of younger men who encouraged him to increase the people&#x27;s burdens and respond harshly. His decision contributed to the division of the kingdom.</p>
+  <p>Rehoboam&#x27;s story illustrates the danger of surrounding ourselves only with voices that reinforce our pride, preferences, or desire for control.</p>
+  <p>If you only listen to people who agree with you, you may eventually lose the wisdom of those who are willing to tell you the truth.</p>
+  <h2>Diotrephes: When Leaders Love Position More Than People</h2>
+  <p>In 3 John 9–10, the apostle John describes Diotrephes as someone who loved to have preeminence among the believers. He refused to receive John and his fellow workers, spoke maliciously against them, and even put people out of the church who wanted to welcome them.</p>
+  <p>His behavior demonstrates how a desire for control and prominence can damage the very people a leader is supposed to serve.</p>
+  <p>John did not ignore the problem. He stated his intention to address Diotrephes&#x27; actions.</p>
+  <p>When a leader becomes more concerned with maintaining control than serving people, leadership can become a source of harm instead of blessing.</p>
+  <h2>Peter: Even Apostles Were Not Beyond Correction</h2>
+  <p>In Galatians 2:11–14, Paul confronted Peter because Peter&#x27;s behavior toward Gentile believers had become inconsistent with the truth of the gospel. Peter had previously eaten with Gentiles but withdrew when certain people arrived, fearing their reaction.</p>
+  <p>Paul confronted Peter publicly because his conduct was public and was influencing others, including Barnabas. Scripture does not record Peter&#x27;s immediate response to this confrontation, but it clearly demonstrates that even prominent apostles were not beyond correction.</p>
+  <p>Spiritual position does not place anyone above the truth of God&#x27;s Word.</p>
+  <h2>When Leaders Use Spiritual Authority to Silence Correction</h2>
+  <p>One of the most troubling situations in ministry occurs when leaders use their spiritual position to discourage legitimate questions, accountability, or concerns about harmful behavior.</p>
+  <p>Sometimes people are told that questioning a leader means questioning God, that expressing concerns is rebellion, or that speaking about wrongdoing is dishonoring the anointing.</p>
+  <p>But biblical submission does not mean unquestioning obedience to human authority. Leaders are accountable to God, His Word, and appropriate standards of integrity and conduct.</p>
+  <p>In 1 Peter 5:2–3, elders are instructed to shepherd God&#x27;s flock willingly, not as those who dominate the people entrusted to them, but as examples to the flock.</p>
+  <p>Godly authority is not permission to intimidate, manipulate, control, or avoid responsibility.</p>
+  <h2>The Difference Between Correction and Rebellion</h2>
+  <p>Not every criticism is wise, truthful, or motivated by love. Some accusations may be unfair, and leaders need discernment when evaluating concerns. But the possibility of unfair criticism does not justify dismissing every challenge.</p>
+  <p>Correction seeks to address what is wrong and promote truth, accountability, and restoration. Rebellion should not be used as a label for anyone who respectfully disagrees, raises legitimate concerns, or reports wrongdoing.</p>
+  <p>First Timothy 5:19–20 provides instructions concerning accusations against elders, including the importance of witnesses and appropriate rebuke when sin is established. These principles call for fairness and accountability, not secrecy or immunity from investigation.</p>
+  <p>When serious misconduct or abuse is alleged, protecting people and following appropriate safeguarding and legal procedures must take priority over protecting a leader&#x27;s reputation.</p>
+  <h2>When Leaders Refuse Correction, Boundaries Become Necessary</h2>
+  <p>Through my own experiences of having to correct leaders, I have learned that not everyone responds the same way. Some receive correction with humility, examine their hearts, acknowledge where they have gone wrong, and make necessary changes. Others become defensive, reject counsel, or simply refuse to change.</p>
+  <p>One thing I have learned is that I can correct someone, advise them, and pray for them, but I cannot make their decisions for them. They must choose whether to receive the truth and change.</p>
+  <p>Proverbs 15:32 (NKJV) says, &quot;He who disdains instruction despises his own soul, But he who heeds rebuke gets understanding.&quot;</p>
+  <p>When a leader repeatedly refuses correction, there may come a time when we must establish healthy boundaries. This may mean reducing our involvement in their life, stepping back from certain ministry responsibilities, limiting our participation in their activities, or declining to continue supporting decisions that we believe are wrong.</p>
+  <p>We must recognize the difference between establishing our own boundaries and exercising formal authority over someone else&#x27;s ministry position. We can decide the level of involvement we are willing to maintain, but removing someone from leadership requires appropriate authority, fair procedures, and a legitimate basis for disciplinary action.</p>
+  <p>These boundaries should not come from bitterness, revenge, or a desire to punish someone. They should come from wisdom, integrity, and a recognition that we cannot take responsibility for another person&#x27;s choices.</p>
+  <p>You can love someone, pray for them, and desire their restoration without continuing to participate in behavior that is unhealthy, harmful, or contrary to God&#x27;s Word.</p>
+  <h2>Even Jesus Allowed People to Make Their Own Choices</h2>
+  <p>In Mark 10:17–22, a wealthy young man came to Jesus asking about eternal life. Jesus lovingly confronted the area of his life that stood in the way of following Him wholeheartedly. But the young man went away sorrowful because he was unwilling to release his possessions.</p>
+  <p>Jesus did not change His instruction to make the young man comfortable, nor did He force him to obey. The man had to make his own decision.</p>
+  <p>This teaches us that even when truth is spoken with love, the person receiving it must decide whether to respond.</p>
+  <p>If Jesus did not force people to follow His instruction, we must recognize that we cannot force people to receive ours.</p>
+  <h2>When Leaders Refuse Correction, There May Be Consequences</h2>
+  <p>When a leader repeatedly refuses correction, there may come a time when boundaries and accountability must be established. Depending on the seriousness of the situation, this may involve reducing their ministry responsibilities, limiting their involvement, suspending certain privileges, or even removing them from leadership positions, ministry roles, and assignments.</p>
+  <p>Leadership is a responsibility, not an entitlement. Just because someone has been gifted, anointed, appointed, or entrusted with authority does not mean they should remain in a position when their conduct is harming others or they are unwilling to address serious wrongdoing.</p>
+  <p>First Timothy 3:1–7 and Titus 1:5–9 remind us that spiritual leadership requires godly character, self-control, faithfulness, and sound doctrine. Gifting alone is not sufficient qualification for leadership.</p>
+  <p>A person&#x27;s gift may qualify them to serve in certain ways, but their character and conduct must also be considered when determining whether they should continue carrying leadership responsibilities.</p>
+  <p>Any decision to remove someone from a position should be made through fair, appropriate oversight, with evidence, accountability, and consideration for the safety and well-being of those affected. Serious abuse or misconduct may require immediate protective action and reporting to the proper authorities rather than waiting for repeated correction.</p>
+  <p>The purpose of correction and appropriate discipline should never be personal revenge. It should be to uphold truth, protect people, encourage genuine repentance, and make restoration possible where appropriate.</p>
+  <h2>Forgiveness Does Not Automatically Mean Restoration to Leadership</h2>
+  <p>A leader may repent sincerely and be forgiven, but that does not automatically mean they are ready or qualified to resume leadership responsibilities.</p>
+  <p>Restoration may involve demonstrating changed behavior, accepting accountability, repairing harm where possible, and rebuilding trust over time.</p>
+  <p>In some situations, a person may be restored to Christian fellowship but never return to the same position of authority.</p>
+  <p>Forgiveness is not the same as reinstatement, and repentance does not eliminate every consequence.</p>
+  <p>We can forgive someone, pray for their restoration, and release them into God&#x27;s hands without allowing them to continue in a position of authority for which their present conduct has made them unfit.</p>
+  <h2>Practical Guidance for Those Correcting Leaders</h2>
+  <p>1. Pray and examine your motives. Before approaching a leader, ask God to help you speak from humility, truth, and love rather than anger or personal offense (Galatians 6:1).</p>
+  <p>2. Speak truth respectfully and clearly. Address specific concerns using facts rather than assumptions or accusations (Ephesians 4:15).</p>
+  <p>3. Allow an appropriate opportunity to respond. Listen carefully and consider the full situation, except where immediate safety measures are required (Proverbs 18:13).</p>
+  <p>4. Recognize when repeated arguments are unproductive. If someone continually refuses to listen, establish appropriate boundaries rather than trying to force change (2 Timothy 2:24–25).</p>
+  <p>5. Use established accountability processes. When serious misconduct or leadership disqualification is involved, seek appropriate oversight and follow fair procedures (1 Timothy 5:19–20).</p>
+  <p>6. Leave room for genuine repentance. Remain open to changed behavior while recognizing that forgiveness does not automatically restore trust or authority (Proverbs 28:13).</p>
+  <h2>Practical Ways Leaders Can Remain Teachable</h2>
+  <p>1. Invite honest feedback. Create opportunities for people to raise concerns without fear of punishment or retaliation (Proverbs 15:22).</p>
+  <p>2. Listen before defending yourself. Consider whether there is truth in what is being said before responding (James 1:19).</p>
+  <p>3. Maintain genuine accountability. Have mature, trustworthy people who can challenge your decisions and conduct, not merely affirm them (Proverbs 27:17).</p>
+  <p>4. Acknowledge wrongdoing without excuses. Take responsibility, make appropriate restitution where possible, and accept necessary consequences (Proverbs 28:13).</p>
+  <p>5. Separate your identity from your position. A title, ministry, or leadership role does not determine your worth or make you infallible (Romans 12:3).</p>
+  <p>6. Welcome wise counsel from different perspectives. Do not surround yourself exclusively with people who tell you what you want to hear (Proverbs 11:14).</p>
+  <p>7. Lead by example, not intimidation. Exercise authority with humility, fairness, and a servant&#x27;s heart (1 Peter 5:2–3).</p>
+  <h2>Final Reflection: The Higher You Lead, the More Humility You Need</h2>
+  <p>Leadership is a responsibility entrusted to us, not a position that places us beyond correction. Saul teaches us the danger of protecting our reputation instead of obeying God. David reminds us that genuine repentance requires acknowledging wrongdoing. Rehoboam demonstrates the consequences of rejecting wise counsel, and Peter&#x27;s confrontation with Paul shows that even prominent spiritual leaders are accountable.</p>
+  <p>Through my own experiences, I have learned that we can speak truth, offer correction, pray, and encourage someone to change, but we cannot make that decision for them. Every leader must choose whether to receive correction and walk in obedience.</p>
+  <p>When correction is repeatedly rejected, wisdom may require us to establish boundaries, reduce our involvement, or step away. Where serious misconduct affects ministry leadership, those entrusted with proper oversight may also need to restrict responsibilities or remove someone from a position to protect others and uphold biblical standards.</p>
+  <p>We can forgive someone without enabling their behavior. We can pray for their restoration without guaranteeing their reinstatement. And we can entrust them to God without carrying responsibility for choices that belong to them.</p>
+  <p>A leader&#x27;s title does not place them above correction, and their gifting does not exempt them from accountability.</p>
+  <p>The higher the responsibility, the greater the need for humility, integrity, and a teachable heart.</p>
+  <div class="declaration-box">
+    <div class="label">A Question to Consider</div>
+    <p>When someone challenges your decisions or brings a concern to your attention, do you respond with humility and a willingness to listen, or do you immediately see that person as a threat to your authority? And when someone repeatedly refuses correction, are you willing to establish the boundaries necessary to protect your integrity and well-being?</p>
+  </div>
+  <div class="prayer-box">
+    <h3>Prayer</h3>
+    <p>Heavenly Father, thank You for every responsibility and opportunity to lead that You entrust to Your children. Guard our hearts against pride, insecurity, and the desire to protect our reputation at the expense of truth. Give us humility to receive correction, wisdom to recognize godly counsel, and courage to acknowledge our mistakes. Help us never to use authority to control, intimidate, or silence others. Teach us to lead with integrity, compassion, accountability, and the character of Jesus Christ. Give us discernment to know when to speak, when to step back, and when to establish healthy boundaries. Help us release those who refuse correction into Your hands without bitterness, while remaining faithful to truth and protecting those entrusted to our care. In Jesus&#x27; name, Amen.</p>
+  </div>
+  <p class="signature">— Anita Singh</p>
+</article>
+
+<div class="post-nav">
+  <a href="blog23.html" class="btn btn-outline">← Previous</a>
+  <a href="../blog.html" class="btn btn-navy">Back to Blog</a>
+</div>
+
+<footer>
+  <div class="container">
+    <img src="../kgimc-logo.png" alt="KGIMC" class="footer-logo" />
+    <h4>Kingdom Guardian International Miracle Centre</h4>
+    <p class="verse">I have given you authority to trample on snakes and scorpions and to overcome all the power of the enemy; nothing will harm you. — Luke 10:19</p>
+    <div class="footer-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#schedule">Schedule</a>
+      <a href="../index.html#team">Team</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../index.html#books">Books</a>
+      <a href="../index.html#book-now">Book Now</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.youtube.com/@KGIMiracleCentre-x7v" target="_blank" title="YouTube">▶</a>
+      <a href="https://www.instagram.com/kgimiraclecentre" target="_blank" title="Instagram">Ⓘ</a>
+      <a href="mailto:kgimcmediateam@gmail.com" title="Email">✉</a>
+    </div>
+    <div class="copyright">© <span id="year"></span> Kingdom Guardian International Miracle Centre. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
+});
+</script>
+</body>
+</html>
