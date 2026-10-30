@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Podcast | KGI Miracle Centre — Kingdom Guardian International</title>
+<meta name="description" content="The KGIMC Podcast — biblical teaching, prayer, healing, restoration and spiritual growth from Kingdom Guardian International Miracle Centre." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0b1e3f; --navy-deep:#061229;
+  --gold:#c9a24b; --gold-light:#e6c67a;
+  --cream:#faf6ee; --ink:#1a1a1a; --muted:#5c5c5c;
+  --line:rgba(201,162,75,0.35);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.7;font-weight:300;font-size:16px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;letter-spacing:.5px;line-height:1.2;color:var(--navy)}
+h1{font-size:clamp(2.5rem,6vw,4.5rem)}
+h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:.5rem}
+h3{font-size:1.5rem}
+p{margin-bottom:1rem}
+a{color:var(--gold);text-decoration:none;transition:.3s}
+a:hover{color:var(--navy)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;padding:14px 36px;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;border:1px solid var(--gold);border-radius:2px;cursor:pointer;transition:.3s;text-align:center}
+.btn-navy{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+.btn-navy:hover{background:transparent;color:var(--navy)}
+
+/* NAV (shared) */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,30,63,0.95);backdrop-filter:blur(10px);padding:14px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-logo{display:flex;align-items:center;gap:12px;color:var(--cream);font-family:var(--serif);font-size:1.1rem;flex-shrink:0}
+.nav-logo img{width:42px;height:42px;border-radius:50%}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center}
+.nav-links a{color:var(--cream);font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:400}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-links .book-btn{background:var(--gold);color:var(--navy)!important;padding:10px 20px;border-radius:2px;font-weight:500}
+.menu-toggle{display:none;background:none;border:none;color:var(--cream);font-size:1.5rem;cursor:pointer}
+
+/* PAGE HEADER */
+.page-header{background:radial-gradient(ellipse at 50% 0%,#2a4778 0%,#1a3260 40%,#0b1e3f 100%);color:var(--cream);padding:150px 24px 80px;text-align:center;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 700px 350px at 50% 15%,rgba(201,162,75,0.25),transparent 70%);pointer-events:none}
+.page-header>*{position:relative;z-index:1}
+.page-header .eyebrow{font-family:var(--sans);font-size:.75rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px;display:block}
+.page-header h1{color:var(--cream);margin-bottom:16px}
+.page-header p{color:rgba(250,246,238,0.8);max-width:700px;margin:0 auto;font-size:1.05rem;font-style:italic;font-family:var(--serif)}
+
+/* CATEGORIES */
+.categories{padding:60px 0 20px;background:var(--cream)}
+.cat-filter{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.cat-btn{background:#fff;border:1px solid var(--line);color:var(--navy);padding:9px 18px;border-radius:20px;cursor:pointer;font-family:var(--sans);font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;transition:.25s;font-weight:500}
+.cat-btn:hover{border-color:var(--gold);color:var(--gold)}
+.cat-btn.active{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+.categories-title{text-align:center}
+.categories-title .eyebrow{font-family:var(--sans);font-size:.75rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px;display:block}
+.categories-title h2{position:relative;display:inline-block;padding-bottom:20px}
+.categories-title h2::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:var(--gold)}
+
+/* POSTS */
+.posts{padding:40px 0 100px;background:var(--cream)}
+.posts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}
+.post-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);padding:32px 28px;border-radius:4px;transition:.3s;display:flex;flex-direction:column}
+.post-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(11,30,63,0.1)}
+.post-cat{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px}
+.post-card h3{font-size:1.4rem;margin-bottom:12px;line-height:1.3}
+.post-card h3 a{color:var(--navy)}
+.post-card h3 a:hover{color:var(--gold)}
+.post-excerpt{color:var(--muted);font-size:.95rem;flex-grow:1;margin-bottom:20px}
+.post-meta{font-size:.75rem;color:var(--muted);letter-spacing:1px;padding-top:14px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:center}
+.post-meta .read-more{color:var(--gold);font-weight:500;text-transform:uppercase;font-size:.72rem;letter-spacing:1.5px}
+.empty-note{grid-column:1/-1;text-align:center;padding:40px 20px;color:var(--muted);font-style:italic;background:#fff;border:1px dashed var(--line);border-radius:4px}
+
+/* COMING SOON SECTION */
+
+/* FOOTER */
+footer{background:var(--navy-deep);color:rgba(250,246,238,0.6);padding:60px 0 30px;text-align:center}
+.footer-logo{width:80px;height:80px;margin:0 auto 20px;border-radius:50%}
+footer h4{font-family:var(--serif);color:var(--gold);font-size:1.4rem;margin-bottom:8px}
+footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:24px 0;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase}
+.footer-links a{color:rgba(250,246,238,0.7)}
+.footer-links a:hover{color:var(--gold)}
+.socials{display:flex;gap:16px;justify-content:center;margin:20px 0}
+.socials a{width:40px;height:40px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.9rem}
+.socials a:hover{background:var(--gold);color:var(--navy)}
+.copyright{margin-top:30px;padding-top:20px;border-top:1px solid rgba(201,162,75,0.15);font-size:.8rem}
+
+@media(max-width:900px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px;gap:20px}
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+    .page-header{padding:120px 24px 60px}
+}
+@media(max-width:1180px){.nav-links{gap:16px}.nav-links a{font-size:.72rem;letter-spacing:1px}}
+
+/* ===== Podcast page ===== */
+.episodes{padding:70px 0 90px}
+.episodes .container{max-width:860px}
+.episode{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:4px;padding:36px 36px 30px;margin-bottom:36px}
+.ep-label{display:inline-block;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:5px 12px;border-radius:20px;margin-bottom:14px;font-weight:500}
+.episode h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:22px;line-height:1.25}
+.ep-player iframe{display:block;width:100%;border:0;border-radius:12px}
+.ep-actions{margin:22px 0 6px}
+.ep-desc{margin-top:26px;border-top:1px solid var(--line);padding-top:24px}
+.ep-desc h3{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-family:var(--sans);font-weight:600;margin-bottom:14px}
+.ep-desc p{color:#2b2b2b;margin-bottom:14px}
+.ep-desc ul{list-style:none;margin:6px 0 18px;padding:0}
+.ep-desc li{position:relative;padding:6px 0 6px 24px;color:var(--navy);border-bottom:1px dashed rgba(201,162,75,0.25)}
+.ep-desc li::before{content:'✦';color:var(--gold);position:absolute;left:0;top:6px}
+.ep-desc blockquote{background:var(--cream);border-left:4px solid var(--gold);padding:16px 20px;margin:20px 0;font-family:var(--serif);font-style:italic;color:var(--navy);font-size:1.12rem;line-height:1.55}
+.ep-sign{margin-top:22px;text-align:center;color:var(--muted);font-size:.85rem;line-height:1.7}
+.ep-sign strong{display:block;font-family:var(--serif);color:var(--navy);font-size:1.15rem;font-weight:500}
+@media(max-width:600px){.episode{padding:26px 20px 22px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html#top" class="nav-logo">
+      <img src="kgimc-logo.png" alt="KGIMC" />
+      <span>KGI Miracle Centre</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#top">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#schedule">Schedule</a></li>
+      <li><a href="presence.html">Our Presence</a></li>
+      <li><a href="index.html#team">Team</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="podcast.html">Podcast</a></li>
+      <li><a href="index.html#books">Books</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#book-now" class="book-btn">Book Now</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <span class="eyebrow">KGIMC Podcast</span>
+  <h1>Listen &amp; Grow</h1>
+  <p>Biblical Teaching • Prayer • Healing • Restoration • Spiritual Growth</p>
+</header>
+
+<section class="episodes">
+  <div class="container">
+
+    <!-- =====================================================================
+         TO ADD A NEW EPISODE: copy one whole <article class="episode"> ... </article>
+         block, paste it ABOVE the newest episode (newest goes first), then change:
+           1. the label   (Season 1 · Episode 2)
+           2. the title
+           3. the Spotify episode ID in BOTH links (the code after /episode/)
+           4. the description text
+         ===================================================================== -->
+
+    <article class="episode" id="s1e1">
+      <span class="ep-label">Season 1 · Episode 1</span>
+      <h2>WHEN GOD REORDERS YOUR RELATIONSHIPS — PART 1</h2>
+      <div class="ep-player">
+        <iframe src="https://open.spotify.com/embed/episode/3ResbJs3q7UwwvGiFcIjZe" height="232" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="When God Reorders Your Relationships — Part 1"></iframe>
+      </div>
+      <div class="ep-actions">
+        <a href="https://open.spotify.com/episode/3ResbJs3q7UwwvGiFcIjZe" target="_blank" rel="noopener" class="btn btn-navy">Listen on Spotify</a>
+      </div>
+      <div class="ep-desc">
+        <h3>Episode Description</h3>
+        <p>Welcome to Part 1 of When God Reorders Your Relationships, an 8-part biblical teaching series from Kingdom Guardian International Miracle Centre (KGIMC).</p>
+        <p>Have you ever experienced a relationship changing and wondered, “God, what are You doing?” Sometimes people enter our lives for a particular season. Sometimes relationships change because God is doing something new in us. Sometimes He brings restoration, healing, reconciliation, or a fresh beginning. At other times, He may lead us to establish healthy boundaries or release a relationship that is no longer aligned with the direction He is taking us.</p>
+        <p>These seasons can be difficult. We may experience disappointment, confusion, rejection, loneliness, or questions about why things are changing. But when we belong to God, we can bring those questions to Him and ask for wisdom, discernment, healing, and direction.</p>
+        <p>In this first teaching, we begin examining what it can mean when God starts to reorder the relationships around us. Rather than allowing emotions, fear, familiarity, or past experiences to determine our decisions, we are encouraged to seek God and allow His Word to guide us.</p>
+        <p>Throughout this 8-part series, we will explore biblical relationships, spiritual discernment, healing, forgiveness, reconciliation, restoration, godly boundaries, obedience, spiritual growth, and trusting God during seasons of change.</p>
+        <p>We will also consider important questions:</p>
+        <ul>
+          <li>How do I know when God is changing a relationship?</li>
+          <li>How do I respond when someone I expected to remain in my life is no longer walking in the same direction?</li>
+          <li>How can I forgive without returning to unhealthy patterns?</li>
+          <li>How do I establish godly boundaries without becoming bitter or hard-hearted?</li>
+          <li>How do I recognize the difference between God&#x27;s leading and my own emotions?</li>
+          <li>When is God bringing restoration, and when is He asking me to release something?</li>
+        </ul>
+        <p>Not every relationship will look the same throughout every season of our lives. Some relationships help us grow. Some teach us valuable lessons. Some require healing and forgiveness. Some may be restored. And some may require a new boundary or a season of separation.</p>
+        <p>The goal is not to make decisions based on hurt, anger, fear, or disappointment. The goal is to seek God and allow Him to give us wisdom to understand our relationships and respond according to His will.</p>
+        <blockquote>Proverbs 3:5–6 reminds us: “Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.”</blockquote>
+        <p>If you are experiencing changes in your relationships, asking God for clarity, walking through a season of healing, or learning how to establish healthy and godly boundaries, we pray that this series will encourage you.</p>
+        <p>Bring your relationships before God. Ask Him for wisdom. Ask Him for discernment. Ask Him for healing. Ask Him to reveal what you need to see and give you the courage to obey His direction.</p>
+        <p>When God reorders your relationships, trust the One who knows exactly where He is leading you.</p>
+        <p>This teaching is presented by Kingdom Guardian International Miracle Centre (KGIMC).</p>
+        <p>If this episode encourages you, share it with someone who may need this message. Continue with all 8 parts of the series as we explore what it means to trust God when He begins to reorder the relationships in our lives.</p>
+        <div class="ep-sign"><strong>Kingdom Guardian International Miracle Centre</strong>Biblical Teaching • Prayer • Healing • Restoration • Spiritual Growth<br/>Website: kgimiraclecentre.org</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <img src="kgimc-logo.png" alt="KGIMC" class="footer-logo" />
+    <h4>Kingdom Guardian International Miracle Centre</h4>
+    <p class="verse">I have given you authority to trample on snakes and scorpions and to overcome all the power of the enemy; nothing will harm you. — Luke 10:19</p>
+    <div class="footer-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#schedule">Schedule</a>
+      <a href="presence.html">Our Presence</a>
+      <a href="index.html#team">Team</a>
+      <a href="blog.html">Blog</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="index.html#books">Books</a>
+      <a href="index.html#book-now">Book Now</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.youtube.com/@KGIMiracleCentre-x7v" target="_blank" title="YouTube">▶</a>
+      <a href="https://www.instagram.com/kgimiraclecentre" target="_blank" title="Instagram">Ⓘ</a>
+      <a href="mailto:kgimcmediateam@gmail.com" title="Email">✉</a>
+    </div>
+    <div class="copyright">© <span id="year"></span> Kingdom Guardian International Miracle Centre. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
+});
+
+</script>
+</body>
+</html>
