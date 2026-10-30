@@ -356,6 +356,23 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
   .day-card h3{min-height:0}
   .presence-btn{margin-left:0}
 }
+
+/* ===== v13: Podcast section + book cover fallback ===== */
+.book-cover.no-cover{align-items:center;justify-content:center;padding:24px;text-align:center}
+.book-cover.no-cover::after{content:attr(data-title);font-family:var(--serif);color:var(--gold-light);font-size:1.4rem;line-height:1.3}
+.podcast-home{background:linear-gradient(135deg,var(--navy-deep),var(--navy));color:var(--cream)}
+.podcast-home .section-title h2{color:var(--cream)}
+.podcast-home .section-title .eyebrow{color:var(--gold-light)}
+.podcast-feature{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:1000px;margin:0 auto}
+.podcast-ep{display:inline-block;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,162,75,0.45);padding:5px 12px;border-radius:20px;margin-bottom:16px}
+.podcast-text h3{color:var(--gold-light);font-size:1.6rem;margin-bottom:14px;line-height:1.3}
+.podcast-text p{color:rgba(250,246,238,0.85)}
+.podcast-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.podcast-home .btn-outline{color:var(--gold);border-color:var(--gold)}
+.podcast-home .btn-outline:hover{background:var(--gold);color:var(--navy)}
+.podcast-player iframe{display:block;border-radius:12px;border:0}
+@media(max-width:1250px){.nav-links{gap:13px}.nav-links a{font-size:.7rem;letter-spacing:.8px}.nav-links .book-btn{padding:9px 12px}}
+@media(max-width:900px){.podcast-feature{grid-template-columns:1fr;gap:28px;text-align:center}.podcast-actions{justify-content:center}}
 </style>
 </head>
 <body>
@@ -374,6 +391,7 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
       <li><a href="presence.html">Our Presence</a></li>
       <li><a href="#team">Team</a></li>
       <li><a href="blog.html">Blog</a></li>
+      <li><a href="podcast.html">Podcast</a></li>
       <li><a href="#books">Books</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#book-now" class="book-btn">Book Now</a></li>
@@ -653,6 +671,30 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
   </div>
 </section>
 
+<!-- ================= PODCAST ================= -->
+<section class="section podcast-home" id="podcast">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Listen &amp; Grow</span>
+      <h2>KGIMC Podcast</h2>
+    </div>
+    <div class="podcast-feature">
+      <div class="podcast-text">
+        <span class="podcast-ep">Season 1 · Episode 1 · Latest</span>
+        <h3>WHEN GOD REORDERS YOUR RELATIONSHIPS — PART 1</h3>
+        <p>Welcome to Part 1 of When God Reorders Your Relationships, an 8-part biblical teaching series from Kingdom Guardian International Miracle Centre (KGIMC).</p>
+        <div class="podcast-actions">
+          <a href="https://open.spotify.com/episode/3ResbJs3q7UwwvGiFcIjZe" target="_blank" rel="noopener" class="btn btn-primary">Listen on Spotify</a>
+          <a href="podcast.html" class="btn btn-outline">All Episodes</a>
+        </div>
+      </div>
+      <div class="podcast-player">
+        <iframe src="https://open.spotify.com/embed/episode/3ResbJs3q7UwwvGiFcIjZe" width="100%" height="232" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="KGIMC Podcast — When God Reorders Your Relationships, Part 1"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= BOOKS ================= -->
 <section class="section books" id="books">
   <div class="container">
@@ -662,6 +704,12 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
     </div>
     <div class="books-grid">
       <div class="book-card"><div class="book-cover"><img src="books/little-feet-big-dreams.jpg" alt="Little Feet, Big Dreams: Walking with God"/></div><div class="book-title">Little Feet, Big Dreams <span class="new-badge">New</span></div><div class="book-subtitle">Walking with God · Ages 5–10</div><div class="book-desc">A 30-day devotional and activity book to help children ages 5–10 grow in faith, build character, and discover how much they are loved and created with a purpose.</div><a href="https://www.amazon.ca/dp/1067743316" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card"><div class="book-cover" data-title="Ari and the Little Yellow Chair"><img src="books/ari-little-yellow-chair.jpg" alt="Ari and the Little Yellow Chair: The World Is Better Because You&#x27;re Here" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Ari and the Little Yellow Chair</div><div class="book-subtitle">The World Is Better Because You're Here</div><div class="book-desc"></div><a href="https://a.co/d/05RbXBB0" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card"><div class="book-cover" data-title="Little Heart, Big Courage!"><img src="books/little-heart-big-courage.jpg" alt="Little Heart, Big Courage!" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Little Heart, Big Courage!</div><div class="book-desc"></div><a href="https://a.co/d/03CiXJVN" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card"><div class="book-cover" data-title="Little One, Let Me Tell You Who You Are"><img src="books/little-one-who-you-are.jpg" alt="Little One, Let Me Tell You Who You Are: The Truth About You, From the God Who Made You" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Little One, Let Me Tell You Who You Are</div><div class="book-subtitle">The Truth About You, From the God Who Made You</div><div class="book-desc"></div><a href="https://a.co/d/03dxkWfr" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card"><div class="book-cover" data-title="Safe Enough to Be Myself"><img src="books/safe-enough-to-be-myself.jpg" alt="Safe Enough to Be Myself: When Love Feels Like Peace Instead of Performance" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Safe Enough to Be Myself</div><div class="book-subtitle">When Love Feels Like Peace Instead of Performance</div><div class="book-desc"></div><a href="https://a.co/d/0fag6vWt" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card"><div class="book-cover" data-title="Blessed to Multiply"><img src="books/blessed-to-multiply.jpg" alt="Blessed to Multiply: Biblical Decrees for Increase, Enlargement, Fruitfulness, Stewardship &amp; Kingdom Impact" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Blessed to Multiply</div><div class="book-subtitle">Biblical Decrees for Increase, Enlargement, Fruitfulness, Stewardship &amp; Kingdom Impact</div><div class="book-desc"></div><a href="https://a.co/d/0diriroE" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card"><div class="book-cover" data-title="The Woman Behind Everything"><img src="books/woman-behind-everything.jpg" alt="The Woman Behind Everything: Her Story. Her Strength. Her Legacy." onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">The Woman Behind Everything</div><div class="book-subtitle">Her Story. Her Strength. Her Legacy.</div><div class="book-desc"></div><a href="https://a.co/d/03MLYW8P" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
       <div class="book-card"><div class="book-cover"><img src="books/love-that-stays.png" alt="A Love That Stays"/></div><div class="book-title">A Love That Stays</div><div class="book-subtitle">Poems on Love, Healing, and Purpose</div><div class="book-desc">A poetry collection on love, healing, and finding purpose through God.</div><a href="https://www.amazon.ca/dp/B0GVYFBLSY" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
       <div class="book-card"><div class="book-cover"><img src="books/voice-restored.png" alt="Voice Restored"/></div><div class="book-title">Voice Restored</div><div class="book-subtitle">Healing After Bullying and Abuse</div><div class="book-desc">A journey of healing from bullying, abuse, and emotional wounds.</div><a href="https://www.amazon.ca/dp/B0GP6HB4DG" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
       <div class="book-card"><div class="book-cover"><img src="books/beautiful-beyond.png" alt="Beautiful Beyond Comprehension"/></div><div class="book-title">Beautiful Beyond Comprehension</div><div class="book-subtitle">A 30-Day Devotional</div><div class="book-desc">A 30-day devotional for healing, reflection, and growth in God's love.</div><a href="https://www.amazon.ca/dp/B0GQNGG14N" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
@@ -751,6 +799,7 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
       <a href="presence.html">Our Presence</a>
       <a href="#team">Team</a>
       <a href="blog.html">Blog</a>
+      <a href="podcast.html">Podcast</a>
       <a href="#books">Books</a>
       <a href="#book-now">Book Now</a>
       <a href="#contact">Contact</a>
