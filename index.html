@@ -373,6 +373,34 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
 .podcast-player iframe{display:block;border-radius:12px;border:0}
 @media(max-width:1250px){.nav-links{gap:13px}.nav-links a{font-size:.7rem;letter-spacing:.8px}.nav-links .book-btn{padding:9px 12px}}
 @media(max-width:900px){.podcast-feature{grid-template-columns:1fr;gap:28px;text-align:center}.podcast-actions{justify-content:center}}
+
+/* ===== v14: Book cards (even height + Read More) and details pop-up ===== */
+.book-card .book-desc{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;flex-grow:0;margin-bottom:16px}
+.book-actions{margin-top:auto;display:flex;flex-direction:column;align-items:center;gap:12px}
+.book-more{background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;padding:4px 2px;border-bottom:1px solid transparent;transition:.3s}
+.book-more:hover,.book-more:focus-visible{color:var(--navy);border-bottom-color:var(--gold);outline:none}
+.book-modal{position:fixed;inset:0;z-index:1000;background:rgba(6,18,41,0.72);display:flex;align-items:center;justify-content:center;padding:24px}
+.book-modal[hidden]{display:none}
+.bm-box{position:relative;background:var(--cream);max-width:760px;width:100%;max-height:88vh;overflow-y:auto;border-radius:6px;border-top:3px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,0.4);padding:34px 36px 30px;text-align:left}
+.bm-close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:2rem;line-height:1;color:var(--navy);cursor:pointer;padding:4px 8px}
+.bm-close:hover{color:var(--gold)}
+.bm-head{display:grid;grid-template-columns:150px 1fr;gap:26px;align-items:center;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.bm-cover img{width:100%;border-radius:3px;box-shadow:0 10px 30px rgba(11,30,63,0.2)}
+.bm-meta h3{font-size:1.5rem;line-height:1.25;margin-bottom:8px;padding-right:24px}
+.bm-by{color:var(--gold);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+.bm-meta .btn{padding:11px 26px;font-size:.75rem}
+.bm-body p{color:#2b2b2b;font-size:.95rem;margin-bottom:14px}
+.bm-body .bm-lead{font-family:var(--serif);font-style:italic;color:var(--navy);font-size:1.25rem;line-height:1.45}
+.bm-body .bm-lines{font-family:var(--serif);font-style:italic;color:var(--navy);font-size:1.12rem;line-height:1.6}
+.bm-body ul{list-style:none;padding:0;margin:4px 0 18px}
+.bm-body li{position:relative;padding:5px 0 5px 22px;font-size:.93rem;color:var(--navy)}
+.bm-body li::before{content:'✦';color:var(--gold);position:absolute;left:0;top:5px}
+@media(max-width:600px){
+  .book-modal{padding:0;align-items:flex-end}
+  .bm-box{max-height:92vh;border-radius:12px 12px 0 0;padding:28px 20px 24px}
+  .bm-head{grid-template-columns:96px 1fr;gap:16px}
+  .bm-meta h3{font-size:1.15rem}
+}
 </style>
 </head>
 <body>
@@ -703,27 +731,216 @@ footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
       <h2>Books by Anita B. Singh</h2>
     </div>
     <div class="books-grid">
-      <div class="book-card"><div class="book-cover"><img src="books/little-feet-big-dreams.jpg" alt="Little Feet, Big Dreams: Walking with God"/></div><div class="book-title">Little Feet, Big Dreams <span class="new-badge">New</span></div><div class="book-subtitle">Walking with God · Ages 5–10</div><div class="book-desc">A 30-day devotional and activity book to help children ages 5–10 grow in faith, build character, and discover how much they are loved and created with a purpose.</div><a href="https://www.amazon.ca/dp/1067743316" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover" data-title="Ari and the Little Yellow Chair"><img src="books/ari-little-yellow-chair.jpg" alt="Ari and the Little Yellow Chair: The World Is Better Because You&#x27;re Here" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Ari and the Little Yellow Chair</div><div class="book-subtitle">The World Is Better Because You're Here</div><div class="book-desc"></div><a href="https://a.co/d/05RbXBB0" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover" data-title="Little Heart, Big Courage!"><img src="books/little-heart-big-courage.jpg" alt="Little Heart, Big Courage!" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Little Heart, Big Courage!</div><div class="book-desc"></div><a href="https://a.co/d/03CiXJVN" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover" data-title="Little One, Let Me Tell You Who You Are"><img src="books/little-one-who-you-are.jpg" alt="Little One, Let Me Tell You Who You Are: The Truth About You, From the God Who Made You" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Little One, Let Me Tell You Who You Are</div><div class="book-subtitle">The Truth About You, From the God Who Made You</div><div class="book-desc"></div><a href="https://a.co/d/03dxkWfr" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover" data-title="Safe Enough to Be Myself"><img src="books/safe-enough-to-be-myself.jpg" alt="Safe Enough to Be Myself: When Love Feels Like Peace Instead of Performance" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Safe Enough to Be Myself</div><div class="book-subtitle">When Love Feels Like Peace Instead of Performance</div><div class="book-desc"></div><a href="https://a.co/d/0fag6vWt" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover" data-title="Blessed to Multiply"><img src="books/blessed-to-multiply.jpg" alt="Blessed to Multiply: Biblical Decrees for Increase, Enlargement, Fruitfulness, Stewardship &amp; Kingdom Impact" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Blessed to Multiply</div><div class="book-subtitle">Biblical Decrees for Increase, Enlargement, Fruitfulness, Stewardship &amp; Kingdom Impact</div><div class="book-desc"></div><a href="https://a.co/d/0diriroE" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover" data-title="The Woman Behind Everything"><img src="books/woman-behind-everything.jpg" alt="The Woman Behind Everything: Her Story. Her Strength. Her Legacy." onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">The Woman Behind Everything</div><div class="book-subtitle">Her Story. Her Strength. Her Legacy.</div><div class="book-desc"></div><a href="https://a.co/d/03MLYW8P" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover"><img src="books/love-that-stays.png" alt="A Love That Stays"/></div><div class="book-title">A Love That Stays</div><div class="book-subtitle">Poems on Love, Healing, and Purpose</div><div class="book-desc">A poetry collection on love, healing, and finding purpose through God.</div><a href="https://www.amazon.ca/dp/B0GVYFBLSY" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover"><img src="books/voice-restored.png" alt="Voice Restored"/></div><div class="book-title">Voice Restored</div><div class="book-subtitle">Healing After Bullying and Abuse</div><div class="book-desc">A journey of healing from bullying, abuse, and emotional wounds.</div><a href="https://www.amazon.ca/dp/B0GP6HB4DG" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover"><img src="books/beautiful-beyond.png" alt="Beautiful Beyond Comprehension"/></div><div class="book-title">Beautiful Beyond Comprehension</div><div class="book-subtitle">A 30-Day Devotional</div><div class="book-desc">A 30-day devotional for healing, reflection, and growth in God's love.</div><a href="https://www.amazon.ca/dp/B0GQNGG14N" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover"><img src="books/you-are-my-beloved.png" alt="You Are My Beloved"/></div><div class="book-title">You Are My Beloved</div><div class="book-subtitle">A Devotional for Restoring Identity</div><div class="book-desc">A devotional to restore identity, worth, and spiritual confidence.</div><a href="https://www.amazon.ca/dp/B0GPY64PWD" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover"><img src="books/love-has-accents.png" alt="Love Has Accents"/></div><div class="book-title">Love Has Accents</div><div class="book-subtitle">How Culture, Family Patterns, and Faith Shape the Way We Love</div><div class="book-desc">Understanding how culture, family, and faith shape the way we love.</div><a href="https://www.amazon.ca/dp/B0GQ98JGLZ" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover"><img src="books/misunderstanding.png" alt="When Misunderstanding Messes Things Up"/></div><div class="book-title">When Misunderstanding Messes Things Up</div><div class="book-subtitle">Finding Clarity, Healing, and Peace Through God's Truth</div><div class="book-desc">How small misreads can damage relationships — and how to restore them.</div><a href="https://www.amazon.ca/dp/B0GPY6V7MF" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover"><img src="books/men-of-purpose.png" alt="Men of Purpose"/></div><div class="book-title">Men of Purpose</div><div class="book-subtitle">A 365-Day Devotional for Christian Men</div><div class="book-desc">A year-long devotional on identity, discipline, and purpose for men of God.</div><a href="https://www.amazon.ca/dp/1067743308" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
-      <div class="book-card"><div class="book-cover"><img src="books/seawall-world.png" alt="From the Seawall to the World"/></div><div class="book-title">From the Seawall to the World</div><div class="book-subtitle">Six Sisters. One Journey. From Guyana to Canada and Beyond</div><div class="book-desc">The journey of six sisters — a testimony of family, faith, and God's faithfulness.</div><a href="https://www.amazon.ca/dp/B0GWLVBPS8" target="_blank" class="btn btn-outline">Buy on Amazon</a></div>
+      <div class="book-card" data-book="little-feet-big-dreams"><div class="book-cover"><img src="books/little-feet-big-dreams.jpg" alt="Little Feet, Big Dreams: Walking with God"/></div><div class="book-title">Little Feet, Big Dreams <span class="new-badge">New</span></div><div class="book-subtitle">Walking with God · Ages 5–10</div><div class="book-desc">A 30-day devotional and activity book to help children ages 5–10 grow in faith, build character, and discover how much they are loved and created with a purpose.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://www.amazon.ca/dp/1067743316" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="ari-little-yellow-chair"><div class="book-cover" data-title="Ari and the Little Yellow Chair"><img src="books/ari-little-yellow-chair.jpg" alt="Ari and the Little Yellow Chair: The World Is Better Because You&#x27;re Here" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Ari and the Little Yellow Chair</div><div class="book-subtitle">The World Is Better Because You're Here</div><div class="book-desc">A heartwarming, beautifully illustrated story for children ages 4–6, celebrating unconditional love, confidence, kindness, and belonging.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://a.co/d/05RbXBB0" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="little-heart-big-courage"><div class="book-cover" data-title="Little Heart, Big Courage!"><img src="books/little-heart-big-courage.jpg" alt="Little Heart, Big Courage!" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Little Heart, Big Courage!</div><div class="book-subtitle">A Picture Book · Ages 3–6</div><div class="book-desc">Every little heart has BIG courage! Gentle rhymes, everyday moments, and 20 uplifting affirmations that encourage children to believe in themselves.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://a.co/d/03CiXJVN" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="little-one-who-you-are"><div class="book-cover" data-title="Little One, Let Me Tell You Who You Are"><img src="books/little-one-who-you-are.jpg" alt="Little One, Let Me Tell You Who You Are: The Truth About You, From the God Who Made You" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Little One, Let Me Tell You Who You Are</div><div class="book-subtitle">The Truth About You, From the God Who Made You</div><div class="book-desc">A gentle, faith-filled picture book that reminds little hearts they are wonderfully made, deeply cherished, and forever loved by God.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://a.co/d/03dxkWfr" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="safe-enough-to-be-myself"><div class="book-cover" data-title="Safe Enough to Be Myself"><img src="books/safe-enough-to-be-myself.jpg" alt="Safe Enough to Be Myself: When Love Feels Like Peace Instead of Performance" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Safe Enough to Be Myself</div><div class="book-subtitle">When Love Feels Like Peace Instead of Performance</div><div class="book-desc">What if feeling safe with someone is not the same as being safe to build a life with them?</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://a.co/d/0fag6vWt" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="blessed-to-multiply"><div class="book-cover" data-title="Blessed to Multiply"><img src="books/blessed-to-multiply.jpg" alt="Blessed to Multiply: Biblical Decrees for Increase, Enlargement, Fruitfulness, Stewardship &amp; Kingdom Impact" onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">Blessed to Multiply</div><div class="book-subtitle">Biblical Decrees for Increase, Enlargement, Fruitfulness, Stewardship &amp; Kingdom Impact</div><div class="book-desc">A Scripture-centered guide for believers who desire to grow in biblical wisdom, faithful stewardship, spiritual maturity, and Kingdom impact.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://a.co/d/0diriroE" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="woman-behind-everything"><div class="book-cover" data-title="The Woman Behind Everything"><img src="books/woman-behind-everything.jpg" alt="The Woman Behind Everything: Her Story. Her Strength. Her Legacy." onerror="this.parentNode.classList.add('no-cover');this.remove()"/></div><div class="book-title">The Woman Behind Everything</div><div class="book-subtitle">Her Story. Her Strength. Her Legacy.</div><div class="book-desc">A heartfelt guided legacy journal to help women reflect on their lives, celebrate their strength, and preserve precious memories.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://a.co/d/03MLYW8P" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="love-that-stays"><div class="book-cover"><img src="books/love-that-stays.png" alt="A Love That Stays"/></div><div class="book-title">A Love That Stays</div><div class="book-subtitle">Poems on Love, Healing, and Purpose</div><div class="book-desc">A poetry collection on love, healing, and finding purpose through God.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://www.amazon.ca/dp/B0GVYFBLSY" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="voice-restored"><div class="book-cover"><img src="books/voice-restored.png" alt="Voice Restored"/></div><div class="book-title">Voice Restored</div><div class="book-subtitle">Healing After Bullying and Abuse</div><div class="book-desc">A journey of healing from bullying, abuse, and emotional wounds.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://www.amazon.ca/dp/B0GP6HB4DG" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="beautiful-beyond"><div class="book-cover"><img src="books/beautiful-beyond.png" alt="Beautiful Beyond Comprehension"/></div><div class="book-title">Beautiful Beyond Comprehension</div><div class="book-subtitle">A 30-Day Devotional</div><div class="book-desc">A 30-day devotional for healing, reflection, and growth in God's love.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://www.amazon.ca/dp/B0GQNGG14N" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="you-are-my-beloved"><div class="book-cover"><img src="books/you-are-my-beloved.png" alt="You Are My Beloved"/></div><div class="book-title">You Are My Beloved</div><div class="book-subtitle">A Devotional for Restoring Identity</div><div class="book-desc">A devotional to restore identity, worth, and spiritual confidence.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://www.amazon.ca/dp/B0GPY64PWD" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="love-has-accents"><div class="book-cover"><img src="books/love-has-accents.png" alt="Love Has Accents"/></div><div class="book-title">Love Has Accents</div><div class="book-subtitle">How Culture, Family Patterns, and Faith Shape the Way We Love</div><div class="book-desc">Understanding how culture, family, and faith shape the way we love.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://www.amazon.ca/dp/B0GQ98JGLZ" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="misunderstanding"><div class="book-cover"><img src="books/misunderstanding.png" alt="When Misunderstanding Messes Things Up"/></div><div class="book-title">When Misunderstanding Messes Things Up</div><div class="book-subtitle">Finding Clarity, Healing, and Peace Through God's Truth</div><div class="book-desc">How small misreads can damage relationships — and how to restore them.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://www.amazon.ca/dp/B0GPY6V7MF" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="men-of-purpose"><div class="book-cover"><img src="books/men-of-purpose.png" alt="Men of Purpose"/></div><div class="book-title">Men of Purpose</div><div class="book-subtitle">A 365-Day Devotional for Christian Men</div><div class="book-desc">A year-long devotional on identity, discipline, and purpose for men of God.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://www.amazon.ca/dp/1067743308" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+      <div class="book-card" data-book="seawall-world"><div class="book-cover"><img src="books/seawall-world.png" alt="From the Seawall to the World"/></div><div class="book-title">From the Seawall to the World</div><div class="book-subtitle">Six Sisters. One Journey. From Guyana to Canada and Beyond</div><div class="book-desc">The journey of six sisters — a testimony of family, faith, and God's faithfulness.</div><div class="book-actions"><button type="button" class="book-more" aria-haspopup="dialog">Read More</button><a href="https://www.amazon.ca/dp/B0GWLVBPS8" target="_blank" class="btn btn-outline">Buy on Amazon</a></div></div>
+    </div>
+    <!-- Full book descriptions (shown in the pop-up when "Read More" is clicked) -->
+    <div class="book-details" hidden>
+      <template id="bd-little-feet-big-dreams" data-title="Little Feet, Big Dreams: Walking with God" data-by="By Anita B Singh &amp; Zion Clarke">
+        <p class="bm-lead">Big dreams begin with little steps of faith.</p>
+        <p>Little Feet, Big Dreams: Walking with God is a 30-day Christian devotional and activity book for children ages 5–10, created to help young hearts grow closer to God while developing faith, courage, kindness, gratitude, forgiveness, honesty, and other Christ-centered character qualities.</p>
+        <p>Each day gives children an opportunity to discover biblical truth in a way they can understand and put into practice. Through Scripture, simple devotional messages, engaging activities, prayers, personal decrees, discussion questions, and parent tips, children are encouraged not only to learn about God—but to walk with Him in everyday life.</p>
+        <p>Inside, children will be encouraged to:</p>
+        <ul><li>Grow in their relationship with God</li><li>Discover how deeply they are loved and valued</li><li>Build strong, godly character</li><li>Learn to pray and trust God</li><li>Practice kindness, honesty, forgiveness, and gratitude</li><li>Find courage when they feel afraid</li><li>Apply biblical truth at home, at school, and in everyday situations</li><li>Talk openly with parents and caregivers about faith and life</li></ul>
+        <p>Perfect for morning or bedtime devotionals, family Bible time, homeschooling, Christian education, or one-on-one time with a parent or caregiver, Little Feet, Big Dreams helps turn small everyday moments into opportunities for spiritual growth.</p>
+        <p>Because little feet can carry big dreams when they learn to walk with God.</p>
+        <p class="bm-lines">For ages 5–10<br/>30 Days of Faith, Character &amp; Purpose</p>
+      </template>
+      <template id="bd-ari-little-yellow-chair" data-title="Ari and the Little Yellow Chair: The World Is Better Because You&#x27;re Here" data-by="By Anita B Singh">
+        <p class="bm-lead">There is a little yellow chair that always waits for Ari…</p>
+        <p>Ari is a curious, kind, and thoughtful child who sometimes feels a little different. But at Grandma’s house, a special yellow chair reminds Ari of something wonderful: everyone deserves to feel loved, accepted, and included.</p>
+        <p>Through family, friendship, and small acts of kindness, Ari discovers that being different is something to celebrate—and that the world is better because each of us is here.</p>
+        <p>Ari and the Little Yellow Chair is a heartwarming, beautifully illustrated story for children ages 4–6, celebrating unconditional love, confidence, kindness, and belonging.</p>
+        <p>Includes special activities and a personalized gift page for families to enjoy together.</p>
+      </template>
+      <template id="bd-little-heart-big-courage" data-title="Little Heart, Big Courage!" data-by="By Anita B Singh">
+        <p class="bm-lead">Every little heart has BIG courage!</p>
+        <p>Help your little one discover the power of kindness, bravery, confidence, and being wonderfully themselves!</p>
+        <p>Little Heart, Big Courage! is a heartwarming, beautifully illustrated children’s book filled with gentle rhymes, everyday moments, and 20 uplifting affirmations that encourage children to believe in themselves and celebrate who they are.</p>
+        <p>Through colorful illustrations and simple, meaningful messages, young readers discover that courage comes in many forms, from trying something new and helping a friend to expressing their feelings and asking for help.</p>
+        <p>Inside this joyful book, children will learn to:</p>
+        <ul><li>Believe in themselves and know they are loved.</li><li>Show kindness, friendship, and compassion.</li><li>Feel brave when trying something new.</li><li>Understand that all their feelings matter.</li><li>Ask for help and express healthy boundaries.</li><li>Celebrate their uniqueness and know they are enough.</li></ul>
+        <p>Each affirmation includes an interactive “SAY IT WITH ME” moment, inviting children to repeat empowering words such as:</p>
+        <p class="bm-lines">“I am brave!”<br/>“I am kind!”<br/>“My feelings matter!”<br/>“I am enough!”<br/>“I am wonderfully ME!”</p>
+        <p>Perfect for children ages 3–6, this encouraging picture book is ideal for bedtime reading, preschool classrooms, family story time, and thoughtful gifts.</p>
+        <p>Whether your child is learning to make friends, facing a new challenge, or discovering their own special strengths, Little Heart, Big Courage! offers a gentle reminder:</p>
+        <p>You are loved. You are important. You belong. And you are enough, just as you are!</p>
+        <p>A little book with a BIG message: Be brave. Be kind. Be YOU!</p>
+      </template>
+      <template id="bd-little-one-who-you-are" data-title="Little One, Let Me Tell You Who You Are: The Truth About You, From the God Who Made You" data-by="By Anita B Singh">
+        <p class="bm-lead">Every little child deserves to know how deeply they are loved.</p>
+        <p>Little One, Let Me Tell You Who You Are is a gentle, faith-filled children’s picture book that reminds little hearts of a beautiful truth: they are wonderfully made, deeply cherished, and forever loved by God.</p>
+        <p>Through tender words and heartwarming illustrations, young children are introduced to God’s love, their unique worth, and the joy of knowing they are precious in His eyes.</p>
+        <p>Perfect for bedtime reading, quiet moments together, baby showers, baptisms, christenings, and meaningful gifts from parents and grandparents.</p>
+        <p>God made you. God knows you. God loves you.</p>
+        <p>A beautiful message of faith and belonging to treasure from the very beginning.</p>
+      </template>
+      <template id="bd-safe-enough-to-be-myself" data-title="Safe Enough to Be Myself: When Love Feels Like Peace Instead of Performance" data-by="By Anita B. Singh">
+        <p class="bm-lead">What if feeling safe with someone is not the same as being safe to build a life with them?</p>
+        <p>Someone sees you. Your guard comes down. You can breathe around them. Their presence feels peaceful—perhaps even like home. And suddenly, parts of your heart you thought were buried begin to awaken.</p>
+        <p>But powerful feelings can bring difficult questions.</p>
+        <p class="bm-lines">Is this love or attachment?<br/>Chemistry or compatibility?<br/>Healing or another familiar cycle?<br/>Can someone feel like home and still not be available to build a home with you?</p>
+        <p>In Safe Enough to Be Myself, Anita B. Singh explores the tender space between emotional connection and wise relationship decisions. With Christian insight, relatable stories, practical reflection, prayer, and compassionate guidance, this book helps you understand what your heart is feeling without allowing feelings alone to determine your future.</p>
+        <p>Discover how to recognize emotional safety without confusing it with availability; understand triggers without letting fear control you; distinguish love, lust, attachment, chemistry, and compatibility; establish healthy boundaries without hardening your heart; stop giving relationship-level access where relationship-level commitment does not exist; and evaluate the faith, character, presence, values, and everyday compatibility required to build a healthy life together.</p>
+        <p>This is not a book about becoming afraid to love.</p>
+        <p>It is about learning to love with a soft heart, clear eyes, strong boundaries, and the wisdom not to abandon yourself.</p>
+        <p class="bm-lines">Because healing does not require rebuilding every wall.<br/>The goal is not to rebuild the wall.<br/>The goal is to replace the wall with a gate.</p>
+      </template>
+      <template id="bd-blessed-to-multiply" data-title="Blessed to Multiply: Biblical Decrees for Increase, Enlargement, Fruitfulness, Stewardship &amp; Kingdom Impact" data-by="By Anita B Singh">
+        <p>Blessed to Multiply is a Scripture-centered guide for believers who desire to grow in biblical wisdom, faithful stewardship, spiritual maturity, and Kingdom impact. Through teaching, prayers, decrees, reflection, and practical application, this book explores what it means to receive increase without losing character, peace, humility, or dependence on God.</p>
+        <p>Inside, readers will discover biblical foundations for fruitfulness and multiplication, a 40-day devotional journey, prayers and decrees for provision and financial stewardship, Heavenly Court teaching, relationship and family growth, leadership development, generational legacy, capacity, rest, and emotional maturity.</p>
+        <p class="bm-lead">You were not blessed merely to receive. You were blessed to become a blessing.</p>
+      </template>
+      <template id="bd-woman-behind-everything" data-title="The Woman Behind Everything: Her Story. Her Strength. Her Legacy." data-by="By Anita B Singh">
+        <p class="bm-lead">Every woman has a story. Some have spent a lifetime making sure everyone else’s story was heard first.</p>
+        <p>Behind every family, every sacrifice, every quiet act of love, there is a woman whose journey deserves to be remembered.</p>
+        <p>The Woman Behind Everything is a heartfelt guided legacy journal created to help women reflect on their lives, celebrate their strength, preserve precious memories, and share the wisdom they have gained along the way.</p>
+        <p>Through thoughtful questions and generous writing spaces, this journal invites women to explore their childhood memories, family traditions, relationships, motherhood, personal challenges, dreams, faith, and the lessons that have shaped their lives.</p>
+        <p>More than a journal, this book is an opportunity to leave something meaningful for the next generation.</p>
+        <p>Inside, you will discover:</p>
+        <ul><li>Thought-provoking prompts that encourage meaningful reflection</li><li>Space to record treasured memories and family stories</li><li>Opportunities to celebrate personal growth, courage, and resilience</li><li>Questions about love, family, dreams, and life lessons</li><li>A beautiful way to preserve your voice and wisdom for future generations</li></ul>
+        <p>Whether you are writing for yourself, your children, your grandchildren, or the women who will come after you, these pages offer a place where your memories matter.</p>
+        <p>Your life has meaning. Your voice has value. Your story deserves to be told—not just remembered.</p>
+        <p>A meaningful keepsake for mothers, grandmothers, daughters, and every woman who wants to leave a lasting legacy.</p>
+      </template>
+      <template id="bd-love-that-stays" data-title="A Love That Stays: Poems on Love, Healing, and Purpose" data-by="By Anita B Singh">
+        <p class="bm-lines">Some love is loud and fleeting.<br/>But there is a love that stays.</p>
+        <p>A Love That Stays is a gentle 60-day companion created for those walking through healing, growth, and restoration. Through deeply reflective poetry, thoughtful journal prompts, and quiet prayers, this book invites you to slow down, breathe again, and rediscover what safe, steady love truly feels like.</p>
+        <p>Written for tender seasons, these pages speak to:</p>
+        <ul><li>the heart that has been weary,</li><li>the soul that longs for peace, and</li><li>the person learning to choose healing without shame.</li></ul>
+        <p>Each day offers space to reflect, release, and rebuild—without pressure, performance, or hurry. This is not a book to rush through, but one to sit with, return to, and keep close during moments of reflection, prayer, and becoming.</p>
+        <p>A Love That Stays is about love rooted in truth, boundaries shaped by wisdom, and faith that does not abandon you when you begin to heal. It reminds readers that healthy love brings peace, that rest is holy, and that becoming whole is not weakness—it is courage.</p>
+        <p>This book is for you if you are:</p>
+        <ul><li>Healing from emotional pain or loss</li><li>Seeking peace, clarity, and spiritual renewal</li><li>Learning healthy boundaries and self-worth</li><li>Looking for a devotional that feels safe, calm, and grounding</li><li>Drawn to reflective poetry paired with prayer and journaling</li></ul>
+        <p class="bm-lines">For the heart seeking peace.<br/>For the soul longing for renewal.<br/>For the love that does not give up.</p>
+      </template>
+      <template id="bd-voice-restored" data-title="VOICE RESTORED: Healing After Bullying and Abuse" data-by="By Anita B Singh">
+        <p>Voice Restored is a compassionate and empowering guide for anyone who has experienced bullying or abuse—at school, in the workplace, at home, or online.</p>
+        <p>If your voice was silenced, minimized, or dismissed, this book helps you reclaim it with clarity, courage, and wisdom.</p>
+        <p>Inside, you’ll discover how to:</p>
+        <ul><li>Release shame and self-blame</li><li>Rebuild confidence after repeated harm</li><li>Set healthy boundaries without guilt</li><li>Calm anxiety and emotional triggers</li><li>Recognize red flags and choose safer relationships</li><li>Restore your sense of worth and personal voice</li></ul>
+        <p>Written with sensitivity and practical insight, Voice Restored offers encouragement, real-life tools, and healing wisdom for survivors who are ready to move forward without minimizing what they’ve been through.</p>
+        <p class="bm-lines">You are not too sensitive.<br/>You are not broken.<br/>Your voice can be restored.</p>
+      </template>
+      <template id="bd-beautiful-beyond" data-title="Beautiful Beyond Comprehension: A 30-Day Devotional" data-by="By Anita B Singh">
+        <p class="bm-lines">Beautiful Beyond Comprehension is a gentle 30-day devotional for those who are becoming—<br/>learning to walk in truth, dignity, and inner healing.</p>
+        <p>This devotional invites you into daily moments of reflection grounded in Scripture, thoughtful meditation, and personal declaration. Each day is designed to help you slow down, reconnect with God’s truth, and rediscover the beauty that is formed through character, faith, and growth.</p>
+        <p>Written with compassion and clarity, this book is for anyone:</p>
+        <ul><li>Seeking peace after seasons of overcoming</li><li>Rebuilding confidence and self-respect</li><li>Learning to set healthy boundaries with grace</li><li>Growing in faith without pressure or performance</li><li>Choosing light, truth, and wholeness each day</li></ul>
+        <p class="bm-lines">Beautiful Beyond Comprehension is not about perfection.<br/>It is about becoming—<br/>becoming rooted, honest, and aligned with God’s design.</p>
+        <p class="bm-lines">May these pages guide you gently,<br/>anchor you in Scripture,<br/>and remind you that true beauty is formed from the inside out.</p>
+      </template>
+      <template id="bd-you-are-my-beloved" data-title="You Are My Beloved Whom I Am Well Pleased: A Devotional for Restoring Identity" data-by="By Anita B Singh">
+        <p>You Are My Beloved, Whom I Am Well Pleased is a devotional written for the weary heart, the healing soul, and anyone who has learned to equate love with effort.</p>
+        <p class="bm-lines">Before striving.<br/>Before proving.<br/>Before becoming anything for anyone—<br/>God speaks one sentence over you: “You are My beloved.”</p>
+        <p class="bm-lines">This book is not written to teach you how to try harder.<br/>It is written to help you rest.</p>
+        <p>Across forty gentle days, these reflections create quiet space to listen again—to a God who is not demanding more, but offering Himself. Each day is written as if God is speaking to one person in a quiet room. There is no pressure here. No rushing. No fixing.</p>
+        <p class="bm-lines">Only presence.<br/>Only love.<br/>Only the slow remembering of who you are.</p>
+        <p>If you have ever felt unseen, unworthy, or tired of trying to be enough, this devotional will meet you where you are and walk with you gently back to belonging.</p>
+        <p class="bm-lines">You were never meant to earn love.<br/>You were named before you performed.</p>
+        <p class="bm-lead">Beloved is still your name.</p>
+      </template>
+      <template id="bd-love-has-accents" data-title="LOVE HAS ACCENTS: How Culture, Family Patterns, and Faith Shape the Way We Love" data-by="By Anita B Singh">
+        <p class="bm-lead">Love is universal—but how we express it is not.</p>
+        <p>Across cultures, families, and life experiences, love speaks in different “accents.” What one person calls care, another may experience as distance. What feels like devotion to one can feel like neglect to another. And when these differences remain unspoken, relationships suffer—not from lack of love, but from misunderstanding.</p>
+        <p>In Love Has Accents: How Culture Shapes the Way We Love, Christian counsellor and missionary Anita B Singh draws from years of cross-cultural work to help readers understand how culture, upbringing, gender expectations, and emotional needs shape the way we give and receive love.</p>
+        <p>Inside, you will learn how to:</p>
+        <ul><li>Recognize the “love rules” you inherited from family and culture</li><li>Communicate your needs with clarity and emotional maturity</li><li>Distinguish between healthy differences and harmful patterns</li><li>Build boundaries that protect dignity and peace</li><li>Create a shared relationship culture rooted in respect, consistency, and repair</li></ul>
+        <p>Whether you are dating, married, single, or healing from past pain, this book will help you understand love more clearly—and love more wisely.</p>
+      </template>
+      <template id="bd-misunderstanding" data-title="When Misunderstanding Messes Things Up: How Small Misreads Become Big Breaks—and How to Fix Them" data-by="By Anita B Singh">
+        <p class="bm-lead">Misunderstanding doesn’t just damage conversations—it quietly damages relationships.</p>
+        <p class="bm-lines">A pause feels like rejection.<br/>A tone sounds like accusation.<br/>A boundary is mistaken for betrayal.</p>
+        <p>Over time, assumptions replace truth, and people begin reacting to stories that were never real.</p>
+        <p>In When Misunderstanding Messes Things Up, Anita B. Singh offers a compassionate, faith-grounded guide for breaking cycles of confusion and restoring clarity in relationships. Through real-life examples, biblical insight, and practical tools, this book helps readers understand why misunderstandings happen, why they repeat, and how they can be healed at the root.</p>
+        <p>Inside this book, you’ll learn how to:</p>
+        <ul><li>Recognize assumptions before they turn into emotional distance</li><li>Communicate clearly without fear, blame, or harshness</li><li>Set boundaries that protect peace rather than create guilt</li><li>Repair trust through humility, honesty, and wisdom</li><li>Break relational patterns rooted in past pain, trauma, and misinterpretation</li></ul>
+        <p>Each chapter includes:</p>
+        <ul><li>Relatable real-life scenarios</li><li>Biblical reflection for perspective and growth</li><li>Practical steps for clarity and repair</li><li>Reflection questions and a Heavenly Court prayer and decree to address deeper roots, cycles, and patterns at the soul level</li></ul>
+        <p>This book is written for anyone who is tired of repeating the same misunderstandings and ready to grow in emotional clarity, spiritual maturity, and healthier connection. It is faith-based, reflective, and practical—designed to guide healing without blame and growth without shame.</p>
+        <p class="bm-lead">Healing begins when clarity replaces assumption—and truth is spoken with love.</p>
+      </template>
+      <template id="bd-men-of-purpose" data-title="Men of Purpose: A 365-Day Devotional for Christian Men" data-by="By Anita B Singh">
+        <p>MEN OF PURPOSE is a 365-day journey designed to strengthen men spiritually, mentally, emotionally, and practically through daily encounters with God’s Word.</p>
+        <p>Many men silently carry pressure. Some are leading families while battling discouragement privately. Some are rebuilding after failure. Others are searching for identity, discipline, healing, wisdom, direction, or purpose. This book was written for the man who wants to grow stronger, live with integrity, and walk boldly in the assignment God placed on his life.</p>
+        <p>Each day includes:</p>
+        <ul><li>Scripture</li><li>Practical teaching</li><li>Honest reflection</li><li>Personal declarations</li><li>Powerful prayers</li></ul>
+        <p>Throughout these pages, you will find encouragement for real-life struggles men face:</p>
+        <ul><li>pressure and responsibility</li><li>spiritual battles</li><li>discipline and consistency</li><li>leadership and integrity</li><li>healing and restoration</li><li>faith and perseverance</li><li>marriage, family, and legacy</li><li>purpose and spiritual growth</li></ul>
+        <p>MEN OF PURPOSE speaks honestly to the hidden battles many men carry while pointing them back to God’s strength, wisdom, and direction.</p>
+        <p>Whether you are rebuilding, searching for direction, carrying heavy responsibility, or desiring a deeper relationship with God, this devotional will encourage you to keep growing, keep praying, and keep becoming the man God created you to be.</p>
+        <p class="bm-lines">A healed man changes generations.<br/>Private obedience builds public strength.<br/>You were not created to drift—you were created to live with purpose.</p>
+      </template>
+      <template id="bd-seawall-world" data-title="From the Seawall to the World: Six Sisters. One Journey. From Guyana to Canada and Beyond" data-by="By Anita B Singh &amp; Taveeta Singh">
+        <p class="bm-lead">A powerful story of sisterhood, survival, and becoming.</p>
+        <p>Six sisters grow up on a farm in Guyana, shaped early by labour, responsibility, and silence. Their childhood is formed by the rhythms of land and faith, by moments of joy and seasons of scarcity, and by a bond that holds even under strain. Then, one by one, their world begins to shift—through migration, separation, and the quiet realization that survival alone is not enough.</p>
+        <p>From the Seawall to the World is a literary memoir of becoming. Told in a collective voice, it traces a shared beginning and diverging paths as the sisters move from Guyana to Canada to the United States, carrying with them the imprint of where they came from and the cost of leaving it behind.</p>
+        <p>As distance grows—between countries, between family members, and eventually between the sisters themselves—the story turns inward. It explores what happens when identity can no longer be inherited, when faith is tested, and when endurance gives way to choice. At its heart is a reckoning with silence: what was never said, what was carried too long, and what it takes to speak at last.</p>
+        <p>Grounded, unsentimental, and deeply human, this is a story of migration and memory, of sisterhood that survives difference, and of women learning how to hold their past without being confined by it.</p>
+        <p>For readers who value literary memoir, family stories, and journeys of identity, resilience, and transformation.</p>
+        <p class="bm-lead">Because sometimes, surviving is only the beginning of becoming.</p>
+      </template>
     </div>
     <div class="author-link">
       <a href="https://www.amazon.ca/stores/author/B0GPP3MNW3/allbooks" target="_blank" class="btn btn-navy">Visit Amazon Author Page</a>
     </div>
   </div>
 </section>
+
+<!-- ================= BOOK DETAILS POP-UP ================= -->
+<div class="book-modal" id="bookModal" hidden>
+  <div class="bm-box" role="dialog" aria-modal="true" aria-labelledby="bmTitle">
+    <button type="button" class="bm-close" aria-label="Close">&times;</button>
+    <div class="bm-head">
+      <div class="bm-cover"><img id="bmImg" alt="" /></div>
+      <div class="bm-meta">
+        <h3 id="bmTitle"></h3>
+        <p class="bm-by" id="bmBy"></p>
+        <a id="bmBuy" href="#" target="_blank" rel="noopener" class="btn btn-primary">Buy on Amazon</a>
+      </div>
+    </div>
+    <div class="bm-body" id="bmBody"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var modal=document.getElementById('bookModal'); if(!modal) return;
+  var box=modal.querySelector('.bm-box'), lastBtn=null;
+  function open(card, btn){
+    var t=document.getElementById('bd-'+card.dataset.book); if(!t) return;
+    var img=card.querySelector('.book-cover img');
+    var bmImg=document.getElementById('bmImg');
+    if(img){ bmImg.src=img.getAttribute('src'); bmImg.alt=img.alt; bmImg.parentNode.style.display=''; }
+    else { bmImg.parentNode.style.display='none'; }
+    document.getElementById('bmTitle').textContent=t.dataset.title;
+    document.getElementById('bmBy').textContent=t.dataset.by;
+    document.getElementById('bmBuy').href=card.querySelector('a.btn').href;
+    var body=document.getElementById('bmBody'); body.innerHTML=''; body.appendChild(t.content.cloneNode(true));
+    modal.hidden=false; document.body.style.overflow='hidden'; box.scrollTop=0;
+    lastBtn=btn; modal.querySelector('.bm-close').focus();
+  }
+  function close(){ modal.hidden=true; document.body.style.overflow=''; if(lastBtn) lastBtn.focus(); }
+  document.querySelectorAll('.book-card .book-more').forEach(function(btn){
+    btn.addEventListener('click', function(){ open(btn.closest('.book-card'), btn); });
+  });
+  modal.addEventListener('click', function(e){ if(e.target===modal) close(); });
+  modal.querySelector('.bm-close').addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !modal.hidden) close(); });
+})();
+</script>
 
 <!-- ================= SOCIAL ================= -->
 <section class="section social-section">
