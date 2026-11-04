@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>When Loyalty Becomes Enabling: Knowing When to Stop Supporting Wrong Behavior | KGIMC Blog</title>
+<meta name="description" content="When loyalty becomes enabling: Eli, Jonathan, Abigail, Nathan and Paul on honouring people without supporting wrong behaviour. By Anita Singh." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0b1e3f; --navy-deep:#061229;
+  --gold:#c9a24b; --gold-light:#e6c67a;
+  --cream:#faf6ee; --ink:#1a1a1a; --muted:#5c5c5c;
+  --line:rgba(201,162,75,0.35);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.8;font-weight:300;font-size:17px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;letter-spacing:.3px;line-height:1.25;color:var(--navy)}
+h1{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:16px}
+h2{font-size:1.8rem;margin:36px 0 14px}
+h3{font-size:1.35rem;margin:28px 0 10px}
+p{margin-bottom:18px;color:#2b2b2b}
+a{color:var(--gold);text-decoration:none;transition:.3s}
+a:hover{color:var(--navy)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;padding:12px 30px;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;border:1px solid var(--gold);border-radius:2px;cursor:pointer;transition:.3s;text-align:center}
+.btn-navy{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+.btn-navy:hover{background:transparent;color:var(--navy)}
+.btn-outline{background:transparent;color:var(--gold)}
+.btn-outline:hover{background:var(--gold);color:var(--navy)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,30,63,0.95);backdrop-filter:blur(10px);padding:14px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-logo{display:flex;align-items:center;gap:12px;color:var(--cream);font-family:var(--serif);font-size:1.1rem;flex-shrink:0}
+.nav-logo img{width:42px;height:42px;border-radius:50%}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center}
+.nav-links a{color:var(--cream);font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:400}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-links .book-btn{background:var(--gold);color:var(--navy)!important;padding:10px 20px;border-radius:2px;font-weight:500}
+.menu-toggle{display:none;background:none;border:none;color:var(--cream);font-size:1.5rem;cursor:pointer}
+
+.post-header{background:radial-gradient(ellipse at 50% 0%,#2a4778 0%,#1a3260 40%,#0b1e3f 100%);color:var(--cream);padding:150px 24px 70px;text-align:center;position:relative;overflow:hidden}
+.post-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 20%,rgba(201,162,75,0.25),transparent 70%);pointer-events:none}
+.post-header>*{position:relative;z-index:1}
+.post-header .cat{font-family:var(--sans);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px;display:inline-block;padding:6px 14px;border:1px solid var(--gold);border-radius:20px}
+.post-header h1{color:var(--cream)}
+.post-header .subtitle{font-family:var(--serif);font-style:italic;color:var(--gold-light);font-size:1.25rem;margin-top:6px}
+.post-header .meta{color:rgba(250,246,238,0.75);font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-top:16px}
+.post-header .verse{font-family:var(--serif);font-style:italic;color:var(--gold-light);font-size:1.15rem;margin-top:24px;max-width:700px;margin-left:auto;margin-right:auto}
+
+article.post{max-width:780px;margin:0 auto;padding:70px 24px 40px}
+article.post .scripture{background:#fff;border-left:4px solid var(--gold);padding:16px 22px;margin:20px 0 26px;font-family:var(--serif);font-style:italic;color:var(--navy);font-size:1.1rem;border-radius:2px}
+article.post .scripture .ref{display:block;font-size:.75rem;letter-spacing:2px;color:var(--gold);font-style:normal;text-transform:uppercase;margin-top:8px}
+article.post .lead{font-family:var(--serif);font-size:1.35rem;color:var(--navy);font-style:italic;line-height:1.5;margin-bottom:28px}
+article.post .prayer-box{background:linear-gradient(135deg,var(--navy),var(--navy-deep));color:var(--cream);padding:30px 32px;border-radius:6px;margin:36px 0}
+article.post .prayer-box h3{color:var(--gold-light);margin-top:0;margin-bottom:12px;font-family:var(--serif);font-size:1.5rem}
+article.post .prayer-box p{color:rgba(250,246,238,0.9)}
+article.post .declaration-box{background:#fff;border:1px solid var(--gold);padding:24px 28px;border-radius:4px;margin:30px 0}
+article.post .declaration-box .label{font-family:var(--sans);font-size:.72rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:500;margin-bottom:12px;text-align:center}
+article.post .declaration-box p{font-family:var(--serif);font-style:italic;color:var(--navy);font-size:1.08rem;line-height:1.65;margin-bottom:14px}
+article.post .signature{margin-top:40px;text-align:right;font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.2rem}
+
+.post-nav{max-width:780px;margin:0 auto;padding:30px 24px 80px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:20px}
+
+footer{background:var(--navy-deep);color:rgba(250,246,238,0.6);padding:60px 0 30px;text-align:center}
+.footer-logo{width:80px;height:80px;margin:0 auto 20px;border-radius:50%}
+footer h4{font-family:var(--serif);color:var(--gold);font-size:1.4rem;margin-bottom:8px}
+footer .verse{font-style:italic;margin:16px 0;color:rgba(250,246,238,0.75)}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:24px 0;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase}
+.footer-links a{color:rgba(250,246,238,0.75)}
+.footer-links a:hover{color:var(--gold)}
+.socials{display:flex;gap:16px;justify-content:center;margin:16px 0}
+.socials a{width:40px;height:40px;border:1px solid var(--gold);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem}
+.socials a:hover{background:var(--gold);color:var(--navy)}
+.copyright{font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;margin-top:20px}
+
+@media (max-width:768px){
+  .nav-links{position:fixed;top:70px;left:0;right:0;background:var(--navy-deep);flex-direction:column;padding:24px;display:none;gap:16px;border-top:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  article.post{padding:50px 20px 30px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../kgimc-logo.png" alt="KGIMC" /><span>KGIMC</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#schedule">Schedule</a></li>
+      <li><a href="../index.html#team">Team</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../index.html#books">Books</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a href="../index.html#book-now" class="book-btn">Book Now</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<header class="post-header">
+  <div class="cat">CHRISTIAN TEACHING • LOYALTY, DISCERNMENT &amp; HEALTHY BOUNDARIES</div>
+  <h1>When Loyalty Becomes Enabling: Knowing When to Stop Supporting Wrong Behavior</h1>
+  <div class="meta">By Anita Singh</div>
+</header>
+
+<article class="post">
+  <p class="lead">Loyalty is a beautiful quality. Whether in marriage, family, friendships, church, or ministry, God calls us to love, support, and remain faithful to one another. But sometimes what we call loyalty can slowly become enabling.</p>
+  <p>Enabling happens when our actions repeatedly shield someone from necessary accountability, excuse harmful patterns, or make it easier for destructive behavior to continue. We may defend their actions, cover their responsibilities, remain silent about wrongdoing, or protect them from consequences they need to face.</p>
+  <p>Often, we do these things because we genuinely care. We do not want to hurt someone, damage a relationship, or see them suffer. But there is a difference between helping someone through a difficult season and supporting behavior that needs to change.</p>
+  <p>True loyalty does not require us to compromise truth, ignore wrongdoing, or take responsibility for another person&#x27;s choices.</p>
+  <h2>True Loyalty Does Not Ignore the Truth</h2>
+  <p>Ephesians 4:15 teaches us to speak the truth in love. God never intended love and truth to be separated. Genuine love seeks what is good for another person, even when that requires an uncomfortable conversation.</p>
+  <p>Proverbs 27:6 (NKJV) says, &quot;Faithful are the wounds of a friend, But the kisses of an enemy are deceitful.&quot;</p>
+  <p>Sometimes the person who challenges us is showing greater loyalty than the person who continually agrees with us. Agreement may preserve temporary peace, but it does not always encourage spiritual growth.</p>
+  <p>Loyalty should never become an excuse for protecting what God is calling someone to change.</p>
+  <h2>Eli and His Sons: When Correction Is Not Followed by Accountability</h2>
+  <p>In 1 Samuel 2:12–25, Eli&#x27;s sons, Hophni and Phinehas, were priests who abused their responsibilities and treated the offerings of the Lord with contempt. Eli knew about their wrongdoing and verbally confronted them, but they refused to listen.</p>
+  <p>In 1 Samuel 3:13, God declared judgment concerning Eli&#x27;s household because he knew about his sons&#x27; wrongdoing and had not adequately restrained them.</p>
+  <p>Eli&#x27;s failure was not that he never spoke to his sons. The problem was that his correction was not accompanied by sufficient action, even though he held responsibility for what was happening.</p>
+  <p>This teaches us that when we have the authority and responsibility to intervene, simply expressing disapproval may not be enough to protect others from continued harm.</p>
+  <p>Correction without appropriate accountability can allow wrongdoing to continue.</p>
+  <h2>Jonathan and Saul: Honoring Someone Without Supporting Their Wrongdoing</h2>
+  <p>Jonathan loved and honored his father, King Saul, but he did not blindly support Saul&#x27;s unjust treatment of David.</p>
+  <p>In 1 Samuel 19:1–7, Jonathan defended David and reminded Saul that David had not sinned against him. Later, when Saul continued seeking David&#x27;s life, Jonathan warned David and helped him escape danger (1 Samuel 20).</p>
+  <p>Jonathan did not have to hate his father to recognize that his actions were wrong. He could love Saul while refusing to cooperate with an unjust plan.</p>
+  <p>This is an important lesson for those who struggle with loyalty toward family members, close friends, spiritual leaders, or people they deeply respect.</p>
+  <p>You can honor someone without agreeing with everything they do. Respect does not require participation in wrongdoing.</p>
+  <h2>Abigail and Nabal: When Wisdom Refuses to Cooperate With Foolishness</h2>
+  <p>In 1 Samuel 25:2–35, Nabal responded harshly to David&#x27;s men, placing his household in danger. When Abigail learned what had happened, she acted quickly and wisely.</p>
+  <p>Abigail brought provisions to David and appealed to him not to take revenge. She did not defend her husband&#x27;s foolish conduct, but she also did not encourage David to retaliate against him.</p>
+  <p>Her actions helped prevent bloodshed and demonstrated that wisdom sometimes requires us to act differently from someone we love.</p>
+  <p>Abigail&#x27;s example reminds us that loyalty does not mean becoming a participant in another person&#x27;s poor decisions. We can act with courage, humility, and discernment while seeking to protect those who may be affected.</p>
+  <p>Sometimes wisdom requires us to refuse cooperation with wrongdoing while still pursuing peace and protecting others.</p>
+  <h2>Nathan and Paul: Love Sometimes Requires Confrontation</h2>
+  <p>In 2 Samuel 12:1–13, Nathan confronted King David about his serious wrongdoing. He did not remain silent because David was king. Likewise, in Galatians 2:11–14, Paul confronted Peter when Peter&#x27;s conduct toward Gentile believers contradicted the truth of the gospel.</p>
+  <p>Both examples remind us that loyalty and spiritual unity must remain grounded in truth. Correction should be offered with humility and discernment, but genuine love does not require silence when wrongdoing needs to be addressed.</p>
+  <h2>How Loyalty Slowly Becomes Enabling</h2>
+  <p>Enabling does not always begin with bad intentions. Often, it begins with compassion, loyalty, or a sincere desire to help someone we care about.</p>
+  <p>We may make excuses for repeated behavior because someone is struggling. We may continually cover their responsibilities because they refuse to become accountable. We may defend actions we know are wrong because we do not want others to think badly of them.</p>
+  <p>Over time, our efforts to protect the person can begin protecting the very behavior that needs to change.</p>
+  <p>Galatians 6:2 calls believers to bear one another&#x27;s burdens, while Galatians 6:5 emphasizes personal responsibility. These verses address different aspects of Christian life, reminding us that mutual care and individual accountability both matter.</p>
+  <p>Helping someone through genuine weakness, illness, hardship, or a season of struggle is not automatically enabling. The concern arises when our support repeatedly excuses harmful choices or prevents necessary accountability.</p>
+  <p>Helping someone carry a genuine burden is different from continually shielding them from the consequences of their choices.</p>
+  <h2>When Fear and Guilt Keep Us in Unhealthy Patterns</h2>
+  <p>Sometimes people continue enabling behavior not because they agree with it, but because they are afraid of what will happen if they stop.</p>
+  <p class="signature">— Anita Singh</p>
+</article>
+
+<div class="post-nav">
+  <a href="blog24.html" class="btn btn-outline">← Previous</a>
+  <a href="../blog.html" class="btn btn-navy">Back to Blog</a>
+</div>
+
+<footer>
+  <div class="container">
+    <img src="../kgimc-logo.png" alt="KGIMC" class="footer-logo" />
+    <h4>Kingdom Guardian International Miracle Centre</h4>
+    <p class="verse">I have given you authority to trample on snakes and scorpions and to overcome all the power of the enemy; nothing will harm you. — Luke 10:19</p>
+    <div class="footer-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#schedule">Schedule</a>
+      <a href="../index.html#team">Team</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../index.html#books">Books</a>
+      <a href="../index.html#book-now">Book Now</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.youtube.com/@KGIMiracleCentre-x7v" target="_blank" title="YouTube">▶</a>
+      <a href="https://www.instagram.com/kgimiraclecentre" target="_blank" title="Instagram">Ⓘ</a>
+      <a href="mailto:kgimcmediateam@gmail.com" title="Email">✉</a>
+    </div>
+    <div class="copyright">© <span id="year"></span> Kingdom Guardian International Miracle Centre. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
+});
+</script>
+</body>
+</html>
